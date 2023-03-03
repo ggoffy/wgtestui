@@ -60,7 +60,7 @@ class PluginsHandler
         $form->setExtra('enctype="multipart/form-data"');
 
         // Form Select testArea
-        $pluginSelect = new \XoopsFormSelect(\_AM_WGTESTUI_PLUGINS_FORM_IMPORT_SELECT, 'plugin', '', 5);
+        $pluginSelect = new \XoopsFormSelect(\_AM_WGTESTUI_PLUGINS_FORM_IMPORT_SELECT, 'plugins', '', 5, true);
         $pluginSelect->setDescription(\_AM_WGTESTUI_PLUGINS_FORM_IMPORT_SELECT_DESC);
         $filesArr = \XoopsLists::getFileListAsArray(\WGTESTUI_PATH . '/plugins/');
         unset($filesArr['index.php']);
@@ -92,8 +92,8 @@ class PluginsHandler
         $form->setExtra('enctype="multipart/form-data"');
 
         // Form Select testArea
-        $pluginSelect = new \XoopsFormSelect(\_AM_WGTESTUI_PLUGINS_FORM_EXPORT_SELECT, 'plugin', '', 5);
-        $sql = 'SELECT `test_module` FROM `'  . $GLOBALS['xoopsDB']->prefix('wgtestui_tests') . '` GROUP BY `test_module`';
+        $pluginSelect = new \XoopsFormSelect(\_AM_WGTESTUI_PLUGINS_FORM_EXPORT_SELECT, 'plugins', '', 5, true);
+        $sql = 'SELECT `module` FROM `'  . $GLOBALS['xoopsDB']->prefix('wgtestui_tests') . '` GROUP BY `module`';
 
         $result = $GLOBALS['xoopsDB']->queryF($sql);
         if (!$result instanceof \mysqli_result) {

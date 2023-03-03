@@ -42,7 +42,7 @@ class TestsHandler extends \XoopsPersistableObjectHandler
      */
     public function __construct(\XoopsDatabase $db)
     {
-        parent::__construct($db, 'wgtestui_tests', Tests::class, 'test_id', 'test_url');
+        parent::__construct($db, 'wgtestui_tests', Tests::class, 'id', 'url');
     }
 
     /**
@@ -86,7 +86,7 @@ class TestsHandler extends \XoopsPersistableObjectHandler
      * @param string $order
      * @return int
      */
-    public function getCountTests($start = 0, $limit = 0, $sort = 'test_id ASC, test_url', $order = 'ASC')
+    public function getCountTests($start = 0, $limit = 0, $sort = 'id ASC, url', $order = 'ASC')
     {
         $crCountTests = new \CriteriaCompo();
         $crCountTests = $this->getTestsCriteria($crCountTests, $start, $limit, $sort, $order);
@@ -101,7 +101,7 @@ class TestsHandler extends \XoopsPersistableObjectHandler
      * @param string $order
      * @return array
      */
-    public function getAllTests($start = 0, $limit = 0, $sort = 'test_id ASC, test_url', $order = 'ASC')
+    public function getAllTests($start = 0, $limit = 0, $sort = 'id ASC, url', $order = 'ASC')
     {
         $crAllTests = new \CriteriaCompo();
         $crAllTests = $this->getTestsCriteria($crAllTests, $start, $limit, $sort, $order);

@@ -2,42 +2,42 @@ wgtestui_tests:
     options: 'ENGINE=InnoDB'
     columns: 
         -
-            name: test_id
+            name: id
             attributes: ' INT(8) UNSIGNED NOT NULL AUTO_INCREMENT '
         -
-            name: test_url
+            name: url
             attributes: ' VARCHAR(500) NOT NULL DEFAULT '''''''' '
         -
-            name: test_module
+            name: module
             attributes: ' VARCHAR(255) NOT NULL DEFAULT '''''''' '
         -
-            name: test_area
+            name: area
             attributes: ' INT(10) NOT NULL DEFAULT ''0'' '
         -
-            name: test_type
+            name: type
             attributes: ' INT(10) NOT NULL DEFAULT ''0'' '
         -
-            name: test_resultcode
+            name: resultcode
             attributes: ' VARCHAR(255) NOT NULL DEFAULT '''''''' '
         -
-            name: test_resulttext
+            name: resulttext
             attributes: ' VARCHAR(255) NOT NULL DEFAULT '''''''' '
         -
-            name: test_infotext
+            name: infotext
             attributes: ' TEXT NOT NULL  '
         -
-            name: test_datetest
+            name: datetest
             attributes: ' INT(11) NOT NULL DEFAULT ''0'' '
         -
-            name: test_datecreated
+            name: datecreated
             attributes: ' INT(11) NOT NULL DEFAULT ''0'' '
         -
-            name: test_submitter
+            name: submitter
             attributes: ' INT(10) NOT NULL DEFAULT ''0'' '
     keys:
         PRIMARY:
-            columns: test_id
+            columns: id
             unique: true
         idxurl:
-            columns: test_url
+            columns: url
             unique: true

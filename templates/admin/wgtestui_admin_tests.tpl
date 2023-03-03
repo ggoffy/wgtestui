@@ -25,8 +25,8 @@
                 <td class='center'><{$test.id}></td>
                 <td class='center'><{$test.url}></td>
                 <td class='center'><{$test.module}></td>
-                <td class='center'><{$test.area}></td>
-                <td class='center'><{$test.type}></td>
+                <td class='center'><{$test.area_text}></td>
+                <td class='center'><{$test.type_text}></td>
                 <td class='center'><{$test.resultcode}> <{$test.resulttext}></td>
                 <td class='center'>
                     <{if $test.infotext|default:'' != ''}>
@@ -39,13 +39,13 @@
                     <{/if}>
                     <{$test.infotext_short}>
                 </td>
-                <td class='center'><{$test.datetest}></td>
-                <td class='center'><{$test.datecreated}></td>
-                <td class='center'><{$test.submitter}></td>
+                <td class='center'><{$test.datetest_text}></td>
+                <td class='center'><{$test.datecreated_text}></td>
+                <td class='center'><{$test.submitter_text}></td>
                 <td class="center  width5">
-                    <a href="tests.php?op=edit&amp;test_id=<{$test.id}>&amp;start=<{$start}>&amp;limit=<{$limit}>" title="<{$smarty.const._EDIT}>"><img src="<{xoModuleIcons16 'edit.png'}>" alt="<{$smarty.const._EDIT}> tests" ></a>
+                    <a href="tests.php?op=edit&amp;id=<{$test.id}>&amp;start=<{$start}>&amp;limit=<{$limit}>" title="<{$smarty.const._EDIT}>"><img src="<{xoModuleIcons16 'edit.png'}>" alt="<{$smarty.const._EDIT}> tests" ></a>
                     <a href="tests.php?op=clone&amp;test_id_source=<{$test.id}>" title="<{$smarty.const._CLONE}>"><img src="<{xoModuleIcons16 'editcopy.png'}>" alt="<{$smarty.const._CLONE}> tests" ></a>
-                    <a href="tests.php?op=delete&amp;test_id=<{$test.id}>" title="<{$smarty.const._DELETE}>"><img src="<{xoModuleIcons16 'delete.png'}>" alt="<{$smarty.const._DELETE}> tests" ></a>
+                    <a href="tests.php?op=delete&amp;id=<{$test.id}>" title="<{$smarty.const._DELETE}>"><img src="<{xoModuleIcons16 'delete.png'}>" alt="<{$smarty.const._DELETE}> tests" ></a>
                 </td>
             </tr>
             <{/foreach}>

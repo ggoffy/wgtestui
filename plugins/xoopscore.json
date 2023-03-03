@@ -4,46 +4,52 @@
     "version": "XOOPS 2.5.11-Beta2",
     "data": [
         {
-            "test_url": "admin.php",
-            "test_module": "xoopscore",
-            "test_area": 1,
-            "test_type": 1
+            "url": "admin.php",
+            "module": "xoopscore",
+            "area": 1,
+            "type": 1
         },
         {
-            "test_url": "index.php",
-            "test_module": "xoopscore",
-            "test_area": 2,
-            "test_type": 1
+            "url": "nonexisting.php",
+            "module": "xoopscore",
+            "area": 2,
+            "type": 1
         },
         {
-            "test_url": "userinfo.php?uid=1",
-            "test_module": "xoopscore",
-            "test_area": 2,
-            "test_type": 1
+            "url": "index.php",
+            "module": "xoopscore",
+            "area": 2,
+            "type": 1
         },
         {
-            "test_url": "edituser.php",
-            "test_module": "xoopscore",
-            "test_area": 2,
-            "test_type": 1
+            "url": "userinfo.php?uid=1",
+            "module": "xoopscore",
+            "area": 2,
+            "type": 1
         },
         {
-            "test_url": "edituser.php?op=avatarform",
-            "test_module": "xoopscore",
-            "test_area": 2,
-            "test_type": 1
+            "url": "edituser.php",
+            "module": "xoopscore",
+            "area": 2,
+            "type": 1
         },
         {
-            "test_url": "viewpmsg.php",
-            "test_module": "xoopscore",
-            "test_area": 2,
-            "test_type": 1
+            "url": "edituser.php?op=avatarform",
+            "module": "xoopscore",
+            "area": 2,
+            "type": 1
         },
         {
-            "test_url": "notifications.php",
-            "test_module": "xoopscore",
-            "test_area": 2,
-            "test_type": 1
+            "url": "viewpmsg.php",
+            "module": "xoopscore",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "notifications.php",
+            "module": "xoopscore",
+            "area": 2,
+            "type": 1
         }
     ]
 }

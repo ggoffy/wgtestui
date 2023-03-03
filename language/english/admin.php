@@ -79,9 +79,9 @@ require_once __DIR__ . '/common.php';
 \define('_AM_WGTESTUI_PLUGINS_FORM_IMPORT_SELECT_DESC', "Pay attention: existing data for these module will be deleted!");
 \define('_AM_WGTESTUI_PLUGINS_FORM_EXPORT', "Export plugins");
 \define('_AM_WGTESTUI_PLUGINS_FORM_EXPORT_SELECT', "Select data for export as plugins");
-\define('_AM_WGTESTUI_PLUGINS_JSON_CREATED_SUCCESS', "JSON file successfuly created");
+\define('_AM_WGTESTUI_PLUGINS_JSON_CREATED_SUCCESS', "JSON file(s) successfuly created: ");
 \define('_AM_WGTESTUI_PLUGINS_JSON_CREATED_ERROR', "An error occured when creating JSON file");
-\define('_AM_WGTESTUI_PLUGINS_JSON_IMPORT_SUCCESS', "JSON file successfuly imported");
+\define('_AM_WGTESTUI_PLUGINS_JSON_IMPORT_SUCCESS', "JSON file(s) successfully imported: ");
 \define('_AM_WGTESTUI_PLUGINS_JSON_IMPORT_ERROR', "An error occured when importing JSON file");
 // General
 \define('_AM_WGTESTUI_FORM_UPLOAD', 'Upload file');

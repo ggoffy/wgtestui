@@ -49,23 +49,23 @@ if (!is_object($testsObj)) {
     }
     //check whether given url already exists in database
     $crTests = new \CriteriaCompo();
-    $crTests->add(new Criteria('test_url', $currentUrl));
+    $crTests->add(new Criteria('url', $currentUrl));
     if ($testsHandler->getCount($crTests) > 0) {
         header('Content-Type: application/json');
         echo json_encode(['status' => 'success', 'message' => \_AM_WGTESTUI_TEST_URL_EXISTS]);
     } else {
         $arrTemp = explode('/', $currentUrl);
         $testModule = \count($arrTemp) > 0 ? $arrTemp[1] : 'xoopscore';
-        $testsObj->setVar('test_url', $currentUrl);
-        $testsObj->setVar('test_area', 2);
-        $testsObj->setVar('test_module', $testModule);
-        $testsObj->setVar('test_type', 1);
-        $testsObj->setVar('test_resultcode', '0');
-        $testsObj->setVar('test_resulttext', '');
-        $testsObj->setVar('test_infotext', '');
-        //$testsObj->setVar('test_datetest', \time());
-        $testsObj->setVar('test_datecreated', \time());
-        $testsObj->setVar('test_submitter', $GLOBALS['xoopsUser']->uid());
+        $testsObj->setVar('url', $currentUrl);
+        $testsObj->setVar('area', 2);
+        $testsObj->setVar('module', $testModule);
+        $testsObj->setVar('type', 1);
+        $testsObj->setVar('resultcode', '0');
+        $testsObj->setVar('resulttext', '');
+        $testsObj->setVar('infotext', '');
+        //$testsObj->setVar('datetest', \time());
+        $testsObj->setVar('datecreated', \time());
+        $testsObj->setVar('submitter', $GLOBALS['xoopsUser']->uid());
         // Insert Data
         if ($testsHandler->insert($testsObj)) {
             // redirect after insert

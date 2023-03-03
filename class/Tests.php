@@ -52,17 +52,17 @@ class Tests extends \XoopsObject
      */
     public function __construct()
     {
-        $this->initVar('test_id', \XOBJ_DTYPE_INT);
-        $this->initVar('test_url', \XOBJ_DTYPE_TXTBOX);
-        $this->initVar('test_module', \XOBJ_DTYPE_TXTBOX);
-        $this->initVar('test_area', \XOBJ_DTYPE_INT);
-        $this->initVar('test_type', \XOBJ_DTYPE_INT);
-        $this->initVar('test_resultcode', \XOBJ_DTYPE_TXTBOX);
-        $this->initVar('test_resulttext', \XOBJ_DTYPE_TXTBOX);
-        $this->initVar('test_infotext', \XOBJ_DTYPE_TXTAREA);
-        $this->initVar('test_datetest', \XOBJ_DTYPE_INT);
-        $this->initVar('test_datecreated', \XOBJ_DTYPE_INT);
-        $this->initVar('test_submitter', \XOBJ_DTYPE_INT);
+        $this->initVar('id', \XOBJ_DTYPE_INT);
+        $this->initVar('url', \XOBJ_DTYPE_TXTBOX);
+        $this->initVar('module', \XOBJ_DTYPE_TXTBOX);
+        $this->initVar('area', \XOBJ_DTYPE_INT);
+        $this->initVar('type', \XOBJ_DTYPE_INT);
+        $this->initVar('resultcode', \XOBJ_DTYPE_TXTBOX);
+        $this->initVar('resulttext', \XOBJ_DTYPE_TXTBOX);
+        $this->initVar('infotext', \XOBJ_DTYPE_TXTAREA);
+        $this->initVar('datetest', \XOBJ_DTYPE_INT);
+        $this->initVar('datecreated', \XOBJ_DTYPE_INT);
+        $this->initVar('submitter', \XOBJ_DTYPE_INT);
     }
 
     /**
@@ -106,36 +106,36 @@ class Tests extends \XoopsObject
         $form = new \XoopsThemeForm($title, 'form', $action, 'post', true);
         $form->setExtra('enctype="multipart/form-data"');
         // Form Text testUrl
-        $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_URL, 'test_url', 100, 255, $this->getVar('test_url')));
+        $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_URL, 'url', 100, 255, $this->getVar('url')));
         // Tests Handler
         $testsHandler = $helper->getHandler('Tests');
         // Form Select testArea
-        $testAreaSelect = new \XoopsFormSelect(\_AM_WGTESTUI_TEST_AREA, 'test_area', $this->getVar('test_area'));
+        $testAreaSelect = new \XoopsFormSelect(\_AM_WGTESTUI_TEST_AREA, 'area', $this->getVar('area'));
         $testAreaSelect->addOption(1,'ADMIN');
         $testAreaSelect->addOption(2,'USER');
         $form->addElement($testAreaSelect);
         // Tests Handler
         $testsHandler = $helper->getHandler('Tests');
         // Form Select testType
-        $testTypeSelect = new \XoopsFormSelect(\_AM_WGTESTUI_TEST_TYPE, 'test_type', $this->getVar('test_type'));
+        $testTypeSelect = new \XoopsFormSelect(\_AM_WGTESTUI_TEST_TYPE, 'type', $this->getVar('type'));
         $testTypeSelect->addOption(1,'HTTPREQUEST');
         $form->addElement($testTypeSelect);
         // Form Text testResultcode
-        $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_RESULTCODE, 'test_resultcode', 50, 255, $this->getVar('test_resultcode')));
+        $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_RESULTCODE, 'resultcode', 50, 255, $this->getVar('resultcode')));
         // Form Text testResulttext
-        $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_RESULTTEXT, 'test_resulttext', 50, 255, $this->getVar('test_resulttext')));
+        $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_RESULTTEXT, 'resulttext', 50, 255, $this->getVar('resulttext')));
         // Form Editor TextArea testInfotext
-        $form->addElement(new \XoopsFormTextArea(\_AM_WGTESTUI_TEST_INFOTEXT, 'test_infotext', $this->getVar('test_infotext', 'e'), 4, 47));
+        $form->addElement(new \XoopsFormTextArea(\_AM_WGTESTUI_TEST_INFOTEXT, 'infotext', $this->getVar('infotext', 'e'), 4, 47));
         // Form Text Date Select testDatetest
-        $testDatetest = $this->isNew() ? \time() : $this->getVar('test_datetest');
-        $form->addElement(new \XoopsFormDateTime(\_AM_WGTESTUI_TEST_DATETEST, 'test_datetest', '', $testDatetest));
+        $testDatetest = $this->isNew() ? \time() : $this->getVar('datetest');
+        $form->addElement(new \XoopsFormDateTime(\_AM_WGTESTUI_TEST_DATETEST, 'datetest', '', $testDatetest));
         // Form Text Date Select testDatecreated
-        $testDatecreated = $this->isNew() ? \time() : $this->getVar('test_datecreated');
-        $form->addElement(new \XoopsFormDateTime(\_AM_WGTESTUI_TEST_DATECREATED, 'test_datecreated', '', $testDatecreated));
+        $testDatecreated = $this->isNew() ? \time() : $this->getVar('datecreated');
+        $form->addElement(new \XoopsFormDateTime(\_AM_WGTESTUI_TEST_DATECREATED, 'datecreated', '', $testDatecreated));
         // Form Select User testSubmitter
         $uidCurrent = \is_object($GLOBALS['xoopsUser']) ? $GLOBALS['xoopsUser']->uid() : 0;
-        $testSubmitter = $this->isNew() ? $uidCurrent : $this->getVar('test_submitter');
-        $form->addElement(new \XoopsFormSelectUser(\_AM_WGTESTUI_TEST_SUBMITTER, 'test_submitter', false, $testSubmitter));
+        $testSubmitter = $this->isNew() ? $uidCurrent : $this->getVar('submitter');
+        $form->addElement(new \XoopsFormSelectUser(\_AM_WGTESTUI_TEST_SUBMITTER, 'submitter', false, $testSubmitter));
         // To Save
         $form->addElement(new \XoopsFormHidden('op', 'save'));
         $form->addElement(new \XoopsFormHidden('start', $this->start));
@@ -156,19 +156,19 @@ class Tests extends \XoopsObject
         $helper  = \XoopsModules\Wgtestui\Helper::getInstance();
         $utility = new \XoopsModules\Wgtestui\Utility();
         $ret = $this->getValues($keys, $format, $maxDepth);
-        $ret['id']               = $this->getVar('test_id');
-        $ret['url']              = $this->getVar('test_url');
-        $ret['module']           = $this->getVar('test_module');
-        $ret['area']             = $this->getVar('test_area') == 1 ? 'ADMIN' : 'USER';
-        $ret['type']             = $this->getVar('test_type') == 1 ? 'HTTPREQUEST' : 'invalid';
-        $ret['resultcode']       = $this->getVar('test_resultcode');
-        $ret['resulttext']       = $this->getVar('test_resulttext');
-        $ret['infotext']       = \strip_tags($this->getVar('test_infotext', 'e'));
+        //$ret['id']               = $this->getVar('id');
+        //$ret['url']              = $this->getVar('url');
+        //$ret['module']           = $this->getVar('module');
+        $ret['area_text']             = $this->getVar('area') == 1 ? 'ADMIN' : 'USER';
+        $ret['type_text']             = $this->getVar('type') == 1 ? 'HTTPREQUEST' : 'invalid';
+        //$ret['resultcode']       = $this->getVar('resultcode');
+        //$ret['resulttext']       = $this->getVar('resulttext');
+        $ret['infotext']       = \strip_tags($this->getVar('infotext', 'e'));
         $editorMaxchar = $helper->getConfig('editor_maxchar');
         $ret['infotext_short'] = $utility::truncateHtml($ret['infotext'], $editorMaxchar);
-        $ret['datetest']         = \formatTimestamp($this->getVar('test_datetest'), 'm');
-        $ret['datecreated']      = \formatTimestamp($this->getVar('test_datecreated'), 'm');
-        $ret['submitter']        = \XoopsUser::getUnameFromId($this->getVar('test_submitter'));
+        $ret['datetest_text']         = $this->getVar('datetest') > 0 ? \formatTimestamp($this->getVar('datetest'), 'm') : '';
+        $ret['datecreated_text']      = \formatTimestamp($this->getVar('datecreated'), 'm');
+        $ret['submitter_text']        = \XoopsUser::getUnameFromId($this->getVar('submitter'));
         return $ret;
     }
 

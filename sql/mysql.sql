@@ -12,18 +12,17 @@
 #
 
 CREATE TABLE `wgtestui_tests` (
-  `test_id` INT(8) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `test_url` VARCHAR(500) NOT NULL DEFAULT '',
-  `test_module` VARCHAR(255) NOT NULL DEFAULT '',
-  `test_area` INT(10) NOT NULL DEFAULT '0',
-  `test_type` INT(10) NOT NULL DEFAULT '0',
-  `test_resultcode` VARCHAR(255) NOT NULL DEFAULT '',
-  `test_resulttext` VARCHAR(255) NOT NULL DEFAULT '',
-  `test_infotext` TEXT NOT NULL ,
-  `test_datetest` INT(11) NOT NULL DEFAULT '0',
-  `test_datecreated` INT(11) NOT NULL DEFAULT '0',
-  `test_submitter` INT(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`test_id`),
-  UNIQUE KEY `idxurl` (`test_url`)
+  `id` INT(8) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `url` VARCHAR(500) NOT NULL DEFAULT '',
+  `module` VARCHAR(255) NOT NULL DEFAULT '',
+  `area` INT(10) NOT NULL DEFAULT '0',
+  `type` INT(10) NOT NULL DEFAULT '0',
+  `resultcode` VARCHAR(255) NOT NULL DEFAULT '',
+  `resulttext` VARCHAR(255) NOT NULL DEFAULT '',
+  `infotext` TEXT NOT NULL ,
+  `datetest` INT(11) NOT NULL DEFAULT '0',
+  `datecreated` INT(11) NOT NULL DEFAULT '0',
+  `submitter` INT(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 

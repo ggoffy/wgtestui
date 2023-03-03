@@ -31,7 +31,7 @@ use XoopsModules\Wgtestui\Common;
 require __DIR__ . '/header.php';
 // Get all request values
 $op     = Request::getCmd('op', 'list');
-$testId = Request::getInt('test_id');
+$testId = Request::getInt('id');
 $start  = Request::getInt('start');
 $limit  = Request::getInt('limit', $helper->getConfig('adminpager'));
 $GLOBALS['xoopsTpl']->assign('start', $start);
@@ -113,30 +113,30 @@ switch ($op) {
             $testsObj = $testsHandler->create();
         }
         // Set Vars
-        $testUrl = str_replace(XOOPS_URL . '/', '', Request::getString('test_url'));
+        $testUrl = str_replace(XOOPS_URL . '/', '', Request::getString('url'));
         $testModule = '';
         $modArr = explode('/', $testUrl);
         if (\count($modArr) > 1) {
             $testModule = $modArr[1];
         }
-        $testsObj->setVar('test_url', $testUrl);
-        $testsObj->setVar('test_module', $testModule);
-        $testsObj->setVar('test_area', Request::getInt('test_area'));
-        $testsObj->setVar('test_type', Request::getInt('test_type'));
-        $testsObj->setVar('test_resultcode', Request::getString('test_resultcode'));
-        $testsObj->setVar('test_resulttext', Request::getString('test_resulttext'));
-        $testsObj->setVar('test_infotext', Request::getText('test_infotext'));
-        $testDatetestArr = Request::getArray('test_datetest');
+        $testsObj->setVar('url', $testUrl);
+        $testsObj->setVar('module', $testModule);
+        $testsObj->setVar('area', Request::getInt('area'));
+        $testsObj->setVar('type', Request::getInt('type'));
+        $testsObj->setVar('resultcode', Request::getString('resultcode'));
+        $testsObj->setVar('resulttext', Request::getString('resulttext'));
+        $testsObj->setVar('infotext', Request::getText('infotext'));
+        $testDatetestArr = Request::getArray('datetest');
         $testDatetestObj = \DateTime::createFromFormat(\_SHORTDATESTRING, $testDatetestArr['date']);
         $testDatetestObj->setTime(0, 0, 0);
         $testDatetest = $testDatetestObj->getTimestamp() + (int)$testDatetestArr['time'];
-        $testsObj->setVar('test_datetest', $testDatetest);
-        $testDatecreatedArr = Request::getArray('test_datecreated');
+        $testsObj->setVar('datetest', $testDatetest);
+        $testDatecreatedArr = Request::getArray('datecreated');
         $testDatecreatedObj = \DateTime::createFromFormat(\_SHORTDATESTRING, $testDatecreatedArr['date']);
         $testDatecreatedObj->setTime(0, 0, 0);
         $testDatecreated = $testDatecreatedObj->getTimestamp() + (int)$testDatecreatedArr['time'];
-        $testsObj->setVar('test_datecreated', $testDatecreated);
-        $testsObj->setVar('test_submitter', Request::getInt('test_submitter'));
+        $testsObj->setVar('datecreated', $testDatecreated);
+        $testsObj->setVar('submitter', Request::getInt('submitter'));
         // Insert Data
         if ($testsHandler->insert($testsObj)) {
             \redirect_header('tests.php?op=list&amp;start=' . $start . '&amp;limit=' . $limit, 2, \_AM_WGTESTUI_FORM_OK);
@@ -163,7 +163,7 @@ switch ($op) {
         $templateMain = 'wgtestui_admin_tests.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('tests.php'));
         $testsObj = $testsHandler->get($testId);
-        $testUrl = $testsObj->getVar('test_url');
+        $testUrl = $testsObj->getVar('url');
         if (isset($_REQUEST['ok']) && 1 == $_REQUEST['ok']) {
             if (!$GLOBALS['xoopsSecurity']->check()) {
                 \redirect_header('tests.php', 3, \implode(', ', $GLOBALS['xoopsSecurity']->getErrors()));
@@ -175,9 +175,9 @@ switch ($op) {
             }
         } else {
             $customConfirm = new Common\Confirm(
-                ['ok' => 1, 'test_id' => $testId, 'start' => $start, 'limit' => $limit, 'op' => 'delete'],
+                ['ok' => 1, 'id' => $testId, 'start' => $start, 'limit' => $limit, 'op' => 'delete'],
                 $_SERVER['REQUEST_URI'],
-                \sprintf(\_AM_WGTESTUI_FORM_SURE_DELETE, $testsObj->getVar('test_url')));
+                \sprintf(\_AM_WGTESTUI_FORM_SURE_DELETE, $testsObj->getVar('url')));
             $form = $customConfirm->getFormConfirm();
             $GLOBALS['xoopsTpl']->assign('form', $form->render());
         }
@@ -204,9 +204,10 @@ switch ($op) {
         }
         break;
     case 'reset_all':
-        $testsHandler->updateAll('test_resultcode', 0, null, true);
-        $testsHandler->updateAll('test_resulttext', '', null, true);
-        $testsHandler->updateAll('test_infotext', '', null, true);
+        $testsHandler->updateAll('resultcode', 0, null, true);
+        $testsHandler->updateAll('resulttext', '', null, true);
+        $testsHandler->updateAll('infotext', '', null, true);
+        $testsHandler->updateAll('datetest', 0, null, true);
         \redirect_header('tests.php', 3, \_AM_WGTESTUI_FORM_DELETE_OK);
         break;
     case 'execute':
@@ -247,8 +248,8 @@ switch ($op) {
             $testsAll = $testsHandler->getAll();
             foreach (\array_keys($testsAll) as $i) {
                 $test = $testsAll[$i]->getValuesTests();
-                $testUrl    = $test['test_url'];
-                $testModule = $test['test_module'];
+                $testUrl    = $test['url'];
+                $testModule = $test['module'];
                 $statusCode = 0;
                 $statusText = 'skipped';
                 $fatalError = '';
@@ -278,10 +279,10 @@ switch ($op) {
                 }
                 $testsObj = $testsHandler->get($i);
                 // Set Vars
-                $testsObj->setVar('test_resultcode', $statusCode);
-                $testsObj->setVar('test_resulttext', $statusText);
-                $testsObj->setVar('test_infotext', $infoText);
-                $testsObj->setVar('test_datetest', \time());
+                $testsObj->setVar('resultcode', $statusCode);
+                $testsObj->setVar('resulttext', $statusText);
+                $testsObj->setVar('infotext', $infoText);
+                $testsObj->setVar('datetest', \time());
                 // Insert Data
                 $testsHandler->insert($testsObj);
             }

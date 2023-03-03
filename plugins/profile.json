@@ -4,28 +4,28 @@
     "version": "1.9.2-Beta1",
     "data": [
         {
-            "test_url": "modules\/profile\/userinfo.php?uid=1",
-            "test_module": "profile",
-            "test_area": 2,
-            "test_type": 1
+            "url": "modules\/profile\/userinfo.php?uid=1",
+            "module": "profile",
+            "area": 2,
+            "type": 1
         },
         {
-            "test_url": "modules\/profile\/edituser.php",
-            "test_module": "profile",
-            "test_area": 2,
-            "test_type": 1
+            "url": "modules\/profile\/edituser.php",
+            "module": "profile",
+            "area": 2,
+            "type": 1
         },
         {
-            "test_url": "modules\/profile\/changepass.php",
-            "test_module": "profile",
-            "test_area": 2,
-            "test_type": 1
+            "url": "modules\/profile\/changepass.php",
+            "module": "profile",
+            "area": 2,
+            "type": 1
         },
         {
-            "test_url": "modules\/profile\/edituser.php?op=avatarform",
-            "test_module": "profile",
-            "test_area": 2,
-            "test_type": 1
+            "url": "modules\/profile\/edituser.php?op=avatarform",
+            "module": "profile",
+            "area": 2,
+            "type": 1
         }
     ]
 }

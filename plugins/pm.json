@@ -4,22 +4,22 @@
     "version": "1.1.4-Stable",
     "data": [
         {
-            "test_url": "modules\/pm\/viewpmsg.php",
-            "test_module": "pm",
-            "test_area": 2,
-            "test_type": 1
+            "url": "modules\/pm\/viewpmsg.php",
+            "module": "pm",
+            "area": 2,
+            "type": 1
         },
         {
-            "test_url": "modules\/pm\/viewpmsg.php?op=out",
-            "test_module": "pm",
-            "test_area": 2,
-            "test_type": 1
+            "url": "modules\/pm\/viewpmsg.php?op=out",
+            "module": "pm",
+            "area": 2,
+            "type": 1
         },
         {
-            "test_url": "modules\/pm\/viewpmsg.php?op=save",
-            "test_module": "pm",
-            "test_area": 2,
-            "test_type": 1
+            "url": "modules\/pm\/viewpmsg.php?op=save",
+            "module": "pm",
+            "area": 2,
+            "type": 1
         }
     ]
 }
