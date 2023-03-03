@@ -61,6 +61,8 @@ switch ($op) {
         $GLOBALS['xoopsTpl']->assign('tests_count', $testsCount);
         $GLOBALS['xoopsTpl']->assign('wgtestui_url', \WGTESTUI_URL);
         $GLOBALS['xoopsTpl']->assign('wgtestui_upload_url', \WGTESTUI_UPLOAD_URL);
+        $GLOBALS['xoopsTpl']->assign('wgtestui_icons_url_16', \WGTESTUI_ICONS_URL . '/16');
+        $GLOBALS['xoopsTpl']->assign('wgtestui_icons_url_32', \WGTESTUI_ICONS_URL . '/32');
         // Table view tests
         if ($testsCount > 0) {
             foreach (\array_keys($testsAll) as $i) {
