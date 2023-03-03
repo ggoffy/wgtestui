@@ -1,0 +1,151 @@
+{
+    "dirname": "wgdiaries",
+    "name": "wgDiaries",
+    "version": "1.3.3",
+    "data": [
+        {
+            "url": "modules\/wgdiaries\/admin\/index.php",
+            "module": "wgdiaries",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/admin\/items.php",
+            "module": "wgdiaries",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/admin\/items.php?op=new",
+            "module": "wgdiaries",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/admin\/files.php",
+            "module": "wgdiaries",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/admin\/files.php?op=new",
+            "module": "wgdiaries",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/admin\/categories.php",
+            "module": "wgdiaries",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/admin\/categories.php?op=new",
+            "module": "wgdiaries",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/admin\/permissions.php",
+            "module": "wgdiaries",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/admin\/clone.php",
+            "module": "wgdiaries",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/admin\/feedback.php",
+            "module": "wgdiaries",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/admin\/about.php",
+            "module": "wgdiaries",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/",
+            "module": "wgdiaries",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/items.php",
+            "module": "wgdiaries",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/items.php?op=show&item_id=4",
+            "module": "wgdiaries",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/items.php?op=edit&item_id=4",
+            "module": "wgdiaries",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/items.php?op=delete&item_id=4",
+            "module": "wgdiaries",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/files.php?op=new&item_id=4",
+            "module": "wgdiaries",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/items.php?op=listgroup",
+            "module": "wgdiaries",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/items.php?op=new",
+            "module": "wgdiaries",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/calendar.php",
+            "module": "wgdiaries",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/statistics.php",
+            "module": "wgdiaries",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/outputs.php",
+            "module": "wgdiaries",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/useritems.php",
+            "module": "wgdiaries",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgdiaries\/items.php?op=listuser&userId=1",
+            "module": "wgdiaries",
+            "area": 2,
+            "type": 1
+        }
+    ]
+}

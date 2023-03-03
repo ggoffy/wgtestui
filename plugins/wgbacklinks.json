@@ -1,0 +1,49 @@
+{
+    "dirname": "wgbacklinks",
+    "name": "wgBacklinks",
+    "version": "1.1.0",
+    "data": [
+        {
+            "url": "modules\/wgbacklinks\/admin\/index.php",
+            "module": "wgbacklinks",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgbacklinks\/admin\/providers.php",
+            "module": "wgbacklinks",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgbacklinks\/admin\/providers.php?op=new",
+            "module": "wgbacklinks",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgbacklinks\/admin\/sites.php",
+            "module": "wgbacklinks",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgbacklinks\/admin\/sites.php?op=new",
+            "module": "wgbacklinks",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgbacklinks\/admin\/about.php",
+            "module": "wgbacklinks",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgbacklinks\/index.php",
+            "module": "wgbacklinks",
+            "area": 2,
+            "type": 1
+        }
+    ]
+}

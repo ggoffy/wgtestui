@@ -109,13 +109,20 @@ switch ($op) {
         if (!$GLOBALS['xoopsSecurity']->check()) {
             \redirect_header('tests.php', 3, \implode(',', $GLOBALS['xoopsSecurity']->getErrors()));
         }
+        $testUrl = str_replace(XOOPS_URL . '/', '', Request::getString('url'));
         if ($testId > 0) {
             $testsObj = $testsHandler->get($testId);
         } else {
+            //check whether given url already exists in database
+            $crTests = new \CriteriaCompo();
+            $crTests->add(new Criteria('url', $testUrl));
+            if ($testsHandler->getCount($crTests) > 0) {
+                \redirect_header('tests.php?op=list', 3, \_AM_WGTESTUI_TEST_URL_EXISTS);
+            }
             $testsObj = $testsHandler->create();
         }
         // Set Vars
-        $testUrl = str_replace(XOOPS_URL . '/', '', Request::getString('url'));
+
         $testModule = '';
         $modArr = explode('/', $testUrl);
         if (\count($modArr) > 1) {
@@ -125,14 +132,18 @@ switch ($op) {
         $testsObj->setVar('module', $testModule);
         $testsObj->setVar('area', Request::getInt('area'));
         $testsObj->setVar('type', Request::getInt('type'));
-        $testsObj->setVar('resultcode', Request::getString('resultcode'));
+        $testsObj->setVar('resultcode', Request::getString('resultcode', '0'));
         $testsObj->setVar('resulttext', Request::getString('resulttext'));
         $testsObj->setVar('infotext', Request::getText('infotext'));
-        $testDatetestArr = Request::getArray('datetest');
-        $testDatetestObj = \DateTime::createFromFormat(\_SHORTDATESTRING, $testDatetestArr['date']);
-        $testDatetestObj->setTime(0, 0, 0);
-        $testDatetest = $testDatetestObj->getTimestamp() + (int)$testDatetestArr['time'];
-        $testsObj->setVar('datetest', $testDatetest);
+        if ($testId > 0) {
+            $testDatetestArr = Request::getArray('datetest');
+            $testDatetestObj = \DateTime::createFromFormat(\_SHORTDATESTRING, $testDatetestArr['date']);
+            $testDatetestObj->setTime(0, 0, 0);
+            $testDatetest = $testDatetestObj->getTimestamp() + (int)$testDatetestArr['time'];
+            $testsObj->setVar('datetest', $testDatetest);
+        } else {
+            $testsObj->setVar('datetest', 0);
+        }
         $testDatecreatedArr = Request::getArray('datecreated');
         $testDatecreatedObj = \DateTime::createFromFormat(\_SHORTDATESTRING, $testDatecreatedArr['date']);
         $testDatecreatedObj->setTime(0, 0, 0);

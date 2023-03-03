@@ -1,0 +1,37 @@
+{
+    "dirname": "wgblocks",
+    "name": "wgBlocks",
+    "version": "1.0",
+    "data": [
+        {
+            "url": "modules\/wgblocks\/admin\/index.php",
+            "module": "wgblocks",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgblocks\/admin\/items.php",
+            "module": "wgblocks",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgblocks\/admin\/clone.php",
+            "module": "wgblocks",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgblocks\/admin\/feedback.php",
+            "module": "wgblocks",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgblocks\/admin\/about.php",
+            "module": "wgblocks",
+            "area": 1,
+            "type": 1
+        }
+    ]
+}
