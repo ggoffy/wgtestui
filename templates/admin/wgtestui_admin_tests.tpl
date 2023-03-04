@@ -1,7 +1,46 @@
 <!-- Header -->
 <{include file='db:wgtestui_admin_header.tpl' }>
 
+<{if $statistics|default:false}>
+    <h5><{$smarty.const._AM_WGTESTUI_STATISTICS}></h5>
+    <table class='table table-bordered' style="margin-bottom:20px">
+        <thead>
+        <tr class='head'>
+            <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_MODULE}></th>
+            <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_STATS_TESTS}></th>
+            <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_STATS_STATUS200}></th>
+            <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_STATS_INFO}></th>
+        </tr>
+        </thead>
+        <tbody>
+        <{foreach item=statistic from=$statistics}>
+            <tr class='<{cycle values='odd, even'}>'>
+                <td class='center'><{$statistic.module}></td>
+                <td class='center'><{$statistic.tests}></td>
+                <td class='center'>
+                    <{$statistic.status200}>
+                    <{if $statistic.status200ok|default:false}>
+                        <img src="<{$wgtestui_icons_url_16}>/ok.png" alt="<{$smarty.const._AM_WGTESTUI_OK}>" title="<{$smarty.const._AM_WGTESTUI_OK}>">
+                    <{else}>
+                        <img src="<{$wgtestui_icons_url_16}>/warning.png" alt="<{$smarty.const._AM_WGTESTUI_NOTOK}>" title="<{$smarty.const._AM_WGTESTUI_NOTOK}>">
+                    <{/if}>
+                </td>
+                <td class='center'>
+                    <{$statistic.info}>
+                    <{if $statistic.info|default:0 > 0}>
+                        <img src="<{$wgtestui_icons_url_16}>/warning.png" alt="<{$smarty.const._AM_WGTESTUI_NOTOK}>" title="<{$smarty.const._AM_WGTESTUI_NOTOK}>">
+                    <{else}>
+                        <img src="<{$wgtestui_icons_url_16}>/ok.png" alt="<{$smarty.const._AM_WGTESTUI_OK}>" title="<{$smarty.const._AM_WGTESTUI_OK}>">
+                    <{/if}>
+                </td>
+            </tr>
+            <{/foreach}>
+        </tbody>
+    </table>
+<{/if}>
+
 <{if $tests_list|default:''}>
+    <h5><{$smarty.const._AM_WGTESTUI_LIST_TESTS}></h5>
     <table class='table table-bordered'>
         <thead>
             <tr class='head'>

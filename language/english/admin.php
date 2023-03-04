@@ -73,6 +73,9 @@ require_once __DIR__ . '/common.php';
 \define('_AM_WGTESTUI_TEST_URL_ADDED', 'Current url added to test database');
 \define('_AM_WGTESTUI_TEST_URL_EXISTS', "The current url exists alreday in the database");
 \define('_AM_WGTESTUI_TEST_URL_ERROR', "Sorry, an error occured when trying to add url in the database");
+\define('_AM_WGTESTUI_TEST_STATS_TESTS', "Number of tests");
+\define('_AM_WGTESTUI_TEST_STATS_STATUS200', "Number of status 200");
+\define('_AM_WGTESTUI_TEST_STATS_INFO', "Number of information");
 // plugins
 \define('_AM_WGTESTUI_PLUGINS_FORM_IMPORT', "Import plugins");
 \define('_AM_WGTESTUI_PLUGINS_FORM_IMPORT_SELECT', "Select the plugins for import into list of tests");
@@ -84,6 +87,8 @@ require_once __DIR__ . '/common.php';
 \define('_AM_WGTESTUI_PLUGINS_JSON_IMPORT_SUCCESS', "JSON file(s) successfully imported: ");
 \define('_AM_WGTESTUI_PLUGINS_JSON_IMPORT_ERROR', "An error occured when importing JSON file");
 // General
+\define('_AM_WGTESTUI_OK', 'OK');
+\define('_AM_WGTESTUI_NOTOK', 'Not OK');
 \define('_AM_WGTESTUI_FORM_UPLOAD', 'Upload file');
 \define('_AM_WGTESTUI_FORM_UPLOAD_NEW', 'Upload new file: ');
 \define('_AM_WGTESTUI_FORM_UPLOAD_SIZE', 'Max file size: ');

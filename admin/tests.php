@@ -55,6 +55,7 @@ switch ($op) {
         $adminObject->addItemButton(\_AM_WGTESTUI_EXEC_TEST, 'tests.php?op=execute', 'exec');
         $adminObject->addItemButton(\_AM_WGTESTUI_RESET_TEST, 'tests.php?op=reset_all', 'delete');
         $adminObject->addItemButton(\_AM_WGTESTUI_CLEAR_TEST, 'tests.php?op=delete_all', 'delete');
+        $adminObject->addItemButton(\_AM_WGTESTUI_STATISTICS, 'tests.php?op=statistics', 'stats');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         $testsCount = $testsHandler->getCountTests();
         $testsAll = $testsHandler->getAllTests($start, $limit);
@@ -75,6 +76,44 @@ switch ($op) {
                 require_once \XOOPS_ROOT_PATH . '/class/pagenav.php';
                 $pagenav = new \XoopsPageNav($testsCount, $limit, $start, 'start', 'op=list&limit=' . $limit);
                 $GLOBALS['xoopsTpl']->assign('pagenav', $pagenav->renderNav());
+            }
+        } else {
+            $GLOBALS['xoopsTpl']->assign('error', \_AM_WGTESTUI_THEREARENT_TESTS);
+        }
+        break;
+    case 'statistics':
+        // Define Stylesheet
+        $GLOBALS['xoTheme']->addStylesheet($style, null);
+        $templateMain = 'wgtestui_admin_tests.tpl';
+        $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('tests.php'));
+        $adminObject->addItemButton(\_AM_WGTESTUI_ADD_TEST, 'tests.php?op=new');
+        $adminObject->addItemButton(\_AM_WGTESTUI_EXEC_TEST, 'tests.php?op=execute', 'exec');
+        $adminObject->addItemButton(\_AM_WGTESTUI_RESET_TEST, 'tests.php?op=reset_all', 'delete');
+        $adminObject->addItemButton(\_AM_WGTESTUI_CLEAR_TEST, 'tests.php?op=delete_all', 'delete');
+        $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
+        $GLOBALS['xoopsTpl']->assign('wgtestui_icons_url_16', \WGTESTUI_ICONS_URL . '/16');
+
+        $testsCount = $testsHandler->getCountTests();// Table view tests
+        if ($testsCount > 0) {
+            $sql = 'SELECT `module`, count(`id`) as countid, sum(IF(STRCMP("200",`resultcode`) = 0, 1, 0)) as count200, ';
+            $sql .= 'sum(IF(STRCMP("",`infotext`) = 0, 0, 1)) as countinfo ';
+            $sql .= 'FROM `'  . $GLOBALS['xoopsDB']->prefix('wgtestui_tests') . '` GROUP BY `module`';
+            $result = $GLOBALS['xoopsDB']->queryF($sql);
+            if (!$result instanceof \mysqli_result) {
+                \trigger_error($GLOBALS['xoopsDB']->error());
+            }
+            $statistics = [];
+            while (false !== ($row = $GLOBALS['xoopsDB']->fetchRow($result))) {
+                $statistics[] = [
+                    'module' => $row[0],
+                    'tests' => $row[1],
+                    'status200' => $row[2],
+                    'status200ok' => ((int)$row[1] === (int)$row[2]),
+                    'info' => $row[3]
+                ];
+            }
+            if (\count($statistics) > 0) {
+                $GLOBALS['xoopsTpl']->assign('statistics', $statistics);
             }
         } else {
             $GLOBALS['xoopsTpl']->assign('error', \_AM_WGTESTUI_THEREARENT_TESTS);

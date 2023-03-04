@@ -117,9 +117,13 @@ class Tests extends \XoopsObject
         // Tests Handler
         $testsHandler = $helper->getHandler('Tests');
         // Form Select testType
+        /*currently only HTTPREQUEST is used*/
+        /*
         $testTypeSelect = new \XoopsFormSelect(\_AM_WGTESTUI_TEST_TYPE, 'type', $this->getVar('type'));
         $testTypeSelect->addOption(1,'HTTPREQUEST');
         $form->addElement($testTypeSelect);
+        */
+        $form->addElement(new \XoopsFormHidden('type', 1));
         // Form Text testResultcode
         $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_RESULTCODE, 'resultcode', 50, 255, $this->getVar('resultcode')));
         // Form Text testResulttext

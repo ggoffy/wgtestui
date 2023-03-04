@@ -32,6 +32,12 @@
             "module": "wgblocks",
             "area": 1,
             "type": 1
+        },
+        {
+            "url": "modules\/wgblocks\/testdata\/index.php?op=load",
+            "module": "wgblocks",
+            "area": 1,
+            "type": 1
         }
     ]
 }

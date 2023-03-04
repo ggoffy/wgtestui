@@ -1,0 +1,325 @@
+{
+    "dirname": "wgevents",
+    "name": "wgEvents",
+    "version": "1.0.5",
+    "data": [
+        {
+            "url": "modules\/wgevents\/admin\/index.php",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/testdata\/index.php?op=load",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/event.php",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/event.php?op=new",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/question.php",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/question.php?op=list&evid=1&start=0&limit=10",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/question.php?op=new&id=1",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/registration.php",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/registration.php?op=list&evid=1&start=0&limit=10",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/answer.php",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/answer.php?op=list&evid=1&start=0&limit=10",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/log.php",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/log.php?op=deleteall",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/task.php",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/task.php?op=new",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/task.php?op=delete_all&deltype=pending",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/task.php?op=delete_all&deltype=done",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/category.php",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/category.php?op=new",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/textblock.php",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/textblock.php?op=new",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/field.php",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/field.php?op=new",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/field.php?op=default_set",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/permission.php",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/account.php",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/account.php?op=new",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/account.php?op=check_account&id=1",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/maintenance.php",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/import.php",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/clone.php",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/feedback.php",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/admin\/about.php",
+            "module": "wgevents",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/",
+            "module": "wgevents",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/event.php",
+            "module": "wgevents",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/event.php?op=show&id=1&filter=&start=0&limit=10",
+            "module": "wgevents",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/registration.php?op=listeventmy&redir=listeventmy&evid=1",
+            "module": "wgevents",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/registration.php?op=contactall&evid=1",
+            "module": "wgevents",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/event.php?op=edit&id=1&start=0&limit=10&cats=",
+            "module": "wgevents",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/image_editor.php?op=list&id=1&start=0&limit=10&cats=",
+            "module": "wgevents",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/event.php?op=clone&id_source=1",
+            "module": "wgevents",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/event.php?op=new",
+            "module": "wgevents",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/textblock.php?op=list",
+            "module": "wgevents",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/textblock.php?op=show&id=1&start=0&limit=10",
+            "module": "wgevents",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/textblock.php?op=edit&id=1&start=0&limit=10",
+            "module": "wgevents",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/textblock.php?op=clone&id_source=1",
+            "module": "wgevents",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/textblock.php?op=delete&id=1",
+            "module": "wgevents",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/textblock.php?op=new",
+            "module": "wgevents",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/registration.php?op=listmy",
+            "module": "wgevents",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/registration.php?op=edit&redir=listmy&id=5",
+            "module": "wgevents",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/registration.php?op=delete&redir=listmy&evid=1&id=5",
+            "module": "wgevents",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/calendar.php",
+            "module": "wgevents",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgevents\/export.php?op=list&new=1",
+            "module": "wgevents",
+            "area": 2,
+            "type": 1
+        }
+    ]
+}
