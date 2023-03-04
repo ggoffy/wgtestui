@@ -30,10 +30,11 @@ use XoopsModules\Wgtestui\Common;
 
 require __DIR__ . '/header.php';
 // Get all request values
-$op     = Request::getCmd('op', 'list');
-$testId = Request::getInt('id');
-$start  = Request::getInt('start');
-$limit  = Request::getInt('limit', $helper->getConfig('adminpager'));
+$op         = Request::getCmd('op', 'list');
+$testId     = Request::getInt('id');
+$testModule = Request::getString('module');
+$start      = Request::getInt('start');
+$limit      = Request::getInt('limit', $helper->getConfig('adminpager'));
 $GLOBALS['xoopsTpl']->assign('start', $start);
 $GLOBALS['xoopsTpl']->assign('limit', $limit);
 
@@ -50,22 +51,31 @@ switch ($op) {
         $GLOBALS['xoTheme']->addScript(\XOOPS_URL . '/modules/system/js/admin.js');
         // end: css and js for showing dialog
         $templateMain = 'wgtestui_admin_tests.tpl';
+        $GLOBALS['xoopsTpl']->assign('wgtestui_url', \WGTESTUI_URL);
+        $GLOBALS['xoopsTpl']->assign('wgtestui_upload_url', \WGTESTUI_UPLOAD_URL);
+        $GLOBALS['xoopsTpl']->assign('wgtestui_icons_url_16', \WGTESTUI_ICONS_URL . '/16');
+        $GLOBALS['xoopsTpl']->assign('wgtestui_icons_url_32', \WGTESTUI_ICONS_URL . '/32');
+
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('tests.php'));
+        if ('' !== $testModule) {
+            $adminObject->addItemButton(\_AM_WGTESTUI_LIST_TESTS, 'tests.php', 'list');
+        }
         $adminObject->addItemButton(\_AM_WGTESTUI_ADD_TEST, 'tests.php?op=new');
         $adminObject->addItemButton(\_AM_WGTESTUI_EXEC_TEST, 'tests.php?op=execute', 'exec');
         $adminObject->addItemButton(\_AM_WGTESTUI_RESET_TEST, 'tests.php?op=reset_all', 'delete');
         $adminObject->addItemButton(\_AM_WGTESTUI_CLEAR_TEST, 'tests.php?op=delete_all', 'delete');
         $adminObject->addItemButton(\_AM_WGTESTUI_STATISTICS, 'tests.php?op=statistics', 'stats');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
-        $testsCount = $testsHandler->getCountTests();
-        $testsAll = $testsHandler->getAllTests($start, $limit);
+
+        $crTests = new \CriteriaCompo();
+        $crTests->add(new \Criteria('module', $testModule));
+        $testsCount = $testsHandler->getCount($crTests);
         $GLOBALS['xoopsTpl']->assign('tests_count', $testsCount);
-        $GLOBALS['xoopsTpl']->assign('wgtestui_url', \WGTESTUI_URL);
-        $GLOBALS['xoopsTpl']->assign('wgtestui_upload_url', \WGTESTUI_UPLOAD_URL);
-        $GLOBALS['xoopsTpl']->assign('wgtestui_icons_url_16', \WGTESTUI_ICONS_URL . '/16');
-        $GLOBALS['xoopsTpl']->assign('wgtestui_icons_url_32', \WGTESTUI_ICONS_URL . '/32');
         // Table view tests
         if ($testsCount > 0) {
+            $crTests->setStart($start);
+            $crTests->setLimit($limit);
+            $testsAll = $testsHandler->getAll($crTests);
             foreach (\array_keys($testsAll) as $i) {
                 $test = $testsAll[$i]->getValuesTests();
                 $GLOBALS['xoopsTpl']->append('tests_list', $test);
@@ -74,7 +84,7 @@ switch ($op) {
             // Display Navigation
             if ($testsCount > $limit) {
                 require_once \XOOPS_ROOT_PATH . '/class/pagenav.php';
-                $pagenav = new \XoopsPageNav($testsCount, $limit, $start, 'start', 'op=list&limit=' . $limit);
+                $pagenav = new \XoopsPageNav($testsCount, $limit, $start, 'start', 'op=list&amp;limit=' . $limit . '&amp;module=' .$testModule);
                 $GLOBALS['xoopsTpl']->assign('pagenav', $pagenav->renderNav());
             }
         } else {
@@ -86,6 +96,7 @@ switch ($op) {
         $GLOBALS['xoTheme']->addStylesheet($style, null);
         $templateMain = 'wgtestui_admin_tests.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('tests.php'));
+        $adminObject->addItemButton(\_AM_WGTESTUI_LIST_TESTS, 'tests.php', 'list');
         $adminObject->addItemButton(\_AM_WGTESTUI_ADD_TEST, 'tests.php?op=new');
         $adminObject->addItemButton(\_AM_WGTESTUI_EXEC_TEST, 'tests.php?op=execute', 'exec');
         $adminObject->addItemButton(\_AM_WGTESTUI_RESET_TEST, 'tests.php?op=reset_all', 'delete');
@@ -109,7 +120,8 @@ switch ($op) {
                     'tests' => $row[1],
                     'status200' => $row[2],
                     'status200ok' => ((int)$row[1] === (int)$row[2]),
-                    'info' => $row[3]
+                    'info' => $row[3],
+                    'show_details' => ((int)$row[1] !== (int)$row[2] || (int)$row[3] > 0)
                 ];
             }
             if (\count($statistics) > 0) {

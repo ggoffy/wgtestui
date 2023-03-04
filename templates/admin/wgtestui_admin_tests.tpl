@@ -2,7 +2,6 @@
 <{include file='db:wgtestui_admin_header.tpl' }>
 
 <{if $statistics|default:false}>
-    <h5><{$smarty.const._AM_WGTESTUI_STATISTICS}></h5>
     <table class='table table-bordered' style="margin-bottom:20px">
         <thead>
         <tr class='head'>
@@ -10,6 +9,7 @@
             <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_STATS_TESTS}></th>
             <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_STATS_STATUS200}></th>
             <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_STATS_INFO}></th>
+            <th class="center">&nbsp;</th>
         </tr>
         </thead>
         <tbody>
@@ -33,6 +33,11 @@
                         <img src="<{$wgtestui_icons_url_16}>/ok.png" alt="<{$smarty.const._AM_WGTESTUI_OK}>" title="<{$smarty.const._AM_WGTESTUI_OK}>">
                     <{/if}>
                 </td>
+                <td class='center'>
+                    <{if $statistic.show_details|default:false}>
+                        <a href="tests.php?op=list&amp;module=<{$statistic.module}>" title="<{$smarty.const._AM_WGTESTUI_TEST_DETAILS}>"><img src="<{$wgtestui_icons_url_16}>/view.png" alt="<{$smarty.const._AM_WGTESTUI_TEST_DETAILS}>" ></a>
+                    <{/if}>
+                </td>
             </tr>
             <{/foreach}>
         </tbody>
@@ -40,7 +45,7 @@
 <{/if}>
 
 <{if $tests_list|default:''}>
-    <h5><{$smarty.const._AM_WGTESTUI_LIST_TESTS}></h5>
+    <h3 class="center"><{$smarty.const._AM_WGTESTUI_LIST_TESTS}></h3>
     <table class='table table-bordered'>
         <thead>
             <tr class='head'>
@@ -73,7 +78,7 @@
                          src="<{$wgtestui_icons_url_32}>/display.png" alt="<{$smarty.const._AM_WGTESTUI_TEST_DETAILS}>" title="<{$smarty.const._AM_WGTESTUI_TEST_DETAILS}>">
                     <div id="dialog<{$test.id}>" title="<{$smarty.const._AM_WGTESTUI_TEST_DETAILS}>" style='display:none;'>
                         <p class="wgt-tooltip-header"><{$smarty.const._AM_WGTESTUI_TEST_RESULTS}> <{$test.url}></p>
-                        <p><{$test.infotext}></p>
+                        <p><{$test.infotext_br}></p>
                     </div>
                     <{/if}>
                     <{$test.infotext_short}>

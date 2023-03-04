@@ -159,20 +159,16 @@ class Tests extends \XoopsObject
     {
         $helper  = \XoopsModules\Wgtestui\Helper::getInstance();
         $utility = new \XoopsModules\Wgtestui\Utility();
-        $ret = $this->getValues($keys, $format, $maxDepth);
-        //$ret['id']               = $this->getVar('id');
-        //$ret['url']              = $this->getVar('url');
-        //$ret['module']           = $this->getVar('module');
-        $ret['area_text']             = $this->getVar('area') == 1 ? 'ADMIN' : 'USER';
-        $ret['type_text']             = $this->getVar('type') == 1 ? 'HTTPREQUEST' : 'invalid';
-        //$ret['resultcode']       = $this->getVar('resultcode');
-        //$ret['resulttext']       = $this->getVar('resulttext');
-        $ret['infotext']       = \strip_tags($this->getVar('infotext', 'e'));
         $editorMaxchar = $helper->getConfig('editor_maxchar');
-        $ret['infotext_short'] = $utility::truncateHtml($ret['infotext'], $editorMaxchar);
-        $ret['datetest_text']         = $this->getVar('datetest') > 0 ? \formatTimestamp($this->getVar('datetest'), 'm') : '';
-        $ret['datecreated_text']      = \formatTimestamp($this->getVar('datecreated'), 'm');
-        $ret['submitter_text']        = \XoopsUser::getUnameFromId($this->getVar('submitter'));
+        $ret = $this->getValues($keys, $format, $maxDepth);
+        $ret['area_text']        = $this->getVar('area') == 1 ? 'ADMIN' : 'USER';
+        $ret['type_text']        = $this->getVar('type') == 1 ? 'HTTPREQUEST' : 'invalid';
+        $ret['infotext']         = $this->getVar('infotext', 'e');
+        $ret['infotext_br']      = \str_replace(PHP_EOL, '<br>', $ret['infotext']);
+        $ret['infotext_short']   = $utility::truncateHtml($ret['infotext'], $editorMaxchar);
+        $ret['datetest_text']    = $this->getVar('datetest') > 0 ? \formatTimestamp($this->getVar('datetest'), 'm') : '';
+        $ret['datecreated_text'] = \formatTimestamp($this->getVar('datecreated'), 'm');
+        $ret['submitter_text']   = \XoopsUser::getUnameFromId($this->getVar('submitter'));
         return $ret;
     }
 
