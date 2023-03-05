@@ -39,6 +39,12 @@ interface Constants
     public const STATUS_OFFLINE   = 1;
     public const STATUS_SUBMITTED = 2;
     public const STATUS_APPROVED  = 3;
-    public const STATUS_BROKEN    = 4;
+
+    // Constants for test area
+    public const AREA_ADMIN = 1;
+    public const AREA_USER  = 2;
+
+    // Constants for test type
+    public const TYPE_HTTPREQUEST = 1;
 
 }

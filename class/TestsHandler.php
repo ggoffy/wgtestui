@@ -26,8 +26,6 @@ namespace XoopsModules\Wgtestui;
  * @author       TDM XOOPS - Email:info@email.com - Website:https://xoops.org
  */
 
-use XoopsModules\Wgtestui;
-
 
 /**
  * Class Object Handler Tests
@@ -134,14 +132,11 @@ class TestsHandler extends \XoopsPersistableObjectHandler
      */
     public function checkURL($url, array $options = []) {
 
-        $returnedStatusCode = 0;
-        $statusText = '';
         $fatalError = '';
 
         $patternsOk        = $options['patterns_ok'];
         $patternsError     = $options['patterns_fatalerror'];
         $patternsErrorDesc = $options['patterns_fatalerrordesc'];
-        $patternsWarning   = $options['patterns_warning'];
 
         if (empty($url)) {
             throw new Exception('URL is empty');
@@ -334,4 +329,5 @@ class TestsHandler extends \XoopsPersistableObjectHandler
 
         return $errors;
     }
+
 }

@@ -41,8 +41,8 @@ $adminmenu[] = [
 ];
 $adminmenu[] = [
     'title' => \_MI_WGTESTUI_ADMENU5,
-    'link' => 'admin/plugins.php',
-    'icon' => 'assets/icons/32/plugins.png',
+    'link' => 'admin/datatools.php',
+    'icon' => 'assets/icons/32/datatools.png',
 ];
 $adminmenu[] = [
     'title' => \_MI_WGTESTUI_ADMENU3,

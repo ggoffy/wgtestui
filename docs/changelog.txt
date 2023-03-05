@@ -4,6 +4,8 @@
  - removed prefix from table field names (goffy)
  - made wgtestui executable wtih smarty 2 (goffy)
  - implemented statistics (goffy)
+ - renamed plugins into datatools (goffy)
+ - implemented filter for list of tests (goffy)
 
 ==============================================================
 1.0.0 Alpha 1 [2023/03/01]

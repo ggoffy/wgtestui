@@ -5,13 +5,18 @@
     <div class="errorMsg"><strong><{$error|default:false}></strong></div>
 <{/if}>
 
-<!-- Section import -->
-<{if $form_import|default:''}>
+<!-- Section import from file -->
+<{if $form_import|default:false}>
     <{$form_import|default:false}>
 <{/if}>
 
-<!-- Section export -->
-<{if $form_export|default:''}>
+<!-- Section import from list -->
+<{if $form_importlist|default:false}>
+    <{$form_importlist|default:false}>
+<{/if}>
+
+<!-- Section export to file -->
+<{if $form_export|default:false}>
     <{$form_export|default:false}>
 <{/if}>
 

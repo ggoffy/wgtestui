@@ -11,10 +11,17 @@
 **wgTestUI** module for [XOOPS CMS](https://xoops.org) for automated testing XOOPS Core and module
 
 Main features:
-* Test XOOPS sites for:
-  * Fatal errors (site blocked)
-  * Errors (notices, warnings)
-  * Deprecated functions
+* What can wgTestUI do?
+  * Test XOOPS sites for:
+    * Fatal errors (site blocked)
+    * Errors (notices, warnings)
+    * Deprecated functions
+  * Execute tests for admin area and/or user area
+  * Import/Export data of lists of tests
+* What can wgTestUI (currently) not do?
+  * Execute actions, e.g. save data, delete data,...
+  * Simulate user actions, e.g. type in data in a form
+
 
 #### Tutorial:
 Coming soon..

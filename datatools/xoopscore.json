@@ -10,12 +10,6 @@
             "type": 1
         },
         {
-            "url": "nonexisting.php",
-            "module": "xoopscore",
-            "area": 2,
-            "type": 1
-        },
-        {
             "url": "index.php",
             "module": "xoopscore",
             "area": 2,

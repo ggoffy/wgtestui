@@ -27,6 +27,7 @@ namespace XoopsModules\Wgtestui;
  */
 
 use XoopsModules\Wgtestui;
+use XoopsModules\Wgtestui\Form\FormInline;
 
 \defined('XOOPS_ROOT_PATH') || die('Restricted access');
 
@@ -57,8 +58,11 @@ class Tests extends \XoopsObject
         $this->initVar('module', \XOBJ_DTYPE_TXTBOX);
         $this->initVar('area', \XOBJ_DTYPE_INT);
         $this->initVar('type', \XOBJ_DTYPE_INT);
-        $this->initVar('resultcode', \XOBJ_DTYPE_TXTBOX);
+        $this->initVar('resultcode', \XOBJ_DTYPE_INT);
         $this->initVar('resulttext', \XOBJ_DTYPE_TXTBOX);
+        $this->initVar('fatalerrors', \XOBJ_DTYPE_INT);
+        $this->initVar('errors', \XOBJ_DTYPE_INT);
+        $this->initVar('deprecated', \XOBJ_DTYPE_INT);
         $this->initVar('infotext', \XOBJ_DTYPE_TXTAREA);
         $this->initVar('datetest', \XOBJ_DTYPE_INT);
         $this->initVar('datecreated', \XOBJ_DTYPE_INT);
@@ -111,8 +115,8 @@ class Tests extends \XoopsObject
         $testsHandler = $helper->getHandler('Tests');
         // Form Select testArea
         $testAreaSelect = new \XoopsFormSelect(\_AM_WGTESTUI_TEST_AREA, 'area', $this->getVar('area'));
-        $testAreaSelect->addOption(1,'ADMIN');
-        $testAreaSelect->addOption(2,'USER');
+        $testAreaSelect->addOption(Constants::AREA_ADMIN,'ADMIN');
+        $testAreaSelect->addOption(Constants::AREA_USER,'USER');
         $form->addElement($testAreaSelect);
         // Tests Handler
         $testsHandler = $helper->getHandler('Tests');
@@ -128,6 +132,12 @@ class Tests extends \XoopsObject
         $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_RESULTCODE, 'resultcode', 50, 255, $this->getVar('resultcode')));
         // Form Text testResulttext
         $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_RESULTTEXT, 'resulttext', 50, 255, $this->getVar('resulttext')));
+        // Form Text testFatalerrors
+        $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_FATALERRORS,  'fatalerrors', 50, 255, $this->getVar('fatalerrors')));
+        // Form Text testErros
+        $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_ERRORS, 'errors', 50, 255, $this->getVar('errors')));
+        // Form Text testDeprecated
+        $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_DEPRECATED, 'deprecated', 50, 255, $this->getVar('deprecated')));
         // Form Editor TextArea testInfotext
         $form->addElement(new \XoopsFormTextArea(\_AM_WGTESTUI_TEST_INFOTEXT, 'infotext', $this->getVar('infotext', 'e'), 4, 47));
         // Form Text Date Select testDatetest
@@ -161,7 +171,7 @@ class Tests extends \XoopsObject
         $utility = new \XoopsModules\Wgtestui\Utility();
         $editorMaxchar = $helper->getConfig('editor_maxchar');
         $ret = $this->getValues($keys, $format, $maxDepth);
-        $ret['area_text']        = $this->getVar('area') == 1 ? 'ADMIN' : 'USER';
+        $ret['area_text']        = $this->getVar('area') == Constants::AREA_ADMIN ? 'ADMIN' : 'USER';
         $ret['type_text']        = $this->getVar('type') == 1 ? 'HTTPREQUEST' : 'invalid';
         $ret['infotext']         = $this->getVar('infotext', 'e');
         $ret['infotext_br']      = \str_replace(PHP_EOL, '<br>', $ret['infotext']);
@@ -185,5 +195,77 @@ class Tests extends \XoopsObject
             $ret[$var] = $this->getVar($var);
         }
         return $ret;
+    }
+
+    /**
+     * @public function to get form for filtering test list
+     * @param bool $action
+     * @return FormInline
+     */
+    public function getFormTestsFilter($action = false)
+    {
+        if (!$action) {
+            $action = $_SERVER['REQUEST_URI'];
+        }
+
+        // Get Theme Form
+        \xoops_load('XoopsFormLoader');
+        $form = new FormInline('', 'form', $action, 'post', true);
+        $form->setExtra('enctype="multipart/form-data"');
+        // Form Select module
+        $filtermSelect = new \XoopsFormSelect(\_AM_WGTESTUI_TEST_MODULE, 'filter_m', $this->getVar('module'));
+        $sql = 'SELECT `module` FROM `'  . $GLOBALS['xoopsDB']->prefix('wgtestui_tests') . '` GROUP BY `module`';
+        $result = $GLOBALS['xoopsDB']->queryF($sql);
+        if (!$result instanceof \mysqli_result) {
+            \trigger_error($GLOBALS['xoopsDB']->error());
+        }
+        $filtermSelect->addOption('all', \_ALL);
+        while (false !== ($row = $GLOBALS['xoopsDB']->fetchRow($result))) {
+            $filtermSelect->addOption($row[0], $row[0]);
+        }
+        $filtermSelect->setExtra(" onchange='submit()' ");
+        $form->addElement($filtermSelect);
+        // Form Select testArea
+        $filteraSelect = new \XoopsFormSelect(\_AM_WGTESTUI_TEST_AREA, 'filter_a', $this->getVar('area'));
+        $filteraSelect->addOption(0, \_ALL);
+        $filteraSelect->addOption(Constants::AREA_ADMIN,'ADMIN');
+        $filteraSelect->addOption(Constants::AREA_USER,'USER');
+        $filteraSelect->setExtra(" onchange='submit()' ");
+        $form->addElement($filteraSelect);
+        // Form Select testType
+        /*currently only HTTPREQUEST is used*/
+        /*
+        $testTypeSelect = new \XoopsFormSelect(\_AM_WGTESTUI_TEST_TYPE, 'type', $this->getVar('type'));
+        $testTypeSelect->addOption(1,'HTTPREQUEST');
+        $form->addElement($testTypeSelect);
+        */
+        // Form Text testResultcode
+        $filterrcSelect = new \XoopsFormSelect(\_AM_WGTESTUI_TEST_RESULTCODE, 'filter_rc', $this->getVar('resultcode'));
+        $filterrcSelect->addOption(0,\_ALL);
+        $filterrcSelect->addOption(1,'<>200');
+        $filterrcSelect->setExtra(" onchange='submit()' ");
+        $form->addElement($filterrcSelect);
+        // Form Text testFatalerrors
+        $filterfeSelect = new \XoopsFormSelect(\_AM_WGTESTUI_TEST_FATALERRORS, 'filter_fe', $this->getVar('fatalerrors'));
+        $filterfeSelect->addOption(0,\_ALL);
+        $filterfeSelect->addOption(1,'> 0');
+        $filterfeSelect->setExtra(" onchange='submit()' ");
+        $form->addElement($filterfeSelect);
+        // Form Text testErros
+        $filtereSelect = new \XoopsFormSelect(\_AM_WGTESTUI_TEST_ERRORS, 'filter_e', $this->getVar('errors'));
+        $filtereSelect->addOption(0,\_ALL);
+        $filtereSelect->addOption(1,'> 0');
+        $filtereSelect->setExtra(" onchange='submit()' ");
+        $form->addElement($filtereSelect);
+        // Form Text testDeprecated
+        $filterdSelect = new \XoopsFormSelect(\_AM_WGTESTUI_TEST_DEPRECATED, 'filter_d', $this->getVar('deprecated'));
+        $filterdSelect->addOption(0,\_ALL);
+        $filterdSelect->addOption(1,'> 0');
+        $filterdSelect->setExtra(" onchange='submit()' ");
+        $form->addElement($filterdSelect);
+
+        // To Save
+        $form->addElement(new \XoopsFormHidden('op', 'list'));
+        return $form;
     }
 }

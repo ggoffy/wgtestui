@@ -8,6 +8,9 @@
             <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_MODULE}></th>
             <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_STATS_TESTS}></th>
             <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_STATS_STATUS200}></th>
+            <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_FATALERRORS}></th>
+            <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_ERRORS}></th>
+            <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_DEPRECATED}></th>
             <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_STATS_INFO}></th>
             <th class="center">&nbsp;</th>
         </tr>
@@ -26,6 +29,30 @@
                     <{/if}>
                 </td>
                 <td class='center'>
+                    <{$statistic.fatalerrors}>
+                    <{if $statistic.fatalerrors|default:0 > 0}>
+                        <img src="<{$wgtestui_icons_url_16}>/warning.png" alt="<{$smarty.const._AM_WGTESTUI_NOTOK}>" title="<{$smarty.const._AM_WGTESTUI_NOTOK}>">
+                    <{else}>
+                        <img src="<{$wgtestui_icons_url_16}>/ok.png" alt="<{$smarty.const._AM_WGTESTUI_OK}>" title="<{$smarty.const._AM_WGTESTUI_OK}>">
+                    <{/if}>
+                </td>
+                <td class='center'>
+                    <{$statistic.errors}>
+                    <{if $statistic.errors|default:0 > 0}>
+                <img src="<{$wgtestui_icons_url_16}>/warning.png" alt="<{$smarty.const._AM_WGTESTUI_NOTOK}>" title="<{$smarty.const._AM_WGTESTUI_NOTOK}>">
+                    <{else}>
+                <img src="<{$wgtestui_icons_url_16}>/ok.png" alt="<{$smarty.const._AM_WGTESTUI_OK}>" title="<{$smarty.const._AM_WGTESTUI_OK}>">
+                    <{/if}>
+                </td>
+                <td class='center'>
+                    <{$statistic.deprecated}>
+                    <{if $statistic.deprecated|default:0 > 0}>
+                <img src="<{$wgtestui_icons_url_16}>/warning.png" alt="<{$smarty.const._AM_WGTESTUI_NOTOK}>" title="<{$smarty.const._AM_WGTESTUI_NOTOK}>">
+                    <{else}>
+                <img src="<{$wgtestui_icons_url_16}>/ok.png" alt="<{$smarty.const._AM_WGTESTUI_OK}>" title="<{$smarty.const._AM_WGTESTUI_OK}>">
+                    <{/if}>
+                </td>
+                <td class='center'>
                     <{$statistic.info}>
                     <{if $statistic.info|default:0 > 0}>
                         <img src="<{$wgtestui_icons_url_16}>/warning.png" alt="<{$smarty.const._AM_WGTESTUI_NOTOK}>" title="<{$smarty.const._AM_WGTESTUI_NOTOK}>">
@@ -35,7 +62,7 @@
                 </td>
                 <td class='center'>
                     <{if $statistic.show_details|default:false}>
-                        <a href="tests.php?op=list&amp;module=<{$statistic.module}>" title="<{$smarty.const._AM_WGTESTUI_TEST_DETAILS}>"><img src="<{$wgtestui_icons_url_16}>/view.png" alt="<{$smarty.const._AM_WGTESTUI_TEST_DETAILS}>" ></a>
+                        <a href="tests.php?op=list&amp;filter_m=<{$statistic.module}>" title="<{$smarty.const._AM_WGTESTUI_TEST_DETAILS}>"><img src="<{$wgtestui_icons_url_16}>/view.png" alt="<{$smarty.const._AM_WGTESTUI_TEST_DETAILS}>" ></a>
                     <{/if}>
                 </td>
             </tr>
@@ -44,7 +71,12 @@
     </table>
 <{/if}>
 
+<{if $form_filter|default:false}>
+    <{$form_filter|default:false}>
+<{/if}>
+
 <{if $tests_list|default:''}>
+
     <h3 class="center"><{$smarty.const._AM_WGTESTUI_LIST_TESTS}></h3>
     <table class='table table-bordered'>
         <thead>
@@ -55,6 +87,9 @@
                 <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_AREA}></th>
                 <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_TYPE}></th>
                 <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_RESULTCODE}></th>
+                <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_FATALERRORS}></th>
+                <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_ERRORS}></th>
+                <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_DEPRECATED}></th>
                 <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_INFOTEXT}></th>
                 <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_DATETEST}></th>
                 <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_DATECREATED}></th>
@@ -72,6 +107,9 @@
                 <td class='center'><{$test.area_text}></td>
                 <td class='center'><{$test.type_text}></td>
                 <td class='center'><{$test.resultcode}> <{$test.resulttext}></td>
+                <td class='center'><{$test.fatalerrors}></td>
+                <td class='center'><{$test.errors}></td>
+                <td class='center'><{$test.deprecated}></td>
                 <td class='center'>
                     <{if $test.infotext|default:'' != ''}>
                     <img class="tooltip wgt-tooltip-img" onclick="display_dialog('<{$test.id}>', true, true, 'slide', 'slide', 300, '80%');"

@@ -32,9 +32,14 @@ require __DIR__ . '/header.php';
 // Get all request values
 $op         = Request::getCmd('op', 'list');
 $testId     = Request::getInt('id');
-$testModule = Request::getString('module');
 $start      = Request::getInt('start');
 $limit      = Request::getInt('limit', $helper->getConfig('adminpager'));
+$filterM    = Request::getString('filter_m', 'all');
+$filterA    = Request::getInt('filter_a');
+$filterRc   = Request::getInt('filter_rc');
+$filterFe   = Request::getInt('filter_fe');
+$filterE    = Request::getInt('filter_e');
+$filterD    = Request::getInt('filter_d');
 $GLOBALS['xoopsTpl']->assign('start', $start);
 $GLOBALS['xoopsTpl']->assign('limit', $limit);
 
@@ -57,18 +62,37 @@ switch ($op) {
         $GLOBALS['xoopsTpl']->assign('wgtestui_icons_url_32', \WGTESTUI_ICONS_URL . '/32');
 
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('tests.php'));
-        if ('' !== $testModule) {
+        if ('' !== $filterM) {
             $adminObject->addItemButton(\_AM_WGTESTUI_LIST_TESTS, 'tests.php', 'list');
         }
         $adminObject->addItemButton(\_AM_WGTESTUI_ADD_TEST, 'tests.php?op=new');
+        $adminObject->addItemButton(\_AM_WGTESTUI_EXEC_TEST_ADMIN, 'tests.php?op=execute_admin', 'exec');
+        $adminObject->addItemButton(\_AM_WGTESTUI_EXEC_TEST_USER, 'tests.php?op=execute_user', 'exec');
         $adminObject->addItemButton(\_AM_WGTESTUI_EXEC_TEST, 'tests.php?op=execute', 'exec');
         $adminObject->addItemButton(\_AM_WGTESTUI_RESET_TEST, 'tests.php?op=reset_all', 'delete');
         $adminObject->addItemButton(\_AM_WGTESTUI_CLEAR_TEST, 'tests.php?op=delete_all', 'delete');
         $adminObject->addItemButton(\_AM_WGTESTUI_STATISTICS, 'tests.php?op=statistics', 'stats');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
-
+        $testsCountTotal = $testsHandler->getCount();
         $crTests = new \CriteriaCompo();
-        $crTests->add(new \Criteria('module', $testModule));
+        if ('all' !== $filterM) {
+            $crTests->add(new \Criteria('module', $filterM));
+        }
+        if ($filterA > 0) {
+            $crTests->add(new \Criteria('area', $filterA));
+        }
+        if ($filterRc > 0) {
+            $crTests->add(new \Criteria('resultcode', 200, '<>'));
+        }
+        if ($filterFe > 0) {
+            $crTests->add(new \Criteria('fatalerrors', 0, '>'));
+        }
+        if ($filterE > 0) {
+            $crTests->add(new \Criteria('errors', 0, '>'));
+        }
+        if ($filterD > 0) {
+            $crTests->add(new \Criteria('deprecated', 0, '>'));
+        }
         $testsCount = $testsHandler->getCount($crTests);
         $GLOBALS['xoopsTpl']->assign('tests_count', $testsCount);
         // Table view tests
@@ -87,8 +111,21 @@ switch ($op) {
                 $pagenav = new \XoopsPageNav($testsCount, $limit, $start, 'start', 'op=list&amp;limit=' . $limit . '&amp;module=' .$testModule);
                 $GLOBALS['xoopsTpl']->assign('pagenav', $pagenav->renderNav());
             }
+
         } else {
             $GLOBALS['xoopsTpl']->assign('error', \_AM_WGTESTUI_THEREARENT_TESTS);
+        }
+        if ($testsCountTotal > 0) {
+            // get filter
+            $testsObjF = $testsHandler->create();
+            $testsObjF->setVar('module', $filterM);
+            $testsObjF->setVar('area', $filterA);
+            $testsObjF->setVar('resultcode', $filterRc);
+            $testsObjF->setVar('fatalerrors', $filterFe);
+            $testsObjF->setVar('errors', $filterE);
+            $testsObjF->setVar('deprecated', $filterD);
+            $form = $testsObjF->getFormTestsFilter();
+            $GLOBALS['xoopsTpl']->assign('form_filter', $form->render());
         }
         break;
     case 'statistics':
@@ -97,16 +134,17 @@ switch ($op) {
         $templateMain = 'wgtestui_admin_tests.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('tests.php'));
         $adminObject->addItemButton(\_AM_WGTESTUI_LIST_TESTS, 'tests.php', 'list');
-        $adminObject->addItemButton(\_AM_WGTESTUI_ADD_TEST, 'tests.php?op=new');
-        $adminObject->addItemButton(\_AM_WGTESTUI_EXEC_TEST, 'tests.php?op=execute', 'exec');
-        $adminObject->addItemButton(\_AM_WGTESTUI_RESET_TEST, 'tests.php?op=reset_all', 'delete');
-        $adminObject->addItemButton(\_AM_WGTESTUI_CLEAR_TEST, 'tests.php?op=delete_all', 'delete');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         $GLOBALS['xoopsTpl']->assign('wgtestui_icons_url_16', \WGTESTUI_ICONS_URL . '/16');
 
         $testsCount = $testsHandler->getCountTests();// Table view tests
         if ($testsCount > 0) {
-            $sql = 'SELECT `module`, count(`id`) as countid, sum(IF(STRCMP("200",`resultcode`) = 0, 1, 0)) as count200, ';
+            $sql = 'SELECT `module`, ';
+            $sql .= 'count(`id`) as countid, ';
+            $sql .= 'sum(IF(`resultcode` = 200, 1, 0)) as count200, ';
+            $sql .= 'sum(`fatalerrors`) as count_fe, ';
+            $sql .= 'sum(`errors`) as count_e, ';
+            $sql .= 'sum(`deprecated`) as count_d, ';
             $sql .= 'sum(IF(STRCMP("",`infotext`) = 0, 0, 1)) as countinfo ';
             $sql .= 'FROM `'  . $GLOBALS['xoopsDB']->prefix('wgtestui_tests') . '` GROUP BY `module`';
             $result = $GLOBALS['xoopsDB']->queryF($sql);
@@ -120,8 +158,11 @@ switch ($op) {
                     'tests' => $row[1],
                     'status200' => $row[2],
                     'status200ok' => ((int)$row[1] === (int)$row[2]),
-                    'info' => $row[3],
-                    'show_details' => ((int)$row[1] !== (int)$row[2] || (int)$row[3] > 0)
+                    'fatalerrors' => $row[3],
+                    'errors' => $row[4],
+                    'deprecated' => $row[5],
+                    'info' => $row[6],
+                    'show_details' => ((int)$row[1] !== (int)$row[2] || (int)$row[3] > 0 || (int)$row[4] > 0 || (int)$row[5] > 0)
                 ];
             }
             if (\count($statistics) > 0) {
@@ -275,6 +316,8 @@ switch ($op) {
         \redirect_header('tests.php', 3, \_AM_WGTESTUI_FORM_DELETE_OK);
         break;
     case 'execute':
+    case 'execute_admin':
+    case 'execute_user':
         // Define Stylesheet
         $GLOBALS['xoTheme']->addStylesheet($style, null);
         $templateMain = 'wgtestui_admin_tests.tpl';
@@ -309,7 +352,15 @@ switch ($op) {
             $crModules = new \CriteriaCompo();
             $crModules->add(new \Criteria('isactive', '1'));
             $moduleslist = $modhandler->getList($crModules, true);
-            $testsAll = $testsHandler->getAll();
+
+            $crTests = new \CriteriaCompo();
+            if ('execute_admin' === $op) {
+                $crTests->add(new \Criteria('area', Constants::AREA_ADMIN));
+            }
+            if ('execute_user' === $op) {
+                $crTests->add(new \Criteria('area', Constants::AREA_USER));
+            }
+            $testsAll = $testsHandler->getAll($crTests);
             foreach (\array_keys($testsAll) as $i) {
                 $test = $testsAll[$i]->getValuesTests();
                 $testUrl    = $test['url'];
@@ -345,6 +396,9 @@ switch ($op) {
                 // Set Vars
                 $testsObj->setVar('resultcode', $statusCode);
                 $testsObj->setVar('resulttext', $statusText);
+                $testsObj->setVar('fatalerrors', '' !== $fatalError ? 1 : 0);
+                $testsObj->setVar('errors', \count($errors));
+                $testsObj->setVar('deprecated', \count($deprecated));
                 $testsObj->setVar('infotext', $infoText);
                 $testsObj->setVar('datetest', \time());
                 // Insert Data
@@ -352,9 +406,16 @@ switch ($op) {
             }
             \redirect_header('tests.php?op=list', 2, \_AM_WGTESTUI_FORM_OK);
         } else {
+            $label = \_AM_WGTESTUI_FORM_TEST_CONFIRM_ALL;
+            if ('execute_admin' === $op) {
+                $label = \_AM_WGTESTUI_FORM_TEST_CONFIRM_ADMIN;
+            }
+            if ('execute_user' === $op) {
+                $label = \_AM_WGTESTUI_FORM_TEST_CONFIRM_USER;
+            }
             $customConfirm = new Common\Confirm(
-                ['ok' => 1, 'op' => 'execute'],
-                $_SERVER['REQUEST_URI'], \_AM_WGTESTUI_FORM_TEST_LABEL, _AM_WGTESTUI_FORM_TEST_CONFIRM, _AM_WGTESTUI_FORM_TEST_CONFIRM);
+                ['ok' => 1, 'op' => $op],
+                $_SERVER['REQUEST_URI'], \_AM_WGTESTUI_FORM_TEST_LABEL, \_AM_WGTESTUI_FORM_TEST_CONFIRM, $label);
             $form = $customConfirm->getFormConfirm();
             $GLOBALS['xoopsTpl']->assign('form', $form->render());
             $GLOBALS['xoopsTpl']->assign('showInfoExecute', true);

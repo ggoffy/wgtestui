@@ -1,0 +1,283 @@
+{
+    "dirname": "system",
+    "name": "System Einstellungen",
+    "version": "2.1.6-Stable",
+    "data": [
+        {
+            "url": "modules\/system\/admin.php?fct=modulesadmin",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=avatars",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=banners",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=banners&op=banner_edit&bid=1",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=banners&op=new_client",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=banners&op=banner_delete&bid=1",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=banners&op=banner_client_delete&cid=1",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=blocksadmin",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=blocksadmin&op=edit&bid=5",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=tplsets&op=edittpl&id=73",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=blocksadmin&op=list&filter=1&selgen=1&selmod=-1&selgrp=2&selvis=1",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=blocksadmin&op=add",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=comments",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=comments&op=comments_form_purge",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=groups",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=groups&op=groups_add",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=groups&op=groups_edit&groups_id=1",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=users&selgroups=1",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=images",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=mailusers",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=maintenance",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=modulesadmin&op=installlist",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=preferences",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=preferences&op=show&confcat_id=1",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=preferences&op=show&confcat_id=2",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=preferences&op=show&confcat_id=3",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=preferences&op=show&confcat_id=4",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=preferences&op=show&confcat_id=5",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=preferences&op=show&confcat_id=6",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=preferences&op=show&confcat_id=7",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=preferences&op=showmod&mod=1",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=smilies",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=smilies&op=edit_smilie&smilies_id=6",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=smilies&op=smilies_delete&smilies_id=6",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=smilies&op=new_smilie",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=tplsets",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=userrank",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=userrank&op=userrank_edit&rank_id=1",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=userrank&op=userrank_delete&rank_id=1",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=userrank&op=userrank_new",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=users",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=users&op=users_edit&uid=1",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=users&op=users_delete&uid=1",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/admin.php?fct=users&op=users_add",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/help.php",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/system\/help.php?mid=1&page=avatars",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        }
+    ]
+}
