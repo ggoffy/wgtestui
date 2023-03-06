@@ -34,3 +34,7 @@ img {
     padding-bottom:20px;
     border-bottom:1px solid #ccc;
 }
+.wgt-divider {
+    margin:40px 80px;
+    border-bottom: 1px solid #ccc;
+}

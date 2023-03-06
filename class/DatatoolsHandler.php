@@ -49,7 +49,6 @@ class DatatoolsHandler
      */
     public function getFormImport($action = false)
     {
-        $helper = \XoopsModules\Wgtestui\Helper::getInstance();
         if (!$action) {
             $action = $_SERVER['REQUEST_URI'];
         }
@@ -82,7 +81,6 @@ class DatatoolsHandler
      */
     public function getFormExport($action = false)
     {
-        $helper = \XoopsModules\Wgtestui\Helper::getInstance();
         if (!$action) {
             $action = $_SERVER['REQUEST_URI'];
         }
@@ -117,7 +115,6 @@ class DatatoolsHandler
      */
     public function getFormImportList($action = false)
     {
-        $helper = \XoopsModules\Wgtestui\Helper::getInstance();
         if (!$action) {
             $action = $_SERVER['REQUEST_URI'];
         }
@@ -139,6 +136,38 @@ class DatatoolsHandler
         // To Save
         $form->addElement(new \XoopsFormHidden('op', 'import_list'));
         $form->addElement(new \XoopsFormButtonTray('', \_SUBMIT, 'submit', '', false));
+        return $form;
+    }
+
+    /**
+     * @public function get form generate from menu.php
+     *
+     * @param string $menuModule
+     * @return \XoopsThemeForm
+     */
+    public function getFormGenerateMenu($menuModule)
+    {
+        if (!$action) {
+            $action = $_SERVER['REQUEST_URI'];
+        }
+        // Get Theme Form
+        \xoops_load('XoopsFormLoader');
+        $form = new \XoopsThemeForm(\_AM_WGTESTUI_DATATOOLS_FORM_IMPORT, 'form', $action, 'post', true);
+        $form->setExtra('enctype="multipart/form-data"');
+
+        // Form Select module
+        $moduleSelect = new \XoopsFormSelect(\_AM_WGTESTUI_DATATOOLS_GENERATE_MENU, 'generate_menu_module', $menuModule);
+        $moduleSelect->setDescription(\_AM_WGTESTUI_DATATOOLS_GENERATE_MENU_DESC);
+        $modules = \XoopsLists::getModulesList();
+        $moduleSelect->addOption(' ', ' ');
+        foreach ($modules as $module) {
+            $moduleSelect->addOption($module, $module);
+        }
+        $moduleSelect->setExtra(" onchange='submit()' ");
+        $form->addElement($moduleSelect, true);
+        // To Save
+        $form->addElement(new \XoopsFormHidden('op', 'generate_from_menu'));
+
         return $form;
     }
 

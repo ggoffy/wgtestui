@@ -32,7 +32,8 @@ require __DIR__ . '/header.php';
 // Template Plugin
 $templateMain = 'wgtestui_admin_datatools.tpl';
 
-$op = Request::getCmd('op', 'list');
+$op     = Request::getCmd('op', 'list');
+$module = Request::getString('generate_menu_module');
 
 // Define Stylesheet
 $GLOBALS['xoTheme']->addStylesheet($style, null);
@@ -44,10 +45,30 @@ $formExport = $datatoolsHandler->getFormExport();
 $GLOBALS['xoopsTpl']->assign('form_export', $formExport->render());
 $formImportList = $datatoolsHandler->getFormImportList();
 $GLOBALS['xoopsTpl']->assign('form_importlist', $formImportList->render());
+$formGenerateMenu = $datatoolsHandler->getFormGenerateMenu($module);
+$GLOBALS['xoopsTpl']->assign('form_generatemenu', $formGenerateMenu->render());
+
 
 switch ($op) {
     case 'list':
     default:
+        break;
+    case 'generate_from_menu':
+        if ('' !== $module) {
+            $resultGenerate = '';
+            include XOOPS_ROOT_PATH . "/modules/$module/admin/menu.php";
+            foreach ($adminmenu as $menuItem) {
+                $file = str_replace('admin/', '', $menuItem['link']);
+                $noNewDelete = ['index.php', 'feedback.php', 'about.php', 'clone.php'];
+                $resultGenerate .= '<br>' . XOOPS_URL . '/modules/' . $module . '/admin/' . $file;
+                if (!\in_array($file, $noNewDelete)) {
+                    $resultGenerate .= '<br>' . XOOPS_URL . '/modules/' . $module . '/admin/' . $file . '?op=new';
+                    $resultGenerate .= '<br>' . XOOPS_URL . '/modules/' . $module . '/admin/' . $file . '?op=delete';
+                }
+            }
+            $GLOBALS['xoopsTpl']->assign('resultGenerate', $resultGenerate);
+        }
+
         break;
     case 'import':
         $datatools = Request::getArray('datatools', 'none');

@@ -100,6 +100,10 @@ require_once __DIR__ . '/common.php';
 \define('_AM_WGTESTUI_DATATOOLS_LIST_IMPORT_SUCCESS', 'Tests imported from list successfully: ');
 \define('_AM_WGTESTUI_DATATOOLS_LIST_IMPORT_ERROR', 'Tests imported from list with error: ');
 \define('_AM_WGTESTUI_DATATOOLS_LIST_IMPORT_EXIST', 'Tests not imported from list, because they exist already: ');
+\define('_AM_WGTESTUI_DATATOOLS_GENERATE_MENU', 'Generate from menu.php');
+\define('_AM_WGTESTUI_DATATOOLS_GENERATE_MENU_DESC', 'If you want I can try to make a suggestion based on menu.php :-)<br>For modules, created by modulebuilder, it should work fine :-)');
+\define('_AM_WGTESTUI_DATATOOLS_GENERATE_MENU_RESULT', 'This is the result:');
+\define('_AM_WGTESTUI_DATATOOLS_GENERATE_MENU_COPY', 'If you like it then copy it into the form below :-)');
 // General
 \define('_AM_WGTESTUI_OK', 'OK');
 \define('_AM_WGTESTUI_NOTOK', 'Not OK');
