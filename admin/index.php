@@ -15,12 +15,10 @@ declare(strict_types=1);
 /**
  * wgTestUI module for xoops
  *
- * @copyright    2021 XOOPS Project (https://xoops.org)
+ * @copyright    2023 XOOPS Project (https://xoops.org)
  * @license      GPL 2.0 or later
  * @package      wgtestui
- * @since        1.0.0
- * @min_xoops    2.5.10
- * @author       TDM XOOPS - Email:info@email.com - Website:https://xoops.org
+ * @author       Goffy - XOOPS Development Team - Email:<webmaster@wedega.com> - Website:<https://xoops.wedega.com>
  */
 
 use XoopsModules\Wgtestui\Common;
