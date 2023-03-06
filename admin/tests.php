@@ -106,7 +106,7 @@ switch ($op) {
             // Display Navigation
             if ($testsCount > $limit) {
                 require_once \XOOPS_ROOT_PATH . '/class/pagenav.php';
-                $pagenav = new \XoopsPageNav($testsCount, $limit, $start, 'start', 'op=list&amp;limit=' . $limit . '&amp;module=' .$testModule);
+                $pagenav = new \XoopsPageNav($testsCount, $limit, $start, 'start', 'op=list&amp;limit=' . $limit . '&amp;module=' .$filterM);
                 $GLOBALS['xoopsTpl']->assign('pagenav', $pagenav->renderNav());
             }
 
@@ -320,9 +320,10 @@ switch ($op) {
         $GLOBALS['xoTheme']->addStylesheet($style, null);
         $templateMain = 'wgtestui_admin_tests.tpl';
         if (isset($_REQUEST['ok']) && 1 === (int)$_REQUEST['ok']) {
-            $options = [];
-            $cookie = '';
-            $userAgent = '';
+            $countAnalysis = 0;
+            $options       = [];
+            $cookie        = '';
+            $userAgent     = '';
             //get http request header
             foreach (getallheaders() as $name => $value) {
                 if ('Cookie' === $name) {
@@ -358,6 +359,7 @@ switch ($op) {
             if ('execute_user' === $op) {
                 $crTests->add(new \Criteria('area', Constants::AREA_USER));
             }
+            $crTests->add(new \Criteria('resultcode', 0));
             $testsAll = $testsHandler->getAll($crTests);
             foreach (\array_keys($testsAll) as $i) {
                 $test = $testsAll[$i]->getValuesTests();
@@ -375,6 +377,7 @@ switch ($op) {
                     $errors     = $resCheck['errors'];
                     $deprecated = $resCheck['deprecated'];
                     $fatalError = $resCheck['fatalError'];
+                    $countAnalysis++;
                 }
                 $infoText = '';
                 if ('' !== $fatalError) {
@@ -402,7 +405,7 @@ switch ($op) {
                 // Insert Data
                 $testsHandler->insert($testsObj);
             }
-            \redirect_header('tests.php?op=list', 2, \_AM_WGTESTUI_FORM_OK);
+            \redirect_header('tests.php?op=list', 3, \sprintf(\_AM_WGTESTUI_TEST_ANALYSIS_DONE, $countAnalysis));
         } else {
             $label = \_AM_WGTESTUI_FORM_TEST_CONFIRM_ALL;
             if ('execute_admin' === $op) {

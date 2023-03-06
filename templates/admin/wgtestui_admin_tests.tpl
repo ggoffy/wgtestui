@@ -146,6 +146,8 @@
         <ul>
             <li><{$smarty.const._AM_WGTESTUI_TEST_INFO_EXEC2}></li>
             <li><{$smarty.const._AM_WGTESTUI_TEST_INFO_EXEC3}></li>
+            <li><{$smarty.const._AM_WGTESTUI_TEST_INFO_EXEC4}></li>
+            <li><{$smarty.const._AM_WGTESTUI_TEST_INFO_EXEC5}></li>
         </ul>
     </div>
 <{/if}>
