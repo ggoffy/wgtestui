@@ -120,7 +120,7 @@ class DatatoolsHandler
         }
         // Get Theme Form
         \xoops_load('XoopsFormLoader');
-        $form = new \XoopsThemeForm(\_AM_WGTESTUI_DATATOOLS_FORM_IMPORT, 'form', $action, 'post', true);
+        $form = new \XoopsThemeForm(\_AM_WGTESTUI_DATATOOLS_LIST, 'form', $action, 'post', true);
         $form->setExtra('enctype="multipart/form-data"');
 
         // Form Editor TextArea pluginList
@@ -150,7 +150,7 @@ class DatatoolsHandler
         $action = $_SERVER['REQUEST_URI'];
         // Get Theme Form
         \xoops_load('XoopsFormLoader');
-        $form = new \XoopsThemeForm(\_AM_WGTESTUI_DATATOOLS_FORM_IMPORT, 'form', $action, 'post', true);
+        $form = new \XoopsThemeForm(\_AM_WGTESTUI_DATATOOLS_GENERATE, 'form', $action, 'post', true);
         $form->setExtra('enctype="multipart/form-data"');
 
         // Form Select module

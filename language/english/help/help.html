@@ -7,21 +7,78 @@
     <!-- -----Help Content ---------- -->
     <h4 class="odd">Description</h4>
     <p class="even">
-        The wgTestUI module can be used to modules in XOOPS<br><br>
+        The module wgTestUI module can be used to test the modules of your XOOPS<br><br>
     </p>
     <h4 class="odd">Install/uninstall</h4>
     <p class="even">
 No special measures necessary, follow the standard installation process and extract the wgtestui folder into the ../modules directory. Install the module through Admin -> System Module -> Modules. <br><br>
 Detailed instructions on installing modules are available in the <a href="https://goo.gl/adT2i">XOOPS Operations Manual</a>
     </p>
+
     <h4 class="odd">Features</h4>
+    <h5>What can wgTestUI do?</h5>
+    Test XOOPS sites for:
+    <ul>
+        <li>Fatal errors (site blocked)</li>
+        <li>Errors (notices, warnings)</li>
+        <li>Deprecated functions</li>
+    </ul>
+
+    <h5>What can wgTestUI (currently) not do?</h5>
+    <ul>
+        <li>Execute actions, e.g. save data, delete data,...</li>
+        <li>Simulate user actions, e.g. type in data in a form</li>
+    </ul>
+
     <p class="even">
-        The ModuleBuilder module continues to expand, to get to the conditions to create modules, more and more sophisticated.<br>
+        The wgTestUI module continues to expand, to get to the conditions to create modules, more and more sophisticated.<br>
         For this reason, I invite all developers to report and send in svn any changes or additions to this module, so that we can jointly contribute to the development <br><br>
     </p>
     <h4 class="odd">Tutorial</h4>
-    <p class="even">
-        You can find a more detailed to this Video Tutorial <a href="https://www.youtube.com/watch?v=dg7zGFCopxY" rel="external">here</a>
+    <h5 class="odd">Create the list of links for testing</h5>
+    <ul>
+        <li>You can type in one by one with 'Add New Test'</li>
+        <li>
+            For collection of urls of user site, please use the block 'Block add new tests', activated it for all pages, then it goes very quickly<br>
+            Simply go from site to site and click always only on button 'Add current url to test database'
+        </li>
+        <li>Use 'Datatools'</li>
+    </ul>
+    <h5 class="odd">Execute tests</h5>
+    <p>Before starting the tests you should:</p>
+    <ul>
+        <li>Enable debug mode inline, in order to get information about errors, notices and warnings</li>
+        <li>Disable module Protector, because otherwise it can be that you are blocked because of the high number of requests within a short time</li>
+        <li>If you want to analyse a hugh number of urls then it is maybe necessary to increase the value for "maximum execution time" in your php settings</li>
+    </ul>
+    <p>If you execute the analysis, only tests with "Result code = 0" will be executed. If you want to re-analyse all uls then you have to reset test results before.</p>
+
+    <p>Execute tests for area ADMIN and/or USER:<br>
+        If you what to test another new theme then it makes no sense to test also the admin area, therefore you can start only 'Execute Tests USER'
     </p>
+    <p>If you have loaded module tests and this module is not installed then this test will be skipped.</p>
+
+    <h5 class="odd">Result of tests</h5>
+    <p>The result shows you, how many findings were made (fatal errors, warnings,...). In 'Info text' you can see the information about the findings</p>
+    <p>If you want you can filter the list by module, errors and so on</p>
+
+    <h5 class="odd">Statistics</h5>
+    <p>When clicking on 'Statistics' you get an overview about all loaded module test and the sums of errors, information and so on.</p>
+
+    <h5 class="odd">Datatools</h5>
+    <p>With datatools you can do:</p>
+    <ul>
+        <li>Import data about lists of tests from a json file in folder 'datatools'</li>
+        <li>You can also export data from lists of tests into a json file in folder 'datatools'</li>
+        <li>
+            You can collect the links in 'Import as list' and add them at once.<br>
+            Use a new line for each new url.
+        </li>
+        <li>
+            If your module follows the structure of Modulebuilder you can also use the generator in datatools<br>
+            The generator reads the admin/menu.php of the module and creates a list of possible links.<br>
+            If you like the list then copy it into the form 'Import as list'.
+        </li>
+    </ul>
     <!-- -----Help Content ---------- -->
 </div>
