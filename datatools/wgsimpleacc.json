@@ -1,0 +1,409 @@
+{
+    "dirname": "wgsimpleacc",
+    "name": "wgSimpleAcc",
+    "version": "1.3.0",
+    "data": [
+        {
+            "url": "modules\/wgsimpleacc\/admin\/index.php",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/transactions.php",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/transactions.php?op=new",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/transactions.php?op=delete",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/transactions.php?op=edit&tra_id=1",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/files.php",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/files.php?op=new",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/files.php?op=delete",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/assets.php",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/assets.php?op=new",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/assets.php?op=delete",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/accounts.php",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/accounts.php?op=new",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/accounts.php?op=delete",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/allocations.php",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/allocations.php?op=new",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/allocations.php?op=delete",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/balances.php",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/balances.php?op=new",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/balances.php?op=delete",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/tratemplates.php",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/tratemplates.php?op=new",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/tratemplates.php?op=delete",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/outtemplates.php",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/outtemplates.php?op=new",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/outtemplates.php?op=delete",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/permissions.php",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/feedback.php",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/admin\/about.php",
+            "module": "wgsimpleacc",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/transactions.php?op=list",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/transactions.php?op=new&tra_type=3",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/transactions.php?op=listhist",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/transactions.php?op=show&tra_id=1",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/tratemplates.php?op=new&tra_id=1",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/transactions.php?op=delete&tra_id=855",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/allocations.php?op=list",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/allocations.php?op=edit&all_id=1",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/allocations.php?op=delete&all_id=5",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/allocations.php?op=new",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/accounts.php?op=list",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/accounts.php?op=edit&acc_id=1",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/accounts.php?op=new",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/assets.php?op=list",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/assets.php?op=edit&as_id=1",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/assets.php?op=new",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/tratemplates.php?op=list",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/tratemplates.php?op=new",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/tratemplates.php?op=delete&ttpl_id=1",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/tratemplates.php?op=edit&ttpl_id=1",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/outtemplates.php?op=list",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/outtemplates.php?op=edit&otpl_id=1",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/outtemplates.php?op=clone&otpl_id_clone=1",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/outtemplates.php?op=delete&otpl_id=1",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/outtemplates.php?op=new",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/balances.php?op=list",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/balances.php?op=details&balanceFrom=1546300800&balanceTo=1577836740",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/outputs.php?op=bal_output&balanceFrom=1546300800&balanceTo=1577836740",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/balances.php?op=new",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/balances.php",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/statistics.php?op=allocations",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/statistics.php?op=assets",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/statistics.php?op=accounts",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/statistics.php?op=hbar_accounts",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/statistics.php?op=balances",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/outputs.php?op=transactions",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsimpleacc\/outputs.php?op=balances",
+            "module": "wgsimpleacc",
+            "area": 2,
+            "type": 1
+        }
+    ]
+}

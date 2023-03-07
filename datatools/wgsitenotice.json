@@ -1,0 +1,79 @@
+{
+    "dirname": "wgsitenotice",
+    "name": "Rechtliche Hinweise",
+    "version": "1.4.0",
+    "data": [
+        {
+            "url": "modules\/wgsitenotice\/admin\/index.php",
+            "module": "wgsitenotice",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsitenotice\/admin\/versions.php",
+            "module": "wgsitenotice",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsitenotice\/admin\/versions.php?op=new",
+            "module": "wgsitenotice",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsitenotice\/admin\/versions.php?op=delete",
+            "module": "wgsitenotice",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsitenotice\/admin\/contents.php",
+            "module": "wgsitenotice",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsitenotice\/admin\/contents.php?op=new",
+            "module": "wgsitenotice",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsitenotice\/admin\/contents.php?op=delete",
+            "module": "wgsitenotice",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsitenotice\/admin\/checkonline.php",
+            "module": "wgsitenotice",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsitenotice\/admin\/feedback.php",
+            "module": "wgsitenotice",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsitenotice\/admin\/about.php",
+            "module": "wgsitenotice",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsitenotice\/",
+            "module": "wgsitenotice",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgsitenotice\/index.php?version_id=1",
+            "module": "wgsitenotice",
+            "area": 2,
+            "type": 1
+        }
+    ]
+}

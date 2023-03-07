@@ -1,0 +1,235 @@
+{
+    "dirname": "wgtransifex",
+    "name": "wgTransifex",
+    "version": "1.1.0",
+    "data": [
+        {
+            "url": "modules\/wgtransifex\/admin\/index.php",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/projects.php",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/projects.php?op=new",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/projects.php?op=delete",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/resources.php",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/resources.php?op=new",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/resources.php?op=delete",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/translations.php",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/translations.php?op=new",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/translations.php?op=delete",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/packages.php",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/packages.php?op=new",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/packages.php?op=delete",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/requests.php",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/requests.php?op=new",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/requests.php?op=delete",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/broken.php",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/broken.php?op=edit",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/broken.php?op=delete",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/languages.php",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/languages.php?op=new",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/languages.php?op=delete",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/moduleimages.php",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/moduleimages.php?op=new",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/moduleimages.php?op=delete",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/moduleimages.php?op=github",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/settings.php",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/settings.php?op=new",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/settings.php?op=delete",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/feedback.php",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/admin\/about.php",
+            "module": "wgtransifex",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/",
+            "module": "wgtransifex",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/packages.php?op=show_index&pkg_id=1",
+            "module": "wgtransifex",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/packages.php?op=broken&pkg_id=1",
+            "module": "wgtransifex",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/requests.php?op=new",
+            "module": "wgtransifex",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/languages.php",
+            "module": "wgtransifex",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/projects.php",
+            "module": "wgtransifex",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtransifex\/projects.php?op=show&pro_id=1",
+            "module": "wgtransifex",
+            "area": 2,
+            "type": 1
+        }
+    ]
+}

@@ -1,0 +1,145 @@
+{
+    "dirname": "wggithub",
+    "name": "wgGitHub",
+    "version": "1.5.0",
+    "data": [
+        {
+            "url": "modules\/wggithub\/admin\/index.php",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/settings.php",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/settings.php?op=new",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/settings.php?op=delete",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/directories.php",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/directories.php?op=new",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/directories.php?op=edit&dir_id=1&start=0&limit=25",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/directories.php?op=delete&dir_id=1&start=0&limit=25",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/permissions.php",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/repositories.php",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/repositories.php?op=edit&repo_id=1&start=0&limit=25",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/repositories.php?op=delete&repo_id=1&start=0&limit=25",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/releases.php",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/releases.php?op=edit&rel_id=14&start=0&limit=25",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/releases.php?op=delete&rel_id=14&start=0&limit=25",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/readmes.php",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/readmes.php?op=edit&rm_id=1&start=0&limit=25",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/readmes.php?op=delete&rm_id=1&start=0&limit=25",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/logs.php",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/logs.php?op=clear",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/feedback.php",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/admin\/about.php",
+            "module": "wggithub",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggithub\/",
+            "module": "wggithub",
+            "area": 2,
+            "type": 1
+        }
+    ]
+}

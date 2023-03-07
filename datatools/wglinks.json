@@ -1,0 +1,73 @@
+{
+    "dirname": "wglinks",
+    "name": "wgLinks",
+    "version": "1.1.0",
+    "data": [
+        {
+            "url": "modules\/wglinks\/",
+            "module": "wglinks",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wglinks\/admin\/index.php",
+            "module": "wglinks",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wglinks\/admin\/category.php",
+            "module": "wglinks",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wglinks\/admin\/category.php?op=new",
+            "module": "wglinks",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wglinks\/admin\/category.php?op=delete",
+            "module": "wglinks",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wglinks\/admin\/link.php",
+            "module": "wglinks",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wglinks\/admin\/link.php?op=new",
+            "module": "wglinks",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wglinks\/admin\/link.php?op=delete",
+            "module": "wglinks",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wglinks\/admin\/clone.php",
+            "module": "wglinks",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wglinks\/admin\/feedback.php",
+            "module": "wglinks",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wglinks\/admin\/about.php",
+            "module": "wglinks",
+            "area": 1,
+            "type": 1
+        }
+    ]
+}

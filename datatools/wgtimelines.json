@@ -1,0 +1,163 @@
+{
+    "dirname": "wgtimelines",
+    "name": "wgTimelines",
+    "version": "1.2.0",
+    "data": [
+        {
+            "url": "modules\/wgtimelines\/",
+            "module": "wgtimelines",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/index.php?op=list&tl_id=1",
+            "module": "wgtimelines",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/index.php?op=list&tl_id=5",
+            "module": "wgtimelines",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/index.php?op=list&tl_id=12",
+            "module": "wgtimelines",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/index.php?op=list&tl_id=8",
+            "module": "wgtimelines",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/index.php?op=list&tl_id=9",
+            "module": "wgtimelines",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/index.php?op=list&tl_id=4",
+            "module": "wgtimelines",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/index.php?op=list&tl_id=2",
+            "module": "wgtimelines",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/index.php?op=list&tl_id=10",
+            "module": "wgtimelines",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/index.php?op=list&tl_id=6",
+            "module": "wgtimelines",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/index.php?op=list&tl_id=7",
+            "module": "wgtimelines",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/index.php?op=list&tl_id=11",
+            "module": "wgtimelines",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/admin\/index.php",
+            "module": "wgtimelines",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/admin\/timelines.php",
+            "module": "wgtimelines",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/admin\/timelines.php?op=new",
+            "module": "wgtimelines",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/admin\/timelines.php?op=delete",
+            "module": "wgtimelines",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/admin\/image_editor.php?op=edit_timeline&tl_id=1",
+            "module": "wgtimelines",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/admin\/items.php",
+            "module": "wgtimelines",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/admin\/items.php?op=new",
+            "module": "wgtimelines",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/admin\/items.php?op=delete",
+            "module": "wgtimelines",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/admin\/items.php?op=editcopy&item_id=1",
+            "module": "wgtimelines",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/admin\/templates.php",
+            "module": "wgtimelines",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/admin\/templates.php?op=reset&tpl_id=1",
+            "module": "wgtimelines",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/admin\/templates.php?op=edit&tpl_id=1",
+            "module": "wgtimelines",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/admin\/feedback.php",
+            "module": "wgtimelines",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgtimelines\/admin\/about.php",
+            "module": "wgtimelines",
+            "area": 1,
+            "type": 1
+        }
+    ]
+}
