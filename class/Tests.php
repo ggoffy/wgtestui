@@ -102,7 +102,8 @@ class Tests extends \XoopsObject
             $action = $_SERVER['REQUEST_URI'];
         }
         // Title
-        $title = $this->isNew() ? \_AM_WGTESTUI_TEST_ADD : \_AM_WGTESTUI_TEST_EDIT;
+        $isNew = $this->isNew();
+        $title = $isNew ? \_AM_WGTESTUI_TEST_ADD : \_AM_WGTESTUI_TEST_EDIT;
         // Get Theme Form
         \xoops_load('XoopsFormLoader');
         $form = new \XoopsThemeForm($title, 'form', $action, 'post', true);
@@ -116,34 +117,50 @@ class Tests extends \XoopsObject
         $testAreaSelect->addOption(Constants::AREA_ADMIN,'ADMIN');
         $testAreaSelect->addOption(Constants::AREA_USER,'USER');
         $form->addElement($testAreaSelect);
-        // Tests Handler
-        $testsHandler = $helper->getHandler('Tests');
         // Form Select testType
-        /*currently only HTTPREQUEST is used*/
-        /*
-        $testTypeSelect = new \XoopsFormSelect(\_AM_WGTESTUI_TEST_TYPE, 'type', $this->getVar('type'));
-        $testTypeSelect->addOption(1,'HTTPREQUEST');
-        $form->addElement($testTypeSelect);
-        */
-        $form->addElement(new \XoopsFormHidden('type', 1));
+        if ($isNew) {
+            $form->addElement(new \XoopsFormHidden('type', 1));
+        } else {
+            /*currently only HTTPREQUEST is used*/
+            /*
+            $testTypeSelect = new \XoopsFormSelect(\_AM_WGTESTUI_TEST_TYPE, 'type', $this->getVar('type'));
+            $testTypeSelect->addOption(1,'HTTPREQUEST');
+            $form->addElement($testTypeSelect);
+            */
+            $form->addElement(new \XoopsFormHidden('type', 1));
+        }
         // Form Text testResultcode
-        $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_RESULTCODE, 'resultcode', 50, 255, $this->getVar('resultcode')));
+        if (!$isNew) {
+            $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_RESULTCODE, 'resultcode', 50, 255, $this->getVar('resultcode')));
+        }
         // Form Text testResulttext
-        $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_RESULTTEXT, 'resulttext', 50, 255, $this->getVar('resulttext')));
+        if (!$isNew) {
+            $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_RESULTTEXT, 'resulttext', 50, 255, $this->getVar('resulttext')));
+        }
         // Form Text testFatalerrors
-        $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_FATALERRORS,  'fatalerrors', 50, 255, $this->getVar('fatalerrors')));
+        if (!$isNew) {
+            $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_FATALERRORS,  'fatalerrors', 50, 255, $this->getVar('fatalerrors')));
+         }
         // Form Text testErros
-        $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_ERRORS, 'errors', 50, 255, $this->getVar('errors')));
+        if (!$isNew) {
+            $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_ERRORS, 'errors', 50, 255, $this->getVar('errors')));
+        }
         // Form Text testDeprecated
-        $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_DEPRECATED, 'deprecated', 50, 255, $this->getVar('deprecated')));
+        if (!$isNew) {
+            $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_DEPRECATED, 'deprecated', 50, 255, $this->getVar('deprecated')));
+        }
         // Form Editor TextArea testInfotext
-        $form->addElement(new \XoopsFormTextArea(\_AM_WGTESTUI_TEST_INFOTEXT, 'infotext', $this->getVar('infotext', 'e'), 4, 47));
+        if (!$isNew) {
+            $form->addElement(new \XoopsFormTextArea(\_AM_WGTESTUI_TEST_INFOTEXT, 'infotext', $this->getVar('infotext', 'e'), 4, 47));
+        }
         // Form Text Date Select testDatetest
-        $testDatetest = $this->isNew() ? \time() : $this->getVar('datetest');
-        $form->addElement(new \XoopsFormDateTime(\_AM_WGTESTUI_TEST_DATETEST, 'datetest', '', $testDatetest));
-        // Form Text Date Select testDatecreated
-        $testDatecreated = $this->isNew() ? \time() : $this->getVar('datecreated');
-        $form->addElement(new \XoopsFormDateTime(\_AM_WGTESTUI_TEST_DATECREATED, 'datecreated', '', $testDatecreated));
+        if (!$isNew) {
+            $testDatetest = $this->isNew() ? \time() : $this->getVar('datetest');
+            $form->addElement(new \XoopsFormDateTime(\_AM_WGTESTUI_TEST_DATETEST, 'datetest', '', $testDatetest));
+            // Form Text Date Select testDatecreated
+            $testDatecreated = $this->isNew() ? \time() : $this->getVar('datecreated');
+            $form->addElement(new \XoopsFormDateTime(\_AM_WGTESTUI_TEST_DATECREATED, 'datecreated', '', $testDatecreated));
+        }
         // Form Select User testSubmitter
         $uidCurrent = \is_object($GLOBALS['xoopsUser']) ? $GLOBALS['xoopsUser']->uid() : 0;
         $testSubmitter = $this->isNew() ? $uidCurrent : $this->getVar('submitter');

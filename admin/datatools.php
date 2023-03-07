@@ -59,7 +59,7 @@ switch ($op) {
             include XOOPS_ROOT_PATH . "/modules/$modGenerate/admin/menu.php";
             foreach ($adminmenu as $menuItem) {
                 $file = str_replace('admin/', '', $menuItem['link']);
-                $noNewDelete = ['index.php', 'feedback.php', 'about.php', 'clone.php'];
+                $noNewDelete = ['index.php', 'feedback.php', 'about.php', 'clone.php', 'permissions.php'];
                 $resultGenerate .= '<br>' . XOOPS_URL . '/modules/' . $modGenerate . '/admin/' . $file;
                 if (!\in_array($file, $noNewDelete)) {
                     $resultGenerate .= '<br>' . XOOPS_URL . '/modules/' . $modGenerate . '/admin/' . $file . '?op=new';

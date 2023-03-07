@@ -1,0 +1,277 @@
+{
+    "dirname": "wggallery",
+    "name": "wgGallery",
+    "version": "1.2.0",
+    "data": [
+        {
+            "url": "modules\/wggallery\/admin\/index.php",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/albums.php",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/albums.php?op=new",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/albums.php?op=delete",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/images.php",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/images.php?op=new",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/images.php?op=delete",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/gallerytypes.php",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/gallerytypes.php?op=new",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/gallerytypes.php?op=delete",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/albumtypes.php",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/albumtypes.php?op=new",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/albumtypes.php?op=delete",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/categories.php",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/categories.php?op=new",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/categories.php?op=delete",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/watermarks.php",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/watermarks.php?op=new",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/watermarks.php?op=delete",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/batch.php",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/permissions.php",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/maintenance.php",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/import.php",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/clone.php",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/feedback.php",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/admin\/about.php",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/index.php",
+            "module": "wggallery",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/gallery.php?op=show&alb_id=1&alb_pid=0",
+            "module": "wggallery",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/images.php?op=list&alb_id=1&alb_pid=0",
+            "module": "wggallery",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/images.php?op=show&redir=list&img_id=25&alb_id=1&start=0&limit=10&img_submitter=0",
+            "module": "wggallery",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/images.php?op=edit&img_id=25",
+            "module": "wggallery",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/images.php?op=delete&img_id=25&alb_id=1&alb_pid=0",
+            "module": "wggallery",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/albums.php?op=edit&alb_id=1",
+            "module": "wggallery",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/images.php?op=manage&alb_id=1&redir=list",
+            "module": "wggallery",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/images.php?op=show&img_id=25&alb_id=1&start=0&limit=10&img_submitter=0&redir_op=manage",
+            "module": "wggallery",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/upload.php?op=list&alb_id=1",
+            "module": "wggallery",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/images.php?op=list&ref=albums&alb_id=1&alb_pid=",
+            "module": "wggallery",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/album_images.php?op=list&alb_id=1",
+            "module": "wggallery",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/index.php?op=list&subm_id=1",
+            "module": "wggallery",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/albums.php",
+            "module": "wggallery",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/images.php?op=list&ref=albums&alb_id=1&alb_pid=0",
+            "module": "wggallery",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/images.php?op=manage&ref=albums&alb_id=1&alb_pid=0",
+            "module": "wggallery",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/albums.php?op=new&alb_pid=0",
+            "module": "wggallery",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/images.php?op=manage",
+            "module": "wggallery",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wggallery\/search.php",
+            "module": "wggallery",
+            "area": 2,
+            "type": 1
+        }
+    ]
+}

@@ -316,6 +316,8 @@ switch ($op) {
     case 'execute':
     case 'execute_admin':
     case 'execute_user':
+        // turn off protector during execute this code
+        \define('PROTECTOR_SKIP_DOS_CHECK', 1);
         // Define Stylesheet
         $GLOBALS['xoTheme']->addStylesheet($style, null);
         $templateMain = 'wgtestui_admin_tests.tpl';
