@@ -147,9 +147,7 @@ class DatatoolsHandler
      */
     public function getFormGenerateMenu($menuModule)
     {
-        if (!$action) {
-            $action = $_SERVER['REQUEST_URI'];
-        }
+        $action = $_SERVER['REQUEST_URI'];
         // Get Theme Form
         \xoops_load('XoopsFormLoader');
         $form = new \XoopsThemeForm(\_AM_WGTESTUI_DATATOOLS_FORM_IMPORT, 'form', $action, 'post', true);

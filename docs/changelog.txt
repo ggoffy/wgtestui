@@ -7,6 +7,7 @@
  - renamed plugins into datatools (goffy)
  - implemented filter for list of tests (goffy)
  - added generator for modules based on modulebuilder (goffy)
+ - fixed bug in DatatoolsHandler (mamba/goffy)
 
 ==============================================================
 1.0.0 Alpha 1 [2023/03/01]
