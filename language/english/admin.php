@@ -46,7 +46,7 @@ require_once __DIR__ . '/common.php';
 \define('_AM_WGTESTUI_TEST_INFO_EXEC2', 'Enable debug mode inline, in order to get information about errors, notices and warnings');
 \define('_AM_WGTESTUI_TEST_INFO_EXEC3', 'Disable module Protector, because otherwise it can be that you are blocked because of the high number of requests within a short time');
 \define('_AM_WGTESTUI_TEST_INFO_EXEC4', 'If you want to analyse a hugh number of urls then it is maybe necessary to increase the value for "maximum execution time" in your php settings');
-\define('_AM_WGTESTUI_TEST_INFO_EXEC5', 'If you execute the analysis, only tests with "Result code = 0" will be executed. If you want to re-analyse all uls then you have to reset test results before.');
+\define('_AM_WGTESTUI_TEST_INFO_EXEC5', 'If you execute the analysis, only tests with "Result code = 0" will be executed. If you want to re-analyse all urls then you have to reset test results before.');
 // Buttons
 \define('_AM_WGTESTUI_ADD_TEST', 'Add New Test');
 \define('_AM_WGTESTUI_EXEC_TEST', 'Execute All Tests');
@@ -85,6 +85,8 @@ require_once __DIR__ . '/common.php';
 \define('_AM_WGTESTUI_TEST_STATS_STATUS200', 'Number of status 200');
 \define('_AM_WGTESTUI_TEST_STATS_INFO', 'Number of information');
 \define('_AM_WGTESTUI_TEST_ANALYSIS_DONE', 'Result of analysis saved successfully. Number of analysis done: %s');
+\define('_AM_WGTESTUI_TEST_URL_OPEN', 'Open url in new tab');
+\define('_AM_WGTESTUI_TEST_RESET', 'Reset this test');
 // datatools
 \define('_AM_WGTESTUI_DATATOOLS_FORM_IMPORT', 'Import datatools');
 \define('_AM_WGTESTUI_DATATOOLS_FORM_IMPORT_SELECT', 'Select the datatool for import file into list of tests');

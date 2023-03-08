@@ -70,12 +70,6 @@
             "type": 1
         },
         {
-            "url": "modules\/wggallery\/admin\/albumtypes.php?op=new",
-            "module": "wggallery",
-            "area": 1,
-            "type": 1
-        },
-        {
             "url": "modules\/wggallery\/admin\/albumtypes.php?op=delete",
             "module": "wggallery",
             "area": 1,

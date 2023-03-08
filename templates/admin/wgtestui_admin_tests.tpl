@@ -115,7 +115,10 @@
                     <img class="tooltip wgt-tooltip-img" onclick="display_dialog('<{$test.id}>', true, true, 'slide', 'slide', 300, '80%');"
                          src="<{$wgtestui_icons_url_32}>/display.png" alt="<{$smarty.const._AM_WGTESTUI_TEST_DETAILS}>" title="<{$smarty.const._AM_WGTESTUI_TEST_DETAILS}>">
                     <div id="dialog<{$test.id}>" title="<{$smarty.const._AM_WGTESTUI_TEST_DETAILS}>" style='display:none;'>
-                        <p class="wgt-tooltip-header"><{$smarty.const._AM_WGTESTUI_TEST_RESULTS}> <{$test.url}></p>
+                        <p class="wgt-tooltip-header">
+                            <{$smarty.const._AM_WGTESTUI_TEST_RESULTS}> <{$test.url}>
+                            <a href="<{$xoops_url}>/<{$test.url}>" title="<{$smarty.const._AM_WGTESTUI_TEST_URL_OPEN}>" target="_blank"><img src="<{$wgtestui_icons_url_32}>/url.png" alt="<{$smarty.const._AM_WGTESTUI_TEST_URL_OPEN}>"></a>
+                        </p>
                         <p><{$test.infotext_br}></p>
                     </div>
                     <{/if}>
@@ -125,9 +128,10 @@
                 <td class='center'><{$test.datecreated_text}></td>
                 <td class='center'><{$test.submitter_text}></td>
                 <td class="center  width5">
-                    <a href="tests.php?op=edit&amp;id=<{$test.id}>&amp;start=<{$start}>&amp;limit=<{$limit}>" title="<{$smarty.const._EDIT}>"><img src="<{$wgtestui_icons_url_16}>/edit.png" alt="<{$smarty.const._EDIT}> tests" ></a>
-                    <a href="tests.php?op=clone&amp;test_id_source=<{$test.id}>" title="<{$smarty.const._CLONE}>"><img src="<{$wgtestui_icons_url_16}>/editcopy.png" alt="<{$smarty.const._CLONE}> tests" ></a>
-                    <a href="tests.php?op=delete&amp;id=<{$test.id}>" title="<{$smarty.const._DELETE}>"><img src="<{$wgtestui_icons_url_16}>/delete.png" alt="<{$smarty.const._DELETE}> tests" ></a>
+                    <a href="tests.php?op=edit&amp;id=<{$test.id}>&amp;start=<{$start}>&amp;limit=<{$limit}>" title="<{$smarty.const._EDIT}>"><img src="<{$wgtestui_icons_url_16}>/edit.png" alt="<{$smarty.const._EDIT}>" ></a>
+                    <a href="tests.php?op=clone&amp;test_id_source=<{$test.id}>" title="<{$smarty.const._CLONE}>"><img src="<{$wgtestui_icons_url_16}>/editcopy.png" alt="<{$smarty.const._CLONE}>" ></a>
+                    <a href="tests.php?op=delete&amp;id=<{$test.id}>" title="<{$smarty.const._DELETE}>"><img src="<{$wgtestui_icons_url_16}>/delete.png" alt="<{$smarty.const._DELETE}>" ></a>
+                    <a href="tests.php?op=reset&amp;id=<{$test.id}>&amp;start=<{$start}>&amp;limit=<{$limit}>" title="<{$smarty.const._AM_WGTESTUI_TEST_RESET}>"><img src="<{$wgtestui_icons_url_16}>/reset.png" alt="<{$smarty.const._AM_WGTESTUI_TEST_RESET}>" ></a>
                 </td>
             </tr>
             <{/foreach}>

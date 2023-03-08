@@ -249,6 +249,20 @@ switch ($op) {
         $form = $testsObj->getFormTests();
         $GLOBALS['xoopsTpl']->assign('form', $form->render());
         break;
+    case 'reset':
+        $testsObj = $testsHandler->get($testId);
+        if (\is_object($testsObj)) {
+            $testsObj->setVar('resultcode', '0');
+            $testsObj->setVar('resulttext', '');
+            $testsObj->setVar('infotext', '');
+            $testsObj->setVar('datetest', 0);
+            // Insert Data
+            if ($testsHandler->insert($testsObj)) {
+                \redirect_header('tests.php?op=list&amp;start=' . $start . '&amp;limit=' . $limit, 2, \_AM_WGTESTUI_FORM_OK);
+            }
+            $GLOBALS['xoopsTpl']->assign('error', $testsObj->getHtmlErrors());
+        }
+        break;
     case 'edit':
         $templateMain = 'wgtestui_admin_tests.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('tests.php'));
@@ -407,7 +421,7 @@ switch ($op) {
                 // Insert Data
                 $testsHandler->insert($testsObj);
             }
-            \redirect_header('tests.php?op=list', 3, \sprintf(\_AM_WGTESTUI_TEST_ANALYSIS_DONE, $countAnalysis));
+            \redirect_header('tests.php?op=statistics', 3, \sprintf(\_AM_WGTESTUI_TEST_ANALYSIS_DONE, $countAnalysis));
         } else {
             $label = \_AM_WGTESTUI_FORM_TEST_CONFIRM_ALL;
             if ('execute_admin' === $op) {
