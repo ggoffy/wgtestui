@@ -71,8 +71,14 @@ if (!is_object($testsObj)) {
             header('Content-Type: application/json');
             echo json_encode(['status' => 'success', 'message' => \_AM_WGTESTUI_TEST_URL_ADDED]);
         } else {
+            $errorsText = '';
+            if (!empty($testsObj->getErrors())) {
+                foreach ($testsObj->getErrors() as $error) {
+                    $errorsText .= $error . '<br>';
+                }
+            }
             header('Content-Type: application/json');
-            echo json_encode(['status' => 'error', 'message' => \_AM_WGTESTUI_TEST_URL_ERROR . '<br>' . $testsObj->getErrors()]);
+            echo json_encode(['status' => 'error', 'message' => \_AM_WGTESTUI_TEST_URL_ERROR . '<br>' . $errorsText]);
         }
     }
 }

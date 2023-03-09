@@ -82,7 +82,7 @@ switch ($op) {
                 if (\count($datatoolArr) > 0) {
                     $crTests = new \CriteriaCompo();
                     $crTests->add(new \Criteria('module', $datatool));
-                    $testsAll = $testsHandler->deleteAll($crTests, true);
+                    $testsAll = $testsHandler->deleteAll($crTests);
                     foreach ($datatoolArr['data'] as $data) {
                         $testsObj = $testsHandler->create();
                         // Set Vars

@@ -47,7 +47,6 @@ class Tests extends \XoopsObject
     /**
      * Constructor
      *
-     * @param null
      */
     public function __construct()
     {
@@ -71,7 +70,6 @@ class Tests extends \XoopsObject
     /**
      * @static function &getInstance
      *
-     * @param null
      */
     public static function getInstance()
     {
@@ -87,8 +85,7 @@ class Tests extends \XoopsObject
      */
     public function getNewInsertedIdTests()
     {
-        $newInsertedId = $GLOBALS['xoopsDB']->getInsertId();
-        return $newInsertedId;
+        return $GLOBALS['xoopsDB']->getInsertId();
     }
 
     /**

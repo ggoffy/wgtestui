@@ -396,30 +396,13 @@ switch ($op) {
                 $fatalError = '';
                 $errors     = [];
                 $deprecated = [];
-
-
-
-
-
-                /*
-                echo '<br>template_set:' . $GLOBALS['xoopsConfig']['template_set'];
-                echo '<br>theme_set:' . $GLOBALS['xoopsConfig']['theme_set'];
-                //echo '<br>folderName:' . $GLOBALS['xoTheme']->getVar('folderName');
-                $themeFile = XOOPS_ROOT_PATH . '/themes/' . $GLOBALS['xoopsConfig']['theme_set'] . '/modules/' . $testModule;
-                echo '<br>theme_file:' .$themeFile;
-                    die;
-                */
-
-
-
-
                 if ('xoopscore' === $testModule || \array_key_exists($testModule, $moduleslist)) {
-                    /*$resCheck = $testsHandler->checkURL(XOOPS_URL . '/' . $testUrl, $options);
+                    $resCheck = $testsHandler->checkURL(XOOPS_URL . '/' . $testUrl, $options);
                     $statusCode = $resCheck['statusCode'];
                     $statusText = $resCheck['statusText'];
                     $errors     = $resCheck['errors'];
                     $deprecated = $resCheck['deprecated'];
-                    $fatalError = $resCheck['fatalError'];*/
+                    $fatalError = $resCheck['fatalError'];
                     $tplSource  = $GLOBALS['xoopsConfig']['theme_set'];
                     $themeFolder = XOOPS_ROOT_PATH . '/themes/' . $GLOBALS['xoopsConfig']['theme_set'] . '/modules/' . $testModule;
                     if (!file_exists($themeFolder)) {
