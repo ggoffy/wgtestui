@@ -237,11 +237,15 @@ switch ($op) {
         } else {
             $testsObj->setVar('datetest', 0);
         }
-        $testDatecreatedArr = Request::getArray('datecreated');
-        $testDatecreatedObj = \DateTime::createFromFormat(\_SHORTDATESTRING, $testDatecreatedArr['date']);
-        $testDatecreatedObj->setTime(0, 0);
-        $testDatecreated = $testDatecreatedObj->getTimestamp() + (int)$testDatecreatedArr['time'];
-        $testsObj->setVar('datecreated', $testDatecreated);
+        if ($testId > 0) {
+            $testDatecreatedArr = Request::getArray('datecreated');
+            $testDatecreatedObj = \DateTime::createFromFormat(\_SHORTDATESTRING, $testDatecreatedArr['date']);
+            $testDatecreatedObj->setTime(0, 0);
+            $testDatecreated = $testDatecreatedObj->getTimestamp() + (int)$testDatecreatedArr['time'];
+            $testsObj->setVar('datecreated', $testDatecreated);
+        } else {
+            $testsObj->setVar('datecreated', \time());
+        }
         $testsObj->setVar('submitter', Request::getInt('submitter'));
         // Insert Data
         if ($testsHandler->insert($testsObj)) {

@@ -1,0 +1,145 @@
+{
+    "dirname": "wgteams",
+    "name": "wgTeams",
+    "version": "2.0.0",
+    "data": [
+        {
+            "url": "modules\/wgteams\/admin\/index.php",
+            "module": "wgteams",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/admin\/infofields.php",
+            "module": "wgteams",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/admin\/infofields.php?op=new",
+            "module": "wgteams",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/admin\/infofields.php?op=delete",
+            "module": "wgteams",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/admin\/teams.php",
+            "module": "wgteams",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/admin\/teams.php?op=new",
+            "module": "wgteams",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/admin\/teams.php?op=delete",
+            "module": "wgteams",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/admin\/members.php",
+            "module": "wgteams",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/admin\/members.php?op=new",
+            "module": "wgteams",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/admin\/members.php?op=delete",
+            "module": "wgteams",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/admin\/relations.php",
+            "module": "wgteams",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/admin\/relations.php?op=new",
+            "module": "wgteams",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/admin\/relations.php?op=delete",
+            "module": "wgteams",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/admin\/maintenance.php",
+            "module": "wgteams",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/admin\/maintenance.php?op=unused_images_search",
+            "module": "wgteams",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/admin\/maintenance.php?op=check_space",
+            "module": "wgteams",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/admin\/clone.php",
+            "module": "wgteams",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/admin\/feedback.php",
+            "module": "wgteams",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/admin\/about.php",
+            "module": "wgteams",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/admin\/image_editor.php?op=edit_team&team_id=1",
+            "module": "wgteams",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/admin\/image_editor.php?op=edit_member&member_id=1",
+            "module": "wgteams",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/",
+            "module": "wgteams",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgteams\/index.php?team_id=1",
+            "module": "wgteams",
+            "area": 2,
+            "type": 1
+        }
+    ]
+}
