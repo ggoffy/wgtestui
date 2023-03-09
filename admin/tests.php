@@ -143,8 +143,9 @@ switch ($op) {
             $sql .= 'sum(`fatalerrors`) as count_fe, ';
             $sql .= 'sum(`errors`) as count_e, ';
             $sql .= 'sum(`deprecated`) as count_d, ';
-            $sql .= 'sum(IF(STRCMP("",`infotext`) = 0, 0, 1)) as countinfo ';
-            $sql .= 'FROM `'  . $GLOBALS['xoopsDB']->prefix('wgtestui_tests') . '` GROUP BY `module`';
+            $sql .= 'sum(IF(STRCMP("",`infotext`) = 0, 0, 1)) as countinfo, ';
+            $sql .= '`tplsource` ';
+            $sql .= 'FROM `'  . $GLOBALS['xoopsDB']->prefix('wgtestui_tests') . '` GROUP BY `module`, `tplsource`';
             $result = $GLOBALS['xoopsDB']->queryF($sql);
             if (!$result instanceof \mysqli_result) {
                 \trigger_error($GLOBALS['xoopsDB']->error());
@@ -160,6 +161,7 @@ switch ($op) {
                     'errors' => $row[4],
                     'deprecated' => $row[5],
                     'info' => $row[6],
+                    'tplsource' => $row[7],
                     'show_details' => ((int)$row[1] !== (int)$row[2] || (int)$row[3] > 0 || (int)$row[4] > 0 || (int)$row[5] > 0)
                 ];
             }
@@ -225,10 +227,11 @@ switch ($op) {
         $testsObj->setVar('resultcode', Request::getString('resultcode', '0'));
         $testsObj->setVar('resulttext', Request::getString('resulttext'));
         $testsObj->setVar('infotext', Request::getText('infotext'));
+        $testsObj->setVar('tplsource', Request::getString('tplsource'));
         if ($testId > 0) {
             $testDatetestArr = Request::getArray('datetest');
             $testDatetestObj = \DateTime::createFromFormat(\_SHORTDATESTRING, $testDatetestArr['date']);
-            $testDatetestObj->setTime(0, 0, 0);
+            $testDatetestObj->setTime(0, 0);
             $testDatetest = $testDatetestObj->getTimestamp() + (int)$testDatetestArr['time'];
             $testsObj->setVar('datetest', $testDatetest);
         } else {
@@ -236,7 +239,7 @@ switch ($op) {
         }
         $testDatecreatedArr = Request::getArray('datecreated');
         $testDatecreatedObj = \DateTime::createFromFormat(\_SHORTDATESTRING, $testDatecreatedArr['date']);
-        $testDatecreatedObj->setTime(0, 0, 0);
+        $testDatecreatedObj->setTime(0, 0);
         $testDatecreated = $testDatecreatedObj->getTimestamp() + (int)$testDatecreatedArr['time'];
         $testsObj->setVar('datecreated', $testDatecreated);
         $testsObj->setVar('submitter', Request::getInt('submitter'));
@@ -255,6 +258,7 @@ switch ($op) {
             $testsObj->setVar('resultcode', '0');
             $testsObj->setVar('resulttext', '');
             $testsObj->setVar('infotext', '');
+            $testsObj->setVar('tplsource', '');
             $testsObj->setVar('datetest', 0);
             // Insert Data
             if ($testsHandler->insert($testsObj)) {
@@ -281,7 +285,7 @@ switch ($op) {
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('tests.php'));
         $testsObj = $testsHandler->get($testId);
         $testUrl = $testsObj->getVar('url');
-        if (isset($_REQUEST['ok']) && 1 == $_REQUEST['ok']) {
+        if (isset($_REQUEST['ok']) && 1 === (int)$_REQUEST['ok']) {
             if (!$GLOBALS['xoopsSecurity']->check()) {
                 \redirect_header('tests.php', 3, \implode(', ', $GLOBALS['xoopsSecurity']->getErrors()));
             }
@@ -321,10 +325,16 @@ switch ($op) {
         }
         break;
     case 'reset_all':
-        $testsHandler->updateAll('resultcode', 0, null, true);
-        $testsHandler->updateAll('resulttext', '', null, true);
-        $testsHandler->updateAll('infotext', '', null, true);
-        $testsHandler->updateAll('datetest', 0, null, true);
+    case 'reset_module':
+        $crTests = new \CriteriaCompo();
+        if ('reset_module' === $op) {
+            $crTests->add(new \Criteria('module', Request::getString('module')));
+        }
+        $testsHandler->updateAll('resultcode', 0, $crTests, true);
+        $testsHandler->updateAll('resulttext', '', $crTests, true);
+        $testsHandler->updateAll('infotext', '', $crTests, true);
+        $testsHandler->updateAll('tplsource', '', $crTests, true);
+        $testsHandler->updateAll('datetest', 0, $crTests, true);
         \redirect_header('tests.php', 3, \_AM_WGTESTUI_FORM_DELETE_OK);
         break;
     case 'execute':
@@ -386,13 +396,35 @@ switch ($op) {
                 $fatalError = '';
                 $errors     = [];
                 $deprecated = [];
+
+
+
+
+
+                /*
+                echo '<br>template_set:' . $GLOBALS['xoopsConfig']['template_set'];
+                echo '<br>theme_set:' . $GLOBALS['xoopsConfig']['theme_set'];
+                //echo '<br>folderName:' . $GLOBALS['xoTheme']->getVar('folderName');
+                $themeFile = XOOPS_ROOT_PATH . '/themes/' . $GLOBALS['xoopsConfig']['theme_set'] . '/modules/' . $testModule;
+                echo '<br>theme_file:' .$themeFile;
+                    die;
+                */
+
+
+
+
                 if ('xoopscore' === $testModule || \array_key_exists($testModule, $moduleslist)) {
-                    $resCheck = $testsHandler->checkURL(XOOPS_URL . '/' . $testUrl, $options);
+                    /*$resCheck = $testsHandler->checkURL(XOOPS_URL . '/' . $testUrl, $options);
                     $statusCode = $resCheck['statusCode'];
                     $statusText = $resCheck['statusText'];
                     $errors     = $resCheck['errors'];
                     $deprecated = $resCheck['deprecated'];
-                    $fatalError = $resCheck['fatalError'];
+                    $fatalError = $resCheck['fatalError'];*/
+                    $tplSource  = $GLOBALS['xoopsConfig']['theme_set'];
+                    $themeFolder = XOOPS_ROOT_PATH . '/themes/' . $GLOBALS['xoopsConfig']['theme_set'] . '/modules/' . $testModule;
+                    if (!file_exists($themeFolder)) {
+                        $tplSource = 'module tpls';
+                    }
                     $countAnalysis++;
                 }
                 $infoText = '';
@@ -417,6 +449,7 @@ switch ($op) {
                 $testsObj->setVar('errors', \count($errors));
                 $testsObj->setVar('deprecated', \count($deprecated));
                 $testsObj->setVar('infotext', $infoText);
+                $testsObj->setVar('tplsource', $tplSource);
                 $testsObj->setVar('datetest', \time());
                 // Insert Data
                 $testsHandler->insert($testsObj);

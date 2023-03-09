@@ -12,7 +12,8 @@
             <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_ERRORS}></th>
             <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_DEPRECATED}></th>
             <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_STATS_INFO}></th>
-            <th class="center">&nbsp;</th>
+            <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_TPLSOURCE}></th>
+            <th class="center"><{$smarty.const._AM_WGTESTUI_FORM_ACTION}></th>
         </tr>
         </thead>
         <tbody>
@@ -60,10 +61,12 @@
                         <img src="<{$wgtestui_icons_url_16}>/ok.png" alt="<{$smarty.const._AM_WGTESTUI_OK}>" title="<{$smarty.const._AM_WGTESTUI_OK}>">
                     <{/if}>
                 </td>
+                <td class='center'><{$statistic.tplsource}></td>
                 <td class='center'>
                     <{if $statistic.show_details|default:false}>
                         <a href="tests.php?op=list&amp;filter_m=<{$statistic.module}>" title="<{$smarty.const._AM_WGTESTUI_TEST_DETAILS}>"><img src="<{$wgtestui_icons_url_16}>/view.png" alt="<{$smarty.const._AM_WGTESTUI_TEST_DETAILS}>" ></a>
                     <{/if}>
+                    <a href="tests.php?op=reset_module&amp;module=<{$statistic.module}>" title="<{$smarty.const._AM_WGTESTUI_TEST_RESETMODULE}>"><img src="<{$wgtestui_icons_url_16}>/reset.png" alt="<{$smarty.const._AM_WGTESTUI_TEST_RESETMODULE}>" ></a>
                 </td>
             </tr>
             <{/foreach}>
@@ -91,6 +94,7 @@
                 <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_ERRORS}></th>
                 <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_DEPRECATED}></th>
                 <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_INFOTEXT}></th>
+                <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_TPLSOURCE}></th>
                 <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_DATETEST}></th>
                 <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_DATECREATED}></th>
                 <th class="center"><{$smarty.const._AM_WGTESTUI_TEST_SUBMITTER}></th>
@@ -124,6 +128,7 @@
                     <{/if}>
                     <{$test.infotext_short}>
                 </td>
+                <td class='center'><{$test.tplsource}></td>
                 <td class='center'><{$test.datetest_text}></td>
                 <td class='center'><{$test.datecreated_text}></td>
                 <td class='center'><{$test.submitter_text}></td>
@@ -131,7 +136,7 @@
                     <a href="tests.php?op=edit&amp;id=<{$test.id}>&amp;start=<{$start}>&amp;limit=<{$limit}>" title="<{$smarty.const._EDIT}>"><img src="<{$wgtestui_icons_url_16}>/edit.png" alt="<{$smarty.const._EDIT}>" ></a>
                     <a href="tests.php?op=clone&amp;test_id_source=<{$test.id}>" title="<{$smarty.const._CLONE}>"><img src="<{$wgtestui_icons_url_16}>/editcopy.png" alt="<{$smarty.const._CLONE}>" ></a>
                     <a href="tests.php?op=delete&amp;id=<{$test.id}>" title="<{$smarty.const._DELETE}>"><img src="<{$wgtestui_icons_url_16}>/delete.png" alt="<{$smarty.const._DELETE}>" ></a>
-                    <a href="tests.php?op=reset&amp;id=<{$test.id}>&amp;start=<{$start}>&amp;limit=<{$limit}>" title="<{$smarty.const._AM_WGTESTUI_TEST_RESET}>"><img src="<{$wgtestui_icons_url_16}>/reset.png" alt="<{$smarty.const._AM_WGTESTUI_TEST_RESET}>" ></a>
+                    <a href="tests.php?op=reset&amp;id=<{$test.id}>&amp;start=<{$start}>&amp;limit=<{$limit}>" title="<{$smarty.const._AM_WGTESTUI_TEST_RESETONE}>"><img src="<{$wgtestui_icons_url_16}>/reset.png" alt="<{$smarty.const._AM_WGTESTUI_TEST_RESETONE}>" ></a>
                 </td>
             </tr>
             <{/foreach}>

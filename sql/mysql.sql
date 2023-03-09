@@ -23,6 +23,7 @@ CREATE TABLE `wgtestui_tests` (
   `errors` INT(10) NOT NULL DEFAULT '0',
   `deprecated` INT(10) NOT NULL DEFAULT '0',
   `infotext` TEXT NOT NULL ,
+  `tplsource` VARCHAR(255) NOT NULL DEFAULT '',
   `datetest` INT(11) NOT NULL DEFAULT '0',
   `datecreated` INT(11) NOT NULL DEFAULT '0',
   `submitter` INT(10) NOT NULL DEFAULT '0',

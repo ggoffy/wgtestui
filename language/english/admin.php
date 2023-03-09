@@ -72,6 +72,7 @@ require_once __DIR__ . '/common.php';
 \define('_AM_WGTESTUI_TEST_ERRORS', 'Errors');
 \define('_AM_WGTESTUI_TEST_DEPRECATED', 'Deprecated');
 \define('_AM_WGTESTUI_TEST_INFOTEXT', 'Info text');
+\define('_AM_WGTESTUI_TEST_TPLSOURCE', 'Template source');
 \define('_AM_WGTESTUI_TEST_DATETEST', 'Datetest');
 \define('_AM_WGTESTUI_TEST_DATECREATED', 'Datecreated');
 \define('_AM_WGTESTUI_TEST_SUBMITTER', 'Submitter');
@@ -86,7 +87,8 @@ require_once __DIR__ . '/common.php';
 \define('_AM_WGTESTUI_TEST_STATS_INFO', 'Number of information');
 \define('_AM_WGTESTUI_TEST_ANALYSIS_DONE', 'Result of analysis saved successfully. Number of analysis done: %s');
 \define('_AM_WGTESTUI_TEST_URL_OPEN', 'Open url in new tab');
-\define('_AM_WGTESTUI_TEST_RESET', 'Reset this test');
+\define('_AM_WGTESTUI_TEST_RESETONE', 'Reset this test');
+\define('_AM_WGTESTUI_TEST_RESETMODULE', 'Reset this module');
 // datatools
 \define('_AM_WGTESTUI_DATATOOLS_FORM_IMPORT', 'Import datatools');
 \define('_AM_WGTESTUI_DATATOOLS_FORM_IMPORT_SELECT', 'Select the datatool for import file into list of tests');

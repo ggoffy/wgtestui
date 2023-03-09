@@ -35,6 +35,9 @@ wgtestui_tests:
             name: infotext
             attributes: ' TEXT NOT NULL  '
         -
+            name: tplsource
+            attributes: ' VARCHAR(255) NOT NULL DEFAULT '''''''' '
+        -
             name: datetest
             attributes: ' INT(11) NOT NULL DEFAULT ''0'' '
         -

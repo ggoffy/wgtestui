@@ -61,6 +61,7 @@ if (!is_object($testsObj)) {
         $testsObj->setVar('resultcode', '0');
         $testsObj->setVar('resulttext', '');
         $testsObj->setVar('infotext', '');
+        $testsObj->setVar('tplsource', '');
         //$testsObj->setVar('datetest', \time());
         $testsObj->setVar('datecreated', \time());
         $testsObj->setVar('submitter', $GLOBALS['xoopsUser']->uid());
