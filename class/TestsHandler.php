@@ -187,14 +187,8 @@ class TestsHandler extends \XoopsPersistableObjectHandler
             }
         }
         // check for deprecated
-        $deprecated = [];
-        if (!$fatalErrorFound) {
-            $deprecated = $this->getXoDeprecated($htmlCode);
-        }
-        $errors = [];
-        if (!$fatalErrorFound) {
-            $errors = $this->getXoErrors($htmlCode);
-        }
+        $deprecated = $this->getXoDeprecated($htmlCode);
+        $errors = $this->getXoErrors($htmlCode);
 
         $statusText = $options['httpStatusCodes'][$returnedStatusCode];
         return ['statusCode' => $returnedStatusCode,

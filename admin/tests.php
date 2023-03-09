@@ -215,7 +215,7 @@ switch ($op) {
         }
         // Set Vars
 
-        $testModule = '';
+        $testModule = Request::getString('module');
         $modArr = explode('/', $testUrl);
         if (\count($modArr) > 1) {
             $testModule = $modArr[1];

@@ -108,8 +108,10 @@ class Tests extends \XoopsObject
         $form->setExtra('enctype="multipart/form-data"');
         // Form Text testUrl
         $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_URL, 'url', 100, 255, $this->getVar('url')));
-        // Tests Handler
-        $testsHandler = $helper->getHandler('Tests');
+        // Form Text testModule
+        if (!$isNew) {
+            $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_MODULE, 'module', 50, 255, $this->getVar('module')));
+        }
         // Form Select testArea
         $testAreaSelect = new \XoopsFormSelect(\_AM_WGTESTUI_TEST_AREA, 'area', $this->getVar('area'));
         $testAreaSelect->addOption(Constants::AREA_ADMIN,'ADMIN');
