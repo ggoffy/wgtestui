@@ -149,48 +149,57 @@ class TestsHandler extends \XoopsPersistableObjectHandler
         curl_setopt($ch, CURLOPT_HTTPHEADER, $options['header']);
 
         $htmlCode = \curl_exec($ch);
-        $returnedStatusCode = curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
-        curl_close($ch);
+        $returnedStatusCode = \curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
+        $effectiveUrl = \curl_getinfo($ch,  CURLINFO_EFFECTIVE_URL );
+        \curl_close($ch);
 
         if (200 == $returnedStatusCode) {
-            // check whether site seems to be loaded proper
-            $properLoad      = false;
-            $fatalErrorFound = false;
-            foreach ($patternsOk as $pattern) {
-                if(strpos($htmlCode, $pattern) > 0) {
-                    $properLoad = true;
-                    break;
-                }
-            }
-            if (!$properLoad) {
-                // search for error
+            if ($url === $effectiveUrl) {
+                // check whether site seems to be loaded proper
+                $properLoad = false;
                 $fatalErrorFound = false;
-                foreach ($patternsError as $pattern) {
-                    if(strpos($htmlCode, $pattern) > 0) {
-                        $fatalErrorFound = true;
+                foreach ($patternsOk as $pattern) {
+                    if (strpos($htmlCode, $pattern) > 0) {
+                        $properLoad = true;
                         break;
                     }
                 }
-                if($fatalErrorFound) {
-                    // search error description
-                    foreach ($patternsErrorDesc as $pattern) {
-                        preg_match($pattern, $htmlCode, $match);
-                        if (\is_array($match)) {
-                            $fatalError = $match[1];
+                if (!$properLoad) {
+                    // search for error
+                    $fatalErrorFound = false;
+                    foreach ($patternsError as $pattern) {
+                        if (strpos($htmlCode, $pattern) > 0) {
+                            $fatalErrorFound = true;
                             break;
                         }
                     }
-                    if ('' === $fatalError) {
-                        $fatalError = "pattern for fatal error found, but no error description";
+                    if ($fatalErrorFound) {
+                        // search error description
+                        foreach ($patternsErrorDesc as $pattern) {
+                            preg_match($pattern, $htmlCode, $match);
+                            if (\is_array($match)) {
+                                $fatalError = $match[1];
+                                break;
+                            }
+                        }
+                        if ('' === $fatalError) {
+                            $fatalError = "pattern for fatal error found, but no error description";
+                        }
                     }
                 }
             }
         }
-        // check for deprecated
-        $deprecated = $this->getXoDeprecated($htmlCode);
-        $errors = $this->getXoErrors($htmlCode);
+        if ($url === $effectiveUrl) {
+            // check for deprecated
+            $deprecated = $this->getXoDeprecated($htmlCode);
+            $errors = $this->getXoErrors($htmlCode);
+            $statusText = $options['httpStatusCodes'][$returnedStatusCode];
+        } else {
+            $returnedStatusCode = 307;
+            $effectiveUrl = str_replace(XOOPS_URL . '/', '', $effectiveUrl);
+            $statusText = sprintf(_AM_WGTESTUI_TEST_REDIRECTED, $effectiveUrl);
+        }
 
-        $statusText = $options['httpStatusCodes'][$returnedStatusCode];
         return ['statusCode' => $returnedStatusCode,
                 'statusText' => $statusText,
                 'fatalError' => $fatalError,

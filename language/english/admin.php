@@ -76,6 +76,7 @@ require_once __DIR__ . '/common.php';
 \define('_AM_WGTESTUI_TEST_DATETEST', 'Datetest');
 \define('_AM_WGTESTUI_TEST_DATECREATED', 'Datecreated');
 \define('_AM_WGTESTUI_TEST_SUBMITTER', 'Submitter');
+\define('_AM_WGTESTUI_TEST_REDIRECTED', 'Redirect to: %s');
 // others tests
 \define('_AM_WGTESTUI_TEST_DETAILS', 'Show test details');
 \define('_AM_WGTESTUI_TEST_RESULTS', 'Details result check of:');
