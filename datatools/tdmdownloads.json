@@ -1,0 +1,223 @@
+{
+    "dirname": "tdmdownloads",
+    "name": "TDMDownloads",
+    "version": "2.1.0",
+    "data": [
+        {
+            "url": "modules\/tdmdownloads\/upload.php?op=list&cat_cid=0",
+            "module": "tdmdownloads",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/index.php",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/testdata\/index.php?op=load",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/category.php",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/category.php?op=new_cat",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/category.php?op=edit_cat&downloadscat_cid=1",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/category.php?op=del_cat&downloadscat_cid=1",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/downloads.php",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/downloads.php?op=new_downloads",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/downloads.php?op=list&statut_display=0",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/downloads.php?op=view_downloads&downloads_lid=1",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/downloads.php?op=edit_downloads&downloads_lid=1",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/downloads.php?op=del_downloads&downloads_lid=1",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/broken.php",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/broken.php?op=del_brokendownloads&broken_id=1",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/modified.php",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/field.php",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/field.php?op=new_field",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/field.php?op=edit_field&fid=3",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/field.php?op=del_field&fid=3",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/import.php",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/import.php?op=form_mydownloads",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/import.php?op=form_wfdownloads",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/permissions.php",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/blocksadmin.php",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/blocksadmin.php?op=edit",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/blocksadmin.php?op=delete",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/admin\/about.php",
+            "module": "tdmdownloads",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/",
+            "module": "tdmdownloads",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/singlefile.php?cid=1&lid=1",
+            "module": "tdmdownloads",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/ratefile.php?lid=1",
+            "module": "tdmdownloads",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/modfile.php?lid=1",
+            "module": "tdmdownloads",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/brokenfile.php?lid=1",
+            "module": "tdmdownloads",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/viewcat.php?cid=1",
+            "module": "tdmdownloads",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/submit.php",
+            "module": "tdmdownloads",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/tdmdownloads\/search.php",
+            "module": "tdmdownloads",
+            "area": 2,
+            "type": 1
+        }
+    ]
+}

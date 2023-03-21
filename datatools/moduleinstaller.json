@@ -1,0 +1,49 @@
+{
+    "dirname": "moduleinstaller",
+    "name": "Installer",
+    "version": "1.5.1-Final",
+    "data": [
+        {
+            "url": "modules\/moduleinstaller\/admin\/index.php",
+            "module": "moduleinstaller",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/moduleinstaller\/admin\/install.php",
+            "module": "moduleinstaller",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/moduleinstaller\/admin\/update.php",
+            "module": "moduleinstaller",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/moduleinstaller\/admin\/uninstall.php",
+            "module": "moduleinstaller",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/moduleinstaller\/admin\/activate.php",
+            "module": "moduleinstaller",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/moduleinstaller\/admin\/deactivate.php",
+            "module": "moduleinstaller",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/moduleinstaller\/admin\/about.php",
+            "module": "moduleinstaller",
+            "area": 1,
+            "type": 1
+        }
+    ]
+}

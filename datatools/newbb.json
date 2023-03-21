@@ -1,0 +1,313 @@
+{
+    "dirname": "newbb",
+    "name": "Forum",
+    "version": "5.1.0",
+    "data": [
+        {
+            "url": "modules\/newbb\/admin\/index.php",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_cat_manager.php",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_cat_manager.php?op=mod",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_cat_manager.php?op=del",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_forum_manager.php",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_forum_manager.php?op=addforum&cat_id=1",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_forum_manager.php?op=moveforum&forum=1",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_forum_manager.php?op=mergeforum&forum=1",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_permissions.php",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_permissions.php?action=template",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_permissions.php?action=apply",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_permissions.php?action=default",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_permissions.php?op=category",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_permissions.php?op=access",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_permissions.php?op=view",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_permissions.php?op=post",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_permissions.php?op=reply",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_forum_reorder.php",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_forum_prune.php",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_report.php",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_report.php?item=processed",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_digest.php",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_digest.php?op=digest",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_votedata.php",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_type_manager.php",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_type_manager.php?op=forum",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_groupmod.php",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/admin_synchronization.php",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/blocksadmin.php",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/admin\/about.php",
+            "module": "newbb",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/list.topic.php?status=active",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/list.topic.php?status=pending",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/list.topic.php?status=deleted",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/viewpost.php?status=active",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/viewpost.php?status=pending",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/viewpost.php?status=deleted",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/moderate.php",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/search.php",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/viewpost.php?status=new",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/viewforum.php?forum=3",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/newtopic.php?forum=3",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/viewforum.php?forum=3&status=digest",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/viewtopic.php?topic_id=1",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/reply.php?topic_id=1",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/newtopic.php?forum=1",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/viewtopic.php?order=ASC&topic_id=1&forum=1&move=prev",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/viewtopic.php?order=ASC&topic_id=1&forum=1&move=next",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/reply.php?topic_id=2&order=ASC&quotedac=1&post_id=2",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/reply.php?topic_id=2&order=ASC&post_id=2",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/newbb\/delete.php?topic_id=2&order=ASC&post_id=2",
+            "module": "newbb",
+            "area": 2,
+            "type": 1
+        }
+    ]
+}

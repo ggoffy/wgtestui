@@ -1,0 +1,187 @@
+{
+    "dirname": "publisher",
+    "name": "Publisher",
+    "version": "1.08",
+    "data": [
+        {
+            "url": "modules\/publisher\/admin\/index.php",
+            "module": "publisher",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/testdata\/index.php?op=load",
+            "module": "publisher",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/admin\/main.php",
+            "module": "publisher",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/admin\/category.php",
+            "module": "publisher",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/admin\/category.php?op=mod",
+            "module": "publisher",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/admin\/category.php?op=del",
+            "module": "publisher",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/admin\/item.php",
+            "module": "publisher",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/admin\/item.php?op=mod",
+            "module": "publisher",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/admin\/item.php?op=del",
+            "module": "publisher",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/admin\/item.php?op=clone",
+            "module": "publisher",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/admin\/trello.php",
+            "module": "publisher",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/admin\/permissions.php",
+            "module": "publisher",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/admin\/blocksadmin.php?op=edit&bid=69",
+            "module": "publisher",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/admin\/blocksadmin.php?op=clone&bid=69",
+            "module": "publisher",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/admin\/mimetypes.php",
+            "module": "publisher",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/admin\/mimetypes.php?op=add&start=0&limit=15",
+            "module": "publisher",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/admin\/import.php",
+            "module": "publisher",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/admin\/clone.php",
+            "module": "publisher",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/admin\/feedback.php",
+            "module": "publisher",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/admin\/about.php",
+            "module": "publisher",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/",
+            "module": "publisher",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/category.php?categoryid=1",
+            "module": "publisher",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/item.php?itemid=14",
+            "module": "publisher",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/print.php?itemid=14",
+            "module": "publisher",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/submit.php?itemid=14",
+            "module": "publisher",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/submit.php?op=del&itemid=14",
+            "module": "publisher",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/submit.php?op=clone&itemid=14",
+            "module": "publisher",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/submit.php?op=add",
+            "module": "publisher",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/search.php",
+            "module": "publisher",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/publisher\/archive.php",
+            "module": "publisher",
+            "area": 2,
+            "type": 1
+        }
+    ]
+}
