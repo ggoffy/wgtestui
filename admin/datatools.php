@@ -59,10 +59,17 @@ switch ($op) {
             include XOOPS_ROOT_PATH . "/modules/$modGenerate/admin/menu.php";
             foreach ($adminmenu as $menuItem) {
                 $file = str_replace('admin/', '', $menuItem['link']);
-                $noNewDelete = ['index.php', 'feedback.php', 'about.php', 'clone.php', 'permissions.php'];
+                $noNew = ['index.php', 'feedback.php', 'about.php', 'clone.php', 'permissions.php', 'blocksadmin.php'];
+                $noDelete = ['index.php', 'feedback.php', 'about.php', 'clone.php', 'permissions.php'];
+                $useEdit = ['blocksadmin.php'];
                 $resultGenerate .= '<br>' . XOOPS_URL . '/modules/' . $modGenerate . '/admin/' . $file;
-                if (!\in_array($file, $noNewDelete)) {
+                if (!\in_array($file, $noNew)) {
                     $resultGenerate .= '<br>' . XOOPS_URL . '/modules/' . $modGenerate . '/admin/' . $file . '?op=new';
+                }
+                if (\in_array($file, $useEdit)) {
+                    $resultGenerate .= '<br>' . XOOPS_URL . '/modules/' . $modGenerate . '/admin/' . $file . '?op=edit';
+                }
+                if (!\in_array($file, $noDelete)) {
                     $resultGenerate .= '<br>' . XOOPS_URL . '/modules/' . $modGenerate . '/admin/' . $file . '?op=delete';
                 }
             }

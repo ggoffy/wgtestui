@@ -1,0 +1,247 @@
+{
+    "dirname": "extcal",
+    "name": "eXtCal",
+    "version": "2.40",
+    "data": [
+        {
+            "url": "modules\/extcal\/admin\/index.php",
+            "module": "extcal",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/testdata\/index.php?op=load",
+            "module": "extcal",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/admin\/cat.php",
+            "module": "extcal",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/admin\/cat.php?op=new",
+            "module": "extcal",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/admin\/cat.php?op=delete&cat_id=1",
+            "module": "extcal",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/admin\/event.php",
+            "module": "extcal",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/admin\/event.php?op=modify&event_id=14",
+            "module": "extcal",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/admin\/event.php?op=delete&event_id=14",
+            "module": "extcal",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/admin\/event.php?op=clone&event_id=14",
+            "module": "extcal",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/admin\/location.php",
+            "module": "extcal",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/admin\/location.php?op=edit_location&location_id=1",
+            "module": "extcal",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/admin\/location.php?op=delete_location&location_id=1",
+            "module": "extcal",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/admin\/permissions.php",
+            "module": "extcal",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/admin\/blocksadmin.php",
+            "module": "extcal",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/admin\/blocksadmin.php?op=edit",
+            "module": "extcal",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/admin\/blocksadmin.php?op=delete",
+            "module": "extcal",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/admin\/about.php",
+            "module": "extcal",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/view_calendar-month.php",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/view_calendar-week.php",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/view_calendar-month.php?year=2023&month=2",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/view_calendar-week.php?year=2023&month=3&day=13",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/view_year.php",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/view_year.php?year=2022",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/view_month.php",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/view_month.php?year=2023&month=2",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/view_week.php",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/view_week.php?year=2023&month=3&day=13",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/view_day.php",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/view_day.php?year=2023&month=3&day=20",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/view_agenda-week.php",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/view_agenda-week.php?year=2023&month=3&day=13",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/view_agenda-day.php",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/view_agenda-day.php?year=2023&month=3&day=20",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/view_search.php",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/view_new-event.php",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/event.php?event=2",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/location.php?location_id=1",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/view_new-event.php?event=2&action=edit",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/view_new-event.php?event=2&action=clone",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/extcal\/print.php?event=2",
+            "module": "extcal",
+            "area": 2,
+            "type": 1
+        }
+    ]
+}
