@@ -54,6 +54,7 @@ require_once __DIR__ . '/common.php';
 \define('_AM_WGTESTUI_EXEC_TEST_USER', 'Execute Tests USER');
 \define('_AM_WGTESTUI_RESET_TEST', 'Reset Test Results');
 \define('_AM_WGTESTUI_CLEAR_TEST', 'Clear Table Test');
+\define('_AM_WGTESTUI_LIST_ERRORS', 'List all errors');
 // Lists
 \define('_AM_WGTESTUI_LIST_TESTS', 'List of Tests');
 // ---------------- Admin Classes ----------------
@@ -71,6 +72,8 @@ require_once __DIR__ . '/common.php';
 \define('_AM_WGTESTUI_TEST_FATALERRORS', 'Fatal errors');
 \define('_AM_WGTESTUI_TEST_ERRORS', 'Errors');
 \define('_AM_WGTESTUI_TEST_DEPRECATED', 'Deprecated');
+\define('_AM_WGTESTUI_TEST_INVALIDSRCS', 'Invalid image sources');
+\define('_AM_WGTESTUI_TEST_PROPERLOADED', 'Proper loaded');
 \define('_AM_WGTESTUI_TEST_INFOTEXT', 'Info text');
 \define('_AM_WGTESTUI_TEST_TPLSOURCE', 'Template source');
 \define('_AM_WGTESTUI_TEST_DATETEST', 'Datetest');

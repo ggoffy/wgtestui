@@ -61,6 +61,8 @@ class Tests extends \XoopsObject
         $this->initVar('fatalerrors', \XOBJ_DTYPE_INT);
         $this->initVar('errors', \XOBJ_DTYPE_INT);
         $this->initVar('deprecated', \XOBJ_DTYPE_INT);
+        $this->initVar('invalidsrcs', \XOBJ_DTYPE_INT);
+        $this->initVar('properloaded', \XOBJ_DTYPE_INT);
         $this->initVar('infotext', \XOBJ_DTYPE_TXTAREA);
         $this->initVar('datetest', \XOBJ_DTYPE_INT);
         $this->initVar('datecreated', \XOBJ_DTYPE_INT);
@@ -148,6 +150,14 @@ class Tests extends \XoopsObject
         // Form Text testDeprecated
         if (!$isNew) {
             $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_DEPRECATED, 'deprecated', 50, 255, $this->getVar('deprecated')));
+        }
+        // Form Text testInvalidSrcs
+        if (!$isNew) {
+            $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_INVALIDSRCS, 'invalidsrcs', 50, 255, $this->getVar('invalidsrcs')));
+        }
+        // Form Text testProperLoaded
+        if (!$isNew) {
+            $form->addElement(new \XoopsFormText(\_AM_WGTESTUI_TEST_PROPERLOADED, 'properloaded', 50, 255, $this->getVar('properloaded')));
         }
         // Form Editor TextArea testInfotext
         if (!$isNew) {
@@ -282,6 +292,18 @@ class Tests extends \XoopsObject
         $filterdSelect->addOption(1,'> 0');
         $filterdSelect->setExtra(" onchange='submit()' ");
         $form->addElement($filterdSelect);
+        // Form Text testInvalidSrcs
+        $filterisSelect = new \XoopsFormSelect(\_AM_WGTESTUI_TEST_INVALIDSRCS, 'filter_is', $this->getVar('invalidsrcs'));
+        $filterisSelect->addOption(0,\_ALL);
+        $filterisSelect->addOption(1,'> 0');
+        $filterisSelect->setExtra(" onchange='submit()' ");
+        $form->addElement($filterisSelect);
+        // Form Text testProperLoaded
+        $filterplSelect = new \XoopsFormSelect(\_AM_WGTESTUI_TEST_PROPERLOADED, 'filter_pl', $this->getVar('properloaded'));
+        $filterplSelect->addOption(0,\_ALL);
+        $filterplSelect->addOption(1,'> 0');
+        $filterplSelect->setExtra(" onchange='submit()' ");
+        $form->addElement($filterplSelect);
 
         // To Save
         $form->addElement(new \XoopsFormHidden('op', 'list'));

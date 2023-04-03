@@ -4,6 +4,12 @@
     "version": "2.1.6-Stable",
     "data": [
         {
+            "url": "modules\/system\/admin.php",
+            "module": "system",
+            "area": 1,
+            "type": 1
+        },
+        {
             "url": "modules\/system\/admin.php?fct=modulesadmin",
             "module": "system",
             "area": 1,

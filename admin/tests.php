@@ -38,6 +38,8 @@ $filterRc   = Request::getInt('filter_rc');
 $filterFe   = Request::getInt('filter_fe');
 $filterE    = Request::getInt('filter_e');
 $filterD    = Request::getInt('filter_d');
+$filterIs   = Request::getInt('filter_is');
+$filterPl   = Request::getInt('filter_pl');
 $GLOBALS['xoopsTpl']->assign('start', $start);
 $GLOBALS['xoopsTpl']->assign('limit', $limit);
 
@@ -70,6 +72,7 @@ switch ($op) {
         $adminObject->addItemButton(\_AM_WGTESTUI_RESET_TEST, 'tests.php?op=reset_all', 'delete');
         $adminObject->addItemButton(\_AM_WGTESTUI_CLEAR_TEST, 'tests.php?op=delete_all', 'delete');
         $adminObject->addItemButton(\_AM_WGTESTUI_STATISTICS, 'tests.php?op=statistics', 'stats');
+        $adminObject->addItemButton(\_AM_WGTESTUI_LIST_ERRORS, 'tests.php?op=list_errors', 'alert');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         $testsCountTotal = $testsHandler->getCount();
         $crTests = new \CriteriaCompo();
@@ -90,6 +93,12 @@ switch ($op) {
         }
         if ($filterD > 0) {
             $crTests->add(new \Criteria('deprecated', 0, '>'));
+        }
+        if ($filterIs > 0) {
+            $crTests->add(new \Criteria('invalidsrcs', 0, '>'));
+        }
+        if ($filterPl > 0) {
+            $crTests->add(new \Criteria('properloaded', 0, '>'));
         }
         $testsCount = $testsHandler->getCount($crTests);
         $GLOBALS['xoopsTpl']->assign('tests_count', $testsCount);
@@ -122,8 +131,59 @@ switch ($op) {
             $testsObjF->setVar('fatalerrors', $filterFe);
             $testsObjF->setVar('errors', $filterE);
             $testsObjF->setVar('deprecated', $filterD);
+            $testsObjF->setVar('invalidsrcs', $filterIs);
+            $testsObjF->setVar('properloaded', $filterPl);
             $form = $testsObjF->getFormTestsFilter();
             $GLOBALS['xoopsTpl']->assign('form_filter', $form->render());
+        }
+        break;
+    case 'list_errors':
+        $templateMain = 'wgtestui_admin_tests.tpl';
+        $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('tests.php'));
+        $adminObject->addItemButton(\_AM_WGTESTUI_LIST_TESTS, 'tests.php', 'list');
+        $adminObject->addItemButton(\_AM_WGTESTUI_ADD_TEST, 'tests.php?op=new');
+        $adminObject->addItemButton(\_AM_WGTESTUI_EXEC_TEST_ADMIN, 'tests.php?op=execute_admin', 'exec');
+        $adminObject->addItemButton(\_AM_WGTESTUI_EXEC_TEST_USER, 'tests.php?op=execute_user', 'exec');
+        $adminObject->addItemButton(\_AM_WGTESTUI_EXEC_TEST, 'tests.php?op=execute', 'exec');
+        $adminObject->addItemButton(\_AM_WGTESTUI_RESET_TEST, 'tests.php?op=reset_all', 'delete');
+        $adminObject->addItemButton(\_AM_WGTESTUI_CLEAR_TEST, 'tests.php?op=delete_all', 'delete');
+        $adminObject->addItemButton(\_AM_WGTESTUI_STATISTICS, 'tests.php?op=statistics', 'stats');
+        $adminObject->addItemButton(\_AM_WGTESTUI_LIST_ERRORS, 'tests.php?op=list_errors', 'alert');
+        $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
+
+        $GLOBALS['xoopsTpl']->assign('wgtestui_url', \WGTESTUI_URL);
+        $GLOBALS['xoopsTpl']->assign('wgtestui_upload_url', \WGTESTUI_UPLOAD_URL);
+        $GLOBALS['xoopsTpl']->assign('wgtestui_icons_url_16', \WGTESTUI_ICONS_URL . '/16');
+        $GLOBALS['xoopsTpl']->assign('wgtestui_icons_url_32', \WGTESTUI_ICONS_URL . '/32');
+
+        $crTests = new \CriteriaCompo();
+        $crTests->add(new \Criteria('resultcode', 200, '<>'), 'OR');
+        $crTests->add(new \Criteria('fatalerrors', 0, '>'), 'OR');
+        $crTests->add(new \Criteria('errors', 0, '>'), 'OR');
+        $crTests->add(new \Criteria('deprecated', 0, '>'), 'OR');
+        $crTests->add(new \Criteria('invalidsrcs', 0, '>'), 'OR');
+        $crTests->add(new \Criteria('properloaded', 0), 'OR');
+        $testsCount = $testsHandler->getCount($crTests);
+        $GLOBALS['xoopsTpl']->assign('tests_count', $testsCount);
+        // Table view tests
+        if ($testsCount > 0) {
+            $crTests->setStart($start);
+            $crTests->setLimit($limit);
+            $testsAll = $testsHandler->getAll($crTests);
+            foreach (\array_keys($testsAll) as $i) {
+                $test = $testsAll[$i]->getValuesTests();
+                $GLOBALS['xoopsTpl']->append('errors_list', $test);
+                unset($test);
+            }
+            // Display Navigation
+            if ($testsCount > $limit) {
+                require_once \XOOPS_ROOT_PATH . '/class/pagenav.php';
+                $pagenav = new \XoopsPageNav($testsCount, $limit, $start, 'start', 'op=list_errors&amp;limit=' . $limit);
+                $GLOBALS['xoopsTpl']->assign('pagenav', $pagenav->renderNav());
+            }
+
+        } else {
+            $GLOBALS['xoopsTpl']->assign('error', \_AM_WGTESTUI_THEREARENT_TESTS);
         }
         break;
     case 'statistics':
@@ -132,6 +192,13 @@ switch ($op) {
         $templateMain = 'wgtestui_admin_tests.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('tests.php'));
         $adminObject->addItemButton(\_AM_WGTESTUI_LIST_TESTS, 'tests.php', 'list');
+        $adminObject->addItemButton(\_AM_WGTESTUI_ADD_TEST, 'tests.php?op=new');
+        $adminObject->addItemButton(\_AM_WGTESTUI_EXEC_TEST_ADMIN, 'tests.php?op=execute_admin', 'exec');
+        $adminObject->addItemButton(\_AM_WGTESTUI_EXEC_TEST_USER, 'tests.php?op=execute_user', 'exec');
+        $adminObject->addItemButton(\_AM_WGTESTUI_EXEC_TEST, 'tests.php?op=execute', 'exec');
+        $adminObject->addItemButton(\_AM_WGTESTUI_RESET_TEST, 'tests.php?op=reset_all', 'delete');
+        $adminObject->addItemButton(\_AM_WGTESTUI_CLEAR_TEST, 'tests.php?op=delete_all', 'delete');
+        $adminObject->addItemButton(\_AM_WGTESTUI_LIST_ERRORS, 'tests.php?op=list_errors', 'alert');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         $GLOBALS['xoopsTpl']->assign('wgtestui_icons_url_16', \WGTESTUI_ICONS_URL . '/16');
 
@@ -143,6 +210,8 @@ switch ($op) {
             $sql .= 'sum(`fatalerrors`) as count_fe, ';
             $sql .= 'sum(`errors`) as count_e, ';
             $sql .= 'sum(`deprecated`) as count_d, ';
+            $sql .= 'sum(`invalidsrcs`) as count_is, ';
+            $sql .= 'sum(`properloaded`) as count_pl, ';
             $sql .= 'sum(IF(STRCMP("",`infotext`) = 0, 0, 1)) as countinfo, ';
             $sql .= '`tplsource` ';
             $sql .= 'FROM `'  . $GLOBALS['xoopsDB']->prefix('wgtestui_tests') . '` GROUP BY `module`, `tplsource`';
@@ -160,9 +229,12 @@ switch ($op) {
                     'fatalerrors' => $row[3],
                     'errors' => $row[4],
                     'deprecated' => $row[5],
-                    'info' => $row[6],
-                    'tplsource' => $row[7],
-                    'show_details' => ((int)$row[1] !== (int)$row[2] || (int)$row[3] > 0 || (int)$row[4] > 0 || (int)$row[5] > 0)
+                    'invalidsrcs' => $row[6],
+                    'properloaded' => $row[7],
+                    'properloadedok' => ((int)$row[1] === (int)$row[7]),
+                    'info' => (string)$row[8],
+                    'tplsource' => $row[9],
+                    'show_details' => ((int)$row[1] !== (int)$row[2] || (int)$row[3] > 0 || (int)$row[4] > 0 || (int)$row[5] > 0 || (int)$row[6] > 0  || (int)$row[7] > 0)
                 ];
             }
             if (\count($statistics) > 0) {
@@ -263,6 +335,11 @@ switch ($op) {
             $testsObj->setVar('resulttext', '');
             $testsObj->setVar('infotext', '');
             $testsObj->setVar('tplsource', '');
+            $testsObj->setVar('fatalerrors', 0);
+            $testsObj->setVar('errors', 0);
+            $testsObj->setVar('deprecated', 0);
+            $testsObj->setVar('invalidsrcs', 0);
+            $testsObj->setVar('properloaded', 0);
             $testsObj->setVar('datetest', 0);
             // Insert Data
             if ($testsHandler->insert($testsObj)) {
@@ -336,10 +413,15 @@ switch ($op) {
         }
         $testsHandler->updateAll('resultcode', 0, $crTests, true);
         $testsHandler->updateAll('resulttext', '', $crTests, true);
+        $testsHandler->updateAll('fatalerrors', 0, $crTests, true);
+        $testsHandler->updateAll('errors', 0, $crTests, true);
+        $testsHandler->updateAll('deprecated', 0, $crTests, true);
+        $testsHandler->updateAll('invalidsrcs', 0, $crTests, true);
+        $testsHandler->updateAll('properloaded', 0, $crTests, true);
         $testsHandler->updateAll('infotext', '', $crTests, true);
         $testsHandler->updateAll('tplsource', '', $crTests, true);
         $testsHandler->updateAll('datetest', 0, $crTests, true);
-        \redirect_header('tests.php', 3, \_AM_WGTESTUI_FORM_DELETE_OK);
+        \redirect_header('tests.php?op=statistics', 3, \_AM_WGTESTUI_FORM_DELETE_OK);
         break;
     case 'execute':
     case 'execute_admin':
@@ -394,6 +476,9 @@ switch ($op) {
             foreach (\array_keys($testsAll) as $i) {
                 $test = $testsAll[$i]->getValuesTests();
                 $testUrl    = $test['url'];
+                if ('modules/wgsimpleacc/admin/feedback.php' == $testUrl) {
+                    //echo 'ok';
+                }
                 $testModule = $test['module'];
                 $statusCode = 0;
                 $statusText = 'skipped';
@@ -401,19 +486,22 @@ switch ($op) {
                 $errors     = [];
                 $deprecated = [];
                 if ('xoopscore' === $testModule || \array_key_exists($testModule, $moduleslist)) {
-                    $resCheck = $testsHandler->checkURL(XOOPS_URL . '/' . $testUrl, $options);
-                    $statusCode = $resCheck['statusCode'];
-                    $statusText = $resCheck['statusText'];
-                    $errors     = $resCheck['errors'];
-                    $deprecated = $resCheck['deprecated'];
-                    $fatalError = $resCheck['fatalError'];
-                    $tplSource  = $GLOBALS['xoopsConfig']['theme_set'];
-                    $themeFolder = XOOPS_ROOT_PATH . '/themes/' . $GLOBALS['xoopsConfig']['theme_set'] . '/modules/' . $testModule;
+                    $resCheck     = $testsHandler->checkURL(XOOPS_URL . '/' . $testUrl, $options);
+                    $statusCode   = $resCheck['statusCode'];
+                    $statusText   = $resCheck['statusText'];
+                    $errors       = $resCheck['errors'];
+                    $deprecated   = $resCheck['deprecated'];
+                    $fatalError   = $resCheck['fatalError'];
+                    $invalidSrcs  = $resCheck['invalidsrcs'];
+                    $properLoaded = $resCheck['properloaded'];
+                    $tplSource    = $GLOBALS['xoopsConfig']['theme_set'];
+                    $themeFolder  = XOOPS_ROOT_PATH . '/themes/' . $GLOBALS['xoopsConfig']['theme_set'] . '/modules/' . $testModule;
                     if (!file_exists($themeFolder)) {
                         $tplSource = 'module tpls';
                     }
                     $countAnalysis++;
                 }
+
                 $infoText = '';
                 if ('' !== $fatalError) {
                     $infoText .= $fatalError . PHP_EOL;
@@ -428,6 +516,11 @@ switch ($op) {
                         $infoText .= $line . PHP_EOL;
                     }
                 }
+                if (\count($invalidSrcs) > 0) {
+                    foreach ($invalidSrcs as $line) {
+                        $infoText .= $line . PHP_EOL;
+                    }
+                }
                 $testsObj = $testsHandler->get($i);
                 // Set Vars
                 $testsObj->setVar('resultcode', $statusCode);
@@ -435,6 +528,8 @@ switch ($op) {
                 $testsObj->setVar('fatalerrors', '' !== $fatalError ? 1 : 0);
                 $testsObj->setVar('errors', \count($errors));
                 $testsObj->setVar('deprecated', \count($deprecated));
+                $testsObj->setVar('invalidsrcs', \count($invalidSrcs));
+                $testsObj->setVar('properloaded', $properLoaded);
                 $testsObj->setVar('infotext', $infoText);
                 $testsObj->setVar('tplsource', $tplSource);
                 $testsObj->setVar('datetest', \time());

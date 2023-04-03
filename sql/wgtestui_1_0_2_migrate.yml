@@ -1,0 +1,58 @@
+wgtestui_tests:
+    options: 'ENGINE=InnoDB'
+    columns: 
+        -
+            name: id
+            attributes: ' INT(8) UNSIGNED NOT NULL AUTO_INCREMENT '
+        -
+            name: url
+            attributes: ' VARCHAR(500) NOT NULL DEFAULT '''''''' '
+        -
+            name: module
+            attributes: ' VARCHAR(255) NOT NULL DEFAULT '''''''' '
+        -
+            name: area
+            attributes: ' INT(10) NOT NULL DEFAULT ''0'' '
+        -
+            name: type
+            attributes: ' INT(10) NOT NULL DEFAULT ''0'' '
+        -
+            name: resultcode
+            attributes: ' INT(10) NOT NULL DEFAULT ''0'' '
+        -
+            name: resulttext
+            attributes: ' VARCHAR(255) NOT NULL DEFAULT '''''''' '
+        -
+            name: fatalerrors
+            attributes: ' INT(10) NOT NULL DEFAULT ''0'' '
+        -
+            name: errors
+            attributes: ' INT(10) NOT NULL DEFAULT ''0'' '
+        -
+            name: deprecated
+            attributes: ' INT(10) NOT NULL DEFAULT ''0'' '
+        -
+            name: invalidsrcs
+            attributes: ' INT(10) NOT NULL DEFAULT ''0'' '
+        -
+            name: properloaded
+            attributes: ' INT(1) NOT NULL DEFAULT ''0'' '
+        -
+            name: infotext
+            attributes: ' TEXT NOT NULL  '
+        -
+            name: tplsource
+            attributes: ' VARCHAR(255) NOT NULL DEFAULT '''''''' '
+        -
+            name: datetest
+            attributes: ' INT(11) NOT NULL DEFAULT ''0'' '
+        -
+            name: datecreated
+            attributes: ' INT(11) NOT NULL DEFAULT ''0'' '
+        -
+            name: submitter
+            attributes: ' INT(10) NOT NULL DEFAULT ''0'' '
+    keys:
+        PRIMARY:
+            columns: id
+            unique: true

@@ -129,7 +129,11 @@ class TestsHandler extends \XoopsPersistableObjectHandler
      */
     public function checkURL($url, array $options = []) {
 
-        $fatalError = '';
+        $fatalError   = '';
+        $deprecated   = [];
+        $errors       = [];
+        $invalidSrc   = [];
+        $properLoaded = 0;
 
         $patternsOk        = $options['patterns_ok'];
         $patternsError     = $options['patterns_fatalerror'];
@@ -147,64 +151,63 @@ class TestsHandler extends \XoopsPersistableObjectHandler
             curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
         }
         curl_setopt($ch, CURLOPT_HTTPHEADER, $options['header']);
-
         $htmlCode = \curl_exec($ch);
         $returnedStatusCode = \curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
         $effectiveUrl = \curl_getinfo($ch,  CURLINFO_EFFECTIVE_URL );
         \curl_close($ch);
+        unset($ch);
 
         if (200 == $returnedStatusCode) {
             if ($url === $effectiveUrl) {
                 // check whether site seems to be loaded proper
-                $properLoad = false;
                 $fatalErrorFound = false;
                 foreach ($patternsOk as $pattern) {
                     if (strpos($htmlCode, $pattern) > 0) {
-                        $properLoad = true;
+                        $properLoaded = 1;
                         break;
                     }
                 }
-                if (!$properLoad) {
-                    // search for error
-                    $fatalErrorFound = false;
-                    foreach ($patternsError as $pattern) {
-                        if (strpos($htmlCode, $pattern) > 0) {
-                            $fatalErrorFound = true;
+                // search for error
+                foreach ($patternsError as $pattern) {
+                    if (strpos($htmlCode, $pattern) > 0) {
+                        $fatalErrorFound = true;
+                        break;
+                    }
+                }
+                if ($fatalErrorFound) {
+                    // search error description
+                    foreach ($patternsErrorDesc as $pattern) {
+                        preg_match($pattern, $htmlCode, $match);
+                        if (\is_array($match)) {
+                            $fatalError = $match[1];
                             break;
                         }
                     }
-                    if ($fatalErrorFound) {
-                        // search error description
-                        foreach ($patternsErrorDesc as $pattern) {
-                            preg_match($pattern, $htmlCode, $match);
-                            if (\is_array($match)) {
-                                $fatalError = $match[1];
-                                break;
-                            }
-                        }
-                        if ('' === $fatalError) {
-                            $fatalError = "pattern for fatal error found, but no error description";
-                        }
+                    if ('' === $fatalError) {
+                        $fatalError = "pattern for fatal error found, but no error description";
                     }
                 }
+                // check for deprecated
+                $deprecated = $this->getXoDeprecated($htmlCode);
+                $errors     = $this->getXoErrors($htmlCode);
+                $statusText = $options['httpStatusCodes'][$returnedStatusCode];
+                $invalidSrc = $this->getInvalidImgSrc($htmlCode, $url);
+            } else { //$url !== $effectiveUrl
+                $returnedStatusCode = 307;
+                $effectiveUrl = str_replace(XOOPS_URL . '/', '', $effectiveUrl);
+                $statusText = sprintf(_AM_WGTESTUI_TEST_REDIRECTED, $effectiveUrl);
             }
-        }
-        if ($url === $effectiveUrl) {
-            // check for deprecated
-            $deprecated = $this->getXoDeprecated($htmlCode);
-            $errors = $this->getXoErrors($htmlCode);
-            $statusText = $options['httpStatusCodes'][$returnedStatusCode];
         } else {
-            $returnedStatusCode = 307;
-            $effectiveUrl = str_replace(XOOPS_URL . '/', '', $effectiveUrl);
-            $statusText = sprintf(_AM_WGTESTUI_TEST_REDIRECTED, $effectiveUrl);
+            $statusText = $options['httpStatusCodes'][$returnedStatusCode];
         }
 
-        return ['statusCode' => $returnedStatusCode,
-                'statusText' => $statusText,
-                'fatalError' => $fatalError,
-                'deprecated' => $deprecated,
-                'errors'     => $errors,
+        return ['statusCode'   => $returnedStatusCode,
+                'statusText'   => $statusText,
+                'fatalError'   => $fatalError,
+                'deprecated'   => $deprecated,
+                'errors'       => $errors,
+                'invalidsrcs'  => $invalidSrc,
+                'properloaded' => $properLoaded,
             ];
 
     }
@@ -287,6 +290,7 @@ class TestsHandler extends \XoopsPersistableObjectHandler
     /**
      * function to return infos about deprecated functions
      *
+     * @param $htmlCode
      * @return array
      */
     public function getXoDeprecated($htmlCode) {
@@ -310,6 +314,7 @@ class TestsHandler extends \XoopsPersistableObjectHandler
     /**
      * function to return infos about errors (non-fatal), warnings and notices
      *
+     * @param $htmlCode
      * @return array
      */
     public function getXoErrors($htmlCode) {
@@ -328,6 +333,39 @@ class TestsHandler extends \XoopsPersistableObjectHandler
         }
 
         return $errors;
+    }
+
+    /**
+     * function to return infos about invalid image sources
+     *
+     * @param $htmlCode
+     * @param $url
+     * @return array
+     */
+    public function getInvalidImgSrc($htmlCode, $url) {
+
+        $images = [];
+
+        $dom = new \DOMDocument();
+        $dom->loadHTML($htmlCode);
+        $counter = 0;
+        foreach ($dom->getElementsByTagName('img') as $i => $img) {
+            $src =  $img->getAttribute('src');
+            if (\substr($src, 0, strlen(XOOPS_URL)) === XOOPS_URL) {
+                //replace url by root
+                $file = \str_replace(XOOPS_URL, XOOPS_ROOT_PATH, $src);
+            } else {
+                $urlNew = \str_replace(XOOPS_URL, XOOPS_ROOT_PATH, $url);
+                $path = \substr($urlNew, 0, \strrpos($urlNew, '/'));
+                $file = $path . '/' . $src;
+            }
+            if (!\is_file($file)) {
+                $counter++;
+                $images[] = $counter . ') ' . $src . ' (file:' . $file . ')';
+            }
+        }
+
+        return $images;
     }
 
 }

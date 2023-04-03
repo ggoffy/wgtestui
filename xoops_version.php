@@ -27,10 +27,10 @@ $moduleDirNameUpper = \mb_strtoupper($moduleDirName);
 // ------------------- Informations ------------------- //
 $modversion = [
     'name'                => \_MI_WGTESTUI_NAME,
-    'version'             => '1.0.1',
+    'version'             => '1.0.2',
     'module_status'       => 'RC1',
-    'release'             => '2023-03-01', // format: yyyy-mm-dd
-    'release_date'        => '2023/03/01', // format: yyyy/mm/dd
+    'release'             => '2023-04-02', // format: yyyy-mm-dd
+    'release_date'        => '2023/04/02', // format: yyyy/mm/dd
     'description'         => \_MI_WGTESTUI_DESC,
     'author'              => 'Goffy - XOOPS Development Team',
     'author_mail'         => 'webmaster@wedega.com',
