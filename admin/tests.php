@@ -475,16 +475,14 @@ switch ($op) {
             $testsAll = $testsHandler->getAll($crTests);
             foreach (\array_keys($testsAll) as $i) {
                 $test = $testsAll[$i]->getValuesTests();
-                $testUrl    = $test['url'];
-                if ('modules/wgsimpleacc/admin/feedback.php' == $testUrl) {
-                    //echo 'ok';
-                }
-                $testModule = $test['module'];
-                $statusCode = 0;
-                $statusText = 'skipped';
-                $fatalError = '';
-                $errors     = [];
-                $deprecated = [];
+                $testUrl     = $test['url'];
+                $testModule  = $test['module'];
+                $statusCode  = 0;
+                $statusText  = 'skipped';
+                $fatalError  = '';
+                $errors      = [];
+                $deprecated  = [];
+                $invalidSrcs = [];
                 if ('xoopscore' === $testModule || \array_key_exists($testModule, $moduleslist)) {
                     $resCheck     = $testsHandler->checkURL(XOOPS_URL . '/' . $testUrl, $options);
                     $statusCode   = $resCheck['statusCode'];
