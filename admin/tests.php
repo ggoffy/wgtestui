@@ -28,7 +28,7 @@ use XoopsModules\Wgtestui\Common;
 
 require __DIR__ . '/header.php';
 // Get all request values
-$op         = Request::getCmd('op', 'list');
+$op         = Request::getCmd('op', 'statistics');
 $testId     = Request::getInt('id');
 $start      = Request::getInt('start');
 $limit      = Request::getInt('limit', $helper->getConfig('adminpager'));
@@ -45,7 +45,6 @@ $GLOBALS['xoopsTpl']->assign('limit', $limit);
 
 switch ($op) {
     case 'list':
-    default:
         // Define Stylesheet
         $GLOBALS['xoTheme']->addStylesheet($style, null);
         // css and js for showing dialog
@@ -187,6 +186,7 @@ switch ($op) {
         }
         break;
     case 'statistics':
+    default:
         // Define Stylesheet
         $GLOBALS['xoTheme']->addStylesheet($style, null);
         $templateMain = 'wgtestui_admin_tests.tpl';
@@ -385,22 +385,32 @@ switch ($op) {
         }
         break;
     case 'delete_all':
+    case 'delete_module':
         $templateMain = 'wgtestui_admin_tests.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('tests.php'));
-
+        $module = Request::getString('module');
         if (isset($_REQUEST['ok']) && 1 === (int)$_REQUEST['ok']) {
             if (!$GLOBALS['xoopsSecurity']->check()) {
                 \redirect_header('tests.php', 3, \implode(', ', $GLOBALS['xoopsSecurity']->getErrors()));
             }
-            if ($testsHandler->deleteAll()) {
+            $critModule = new CriteriaCompo();
+            if ('delete_module' === $op) {
+                $critModule->add(new Criteria('module', $module));
+            }
+            if ($testsHandler->deleteAll($critModule)) {
                 \redirect_header('tests.php', 3, \_AM_WGTESTUI_FORM_DELETE_OK);
             } else {
-                $GLOBALS['xoopsTpl']->assign('error', $testsObj->getHtmlErrors());
+                $GLOBALS['xoopsTpl']->assign('error', $testsHandler->getHtmlErrors());
             }
         } else {
+            if ('delete_all' === $op) {
+                $confirmText = \_AM_WGTESTUI_FORM_DELETE_TABLEALL;
+            } else {
+                $confirmText = \sprintf(_AM_WGTESTUI_FORM_DELETE_MODULE, $module);
+            }
             $customConfirm = new Common\Confirm(
-                ['ok' => 1, 'op' => 'delete_all'],
-                $_SERVER['REQUEST_URI'], \_AM_WGTESTUI_FORM_DELETE_TABLEALL);
+                ['ok' => 1, 'op' => $op],
+                $_SERVER['REQUEST_URI'], $confirmText);
             $form = $customConfirm->getFormConfirm();
             $GLOBALS['xoopsTpl']->assign('form', $form->render());
         }

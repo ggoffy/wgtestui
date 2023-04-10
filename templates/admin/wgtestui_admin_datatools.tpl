@@ -1,7 +1,7 @@
 <!-- Header -->
 <{include file='db:wgtestui_admin_header.tpl' }>
 
-<{if $error|default:''}>
+<{if isset($error)}>
     <div class="errorMsg"><strong><{$error|default:false}></strong></div>
     <div class="wgt-divider"></div>
 <{/if}>
