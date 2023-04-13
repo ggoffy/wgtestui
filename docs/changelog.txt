@@ -4,6 +4,7 @@
  - added check for invalid image sources (goffy)
  - added proper loaded info (goffy)
  - fixed bug with count (mamba/goffy)
+ - implemented coding tools smarty 3 (goffy)
 
 ==============================================================
 1.0.1 RC1 [2023/03/01]

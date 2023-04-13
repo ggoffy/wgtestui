@@ -43,6 +43,11 @@ $adminmenu[] = [
     'icon' => 'assets/icons/32/datatools.png',
 ];
 $adminmenu[] = [
+    'title' => \_MI_WGTESTUI_ADMENU6,
+    'link' => 'admin/tools.php',
+    'icon' => $sysPathIcon32.'/exec.png',
+];
+$adminmenu[] = [
     'title' => \_MI_WGTESTUI_ADMENU3,
     'link' => 'admin/clone.php',
     'icon' => $sysPathIcon32.'/page_copy.png',

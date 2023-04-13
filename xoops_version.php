@@ -82,6 +82,7 @@ $modversion['templates'] = [
     ['file' => 'wgtestui_admin_examples.tpl', 'description' => '', 'type' => 'admin'],
     ['file' => 'wgtestui_admin_examples_err.tpl', 'description' => '', 'type' => 'admin'],
     ['file' => 'wgtestui_admin_datatools.tpl', 'description' => '', 'type' => 'admin'],
+    ['file' => 'wgtestui_admin_tools.tpl', 'description' => '', 'type' => 'admin'],
     // User templates
     ['file' => 'wgtestui_header.tpl', 'description' => ''],
     ['file' => 'wgtestui_index.tpl', 'description' => ''],

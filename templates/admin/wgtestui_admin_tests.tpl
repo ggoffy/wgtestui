@@ -168,7 +168,7 @@
         <{/if}>
     </table>
     <div class="clear">&nbsp;</div>
-    <{if isset($pagenav)}>
+    <{if !empty($pagenav)}>
         <div class="xo-pagenav floatright"><{$pagenav|default:false}></div>
         <div class="clear spacer"></div>
     <{/if}>
@@ -243,16 +243,16 @@
         <{/if}>
     </table>
     <div class="clear">&nbsp;</div>
-    <{if isset($pagenav)}>
+    <{if !empty($pagenav)}>
         <div class="xo-pagenav floatright"><{$pagenav|default:false}></div>
         <div class="clear spacer"></div>
     <{/if}>
 <{/if}>
 
-<{if isset($form)}>
+<{if !empty($form)}>
     <{$form|default:false}>
 <{/if}>
-<{if isset($error)}>
+<{if !empty($error)}>
     <div class="errorMsg"><strong><{$error|default:false}></strong></div>
 <{/if}>
 

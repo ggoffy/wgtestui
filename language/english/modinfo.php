@@ -32,6 +32,7 @@ require_once __DIR__ . '/common.php';
 \define('_MI_WGTESTUI_ADMENU3', 'Clone');
 \define('_MI_WGTESTUI_ADMENU4', 'Feedback');
 \define('_MI_WGTESTUI_ADMENU5', 'Datatools');
+\define('_MI_WGTESTUI_ADMENU6', 'Coding tools');
 \define('_MI_WGTESTUI_ABOUT', 'About');
 // ---------------- Admin Nav ----------------
 \define('_MI_WGTESTUI_ADMIN_PAGER', 'Admin pager');

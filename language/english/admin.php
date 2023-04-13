@@ -55,6 +55,7 @@ require_once __DIR__ . '/common.php';
 \define('_AM_WGTESTUI_RESET_TEST', 'Reset Test Results');
 \define('_AM_WGTESTUI_CLEAR_TEST', 'Clear Table Test');
 \define('_AM_WGTESTUI_LIST_ERRORS', 'List all errors');
+\define('_AM_WGTESTUI_EXEC_CODETOOL', 'Execute coding tool');
 // Lists
 \define('_AM_WGTESTUI_LIST_TESTS', 'List of Tests');
 // ---------------- Admin Classes ----------------
@@ -141,6 +142,11 @@ require_once __DIR__ . '/common.php';
 \define('_AM_WGTESTUI_CLONE_CONGRAT', 'Congratulations! %s was sucessfully created!<br>You may want to make changes in language files.');
 \define('_AM_WGTESTUI_CLONE_IMAGEFAIL', 'Attention, we failed creating the new module logo. Please consider modifying assets/images/logo_module.png manually!');
 \define('_AM_WGTESTUI_CLONE_FAIL', 'Sorry, we failed in creating the new clone. Maybe you need to temporally set write permissions (CHMOD 777) to modules folder and try again.');
+// helpers
+\define('_AM_WGTESTUI_TOOLS_SMARTY3', 'Update code to smarty 3');
+\define('_AM_WGTESTUI_TOOLS_ATT_OVERWRITE', "Pay attention: files in '%s' will be immediately overwriten");
+\define('_AM_WGTESTUI_TOOLS_ATT_MIMETYPES', "Updating will be applied on following file types: %s");
+\define('_AM_WGTESTUI_TOOLS_DONE1', "Updating files done");
 // ---------------- Admin Others ----------------
 \define('_AM_WGTESTUI_ABOUT_MAKE_DONATION', 'Submit');
 \define('_AM_WGTESTUI_SUPPORT_FORUM', 'Support Forum');
