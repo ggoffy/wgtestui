@@ -301,7 +301,7 @@ class Tests extends \XoopsObject
         // Form Text testProperLoaded
         $filterplSelect = new \XoopsFormSelect(\_AM_WGTESTUI_TEST_PROPERLOADED, 'filter_pl', $this->getVar('properloaded'));
         $filterplSelect->addOption(0,\_ALL);
-        $filterplSelect->addOption(1,'> 0');
+        $filterplSelect->addOption(1,'0');
         $filterplSelect->setExtra(" onchange='submit()' ");
         $form->addElement($filterplSelect);
 

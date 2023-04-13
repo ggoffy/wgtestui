@@ -351,17 +351,29 @@ class TestsHandler extends \XoopsPersistableObjectHandler
         $counter = 0;
         foreach ($dom->getElementsByTagName('img') as $i => $img) {
             $src =  $img->getAttribute('src');
-            if (\substr($src, 0, strlen(XOOPS_URL)) === XOOPS_URL) {
-                //replace url by root
-                $file = \str_replace(XOOPS_URL, XOOPS_ROOT_PATH, $src);
-            } else {
-                $urlNew = \str_replace(XOOPS_URL, XOOPS_ROOT_PATH, $url);
-                $path = \substr($urlNew, 0, \strrpos($urlNew, '/'));
-                $file = $path . '/' . $src;
-            }
-            if (!\is_file($file)) {
-                $counter++;
-                $images[] = $counter . ') ' . $src . ' (file:' . $file . ')';
+            if ('' !== $src) {
+                if (\substr($src, 0, strlen(XOOPS_URL)) === XOOPS_URL) {
+                    //src contains full path to image
+                    //replace url by root
+                    $file = \str_replace(XOOPS_URL, XOOPS_ROOT_PATH, $src);
+                } else {
+                    //src contains a relative path to image, take path of test_url
+                    $urlNew = \str_replace(XOOPS_URL, XOOPS_ROOT_PATH, $url);
+                    $path = \substr($urlNew, 0, \strrpos($urlNew, '/'));
+                    $file = $path . '/' . $src;
+                }
+                //remove hashtag # if exists in path
+                if (\strpos($file, '#') > 0) {
+                    $file = \substr($file, 0, \strpos($file, '#'));
+                }
+                //remove ? if exists in path
+                if (\strpos($file, '?') > 0) {
+                    $file = \substr($file, 0, \strpos($file, '?'));
+                }
+                if (!\is_file($file)) {
+                    $counter++;
+                    $images[] = $counter . ') ' . $src . ' (file:' . $file . ')';
+                }
             }
         }
 

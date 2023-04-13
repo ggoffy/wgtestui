@@ -129,7 +129,7 @@ require_once __DIR__ . '/common.php';
 \define('_AM_WGTESTUI_FORM_EDIT', 'Modification');
 \define('_AM_WGTESTUI_FORM_DELETE', 'Clear');
 \define('_AM_WGTESTUI_FORM_DELETE_TABLEALL', 'Clear table tests');
-\define('_AM_WGTESTUI_FORM_DELETE_MODULE', 'Do you really want delete module: %s');
+\define('_AM_WGTESTUI_FORM_DELETE_MODULE', 'Do you really want delete tests of module: %s');
 // Clone feature
 \define('_AM_WGTESTUI_CLONE', 'Clone');
 \define('_AM_WGTESTUI_CLONE_DSC', 'Cloning a module has never been this easy! Just type in the name you want for it and hit submit button!');

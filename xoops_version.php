@@ -143,7 +143,7 @@ $modversion['config'][] = [
     'description' => '\_MI_WGTESTUI_PATTERNS_FATALERROR_DESC',
     'formtype'    => 'textarea',
     'valuetype'   => 'text',
-    'default'     => "xo-siteblocked-message",
+    'default'     => "xo-siteblocked-message\r\nxe-fatal-error",
 ];
 // patterns Error description
 $modversion['config'][] = [

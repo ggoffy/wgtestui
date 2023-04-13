@@ -97,7 +97,7 @@ switch ($op) {
             $crTests->add(new \Criteria('invalidsrcs', 0, '>'));
         }
         if ($filterPl > 0) {
-            $crTests->add(new \Criteria('properloaded', 0, '>'));
+            $crTests->add(new \Criteria('properloaded', 0));
         }
         $testsCount = $testsHandler->getCount($crTests);
         $GLOBALS['xoopsTpl']->assign('tests_count', $testsCount);
