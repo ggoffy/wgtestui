@@ -156,12 +156,18 @@ switch ($op) {
         $GLOBALS['xoopsTpl']->assign('wgtestui_icons_url_32', \WGTESTUI_ICONS_URL . '/32');
 
         $crTests = new \CriteriaCompo();
-        $crTests->add(new \Criteria('resultcode', 200, '<>'), 'OR');
-        $crTests->add(new \Criteria('fatalerrors', 0, '>'), 'OR');
-        $crTests->add(new \Criteria('errors', 0, '>'), 'OR');
-        $crTests->add(new \Criteria('deprecated', 0, '>'), 'OR');
-        $crTests->add(new \Criteria('invalidsrcs', 0, '>'), 'OR');
-        $crTests->add(new \Criteria('properloaded', 0), 'OR');
+        $crTestsRC = new \CriteriaCompo();
+        $crTestsErr = new \CriteriaCompo();
+        $crTestsRC->add(new \Criteria('resultcode', 0, '<>'));
+        $crTests->add($crTestsRC);
+        $crTestsErr->add(new \Criteria('resultcode', 200, '<>'), 'OR');
+        $crTestsErr->add(new \Criteria('fatalerrors', 0, '>'), 'OR');
+        $crTestsErr->add(new \Criteria('fatalerrors', 0, '>'), 'OR');
+        $crTestsErr->add(new \Criteria('errors', 0, '>'), 'OR');
+        $crTestsErr->add(new \Criteria('deprecated', 0, '>'), 'OR');
+        $crTestsErr->add(new \Criteria('invalidsrcs', 0, '>'), 'OR');
+        $crTestsErr->add(new \Criteria('properloaded', 0), 'OR');
+        $crTests->add($crTestsErr);
         $testsCount = $testsHandler->getCount($crTests);
         $GLOBALS['xoopsTpl']->assign('tests_count', $testsCount);
         // Table view tests
