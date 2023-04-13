@@ -18,9 +18,10 @@ require __DIR__ . '/header.php';
 $src_path = XOOPS_ROOT_PATH .  '/modules/';
 $dst_path = XOOPS_ROOT_PATH .  '/modules/';
 $patterns = [
-    '<{includeq file' => '<{include file',
-    '<{foreachq ' => '<{foreach ',
-    '<{xoAppUrl index.php}>' => "<{xoAppUrl 'index.php'}>"
+    '<{includeq file'        => '<{include file',
+    '<{foreachq '            => '<{foreach ',
+    '<{xoAppUrl index.php}>' => "<{xoAppUrl 'index.php'}>",
+    '<{block '               => '<{xoBlock '
 ];
 //check all images from icons 16
 $img16 = XOOPS_ROOT_PATH . '/Frameworks/moduleclasses/icons/16/';
