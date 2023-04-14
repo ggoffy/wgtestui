@@ -56,21 +56,36 @@ switch ($op) {
         $img16 = XOOPS_ROOT_PATH . '/Frameworks/moduleclasses/icons/16/';
         $imagesArr   = \XoopsLists::getImgListAsArray($img16);
         foreach ($imagesArr as $img) {
-            $patterns['<{xoModuleIcons16 ' . $img . '}>'] = "<{xoModuleIcons16 '" . $img . "'}>";
-            $patterns['<{xoAdminIcons ' . $img . '}>']    = "<{xoAdminIcons '" . $img . "'}>";
-            $patterns['<{xoAdminNav ' . $img . '}>']      = "<{xoAdminNav '" . $img . "'}>";
-            $patterns['<{xoAppUrl ' . $img . '}>']        = "<{xoAppUrl '" . $img . "'}>";
-            $patterns['<{xoImgUrl ' . $img . '}>']        = "<{xoImgUrl '" . $img . "'}>";
+            //"<{xoModuleIcons16 edit.png}>" into "<{xoModuleIcons16 'edit.png'}>"
+            $patterns["\"<{xoModuleIcons16 $img}>\""] = "\"<{xoModuleIcons16 '$img'}>\"";
+            $patterns["\"<{xoAdminIcons $img}>\""]    = "\"<{xoAdminIcons '$img'}>\"";
+            $patterns["\"<{xoAdminNav $img}>\""]      = "\"<{xoAdminNav '$img'}>\"";
+            $patterns["\"<{xoAppUrl $img}>\""]        = "\"<{xoAppUrl '$img'}>\"";
+            $patterns["\"<{xoImgUrl $img}>\""]        = "\"<{xoImgUrl '$img'}>\"";
+            //'<{xoModuleIcons16 edit.png}>' into "<{xoModuleIcons16 'edit.png'}>"
+            $patterns["'<{xoModuleIcons16 $img}>'"] = "\"<{xoModuleIcons16 '$img'}>\"";
+            $patterns["'<{xoAdminIcons $img}>'"]    = "\"<{xoAdminIcons '$img'}>\"";
+            $patterns["'<{xoAdminNav $img}>'"]      = "\"<{xoAdminNav '$img'}>\"";
+            $patterns["'<{xoAppUrl $img}>'"]        = "\"<{xoAppUrl '$img'}>\"";
+            $patterns["'<{xoImgUrl $img}>'"]        = "\"<{xoImgUrl '$img'}>\"";
+
         }
         //check all images from icons 32
         $img32 = XOOPS_ROOT_PATH . '/Frameworks/moduleclasses/icons/32/';
         $imagesArr   = \XoopsLists::getImgListAsArray($img32);
         foreach ($imagesArr as $img) {
-            $patterns['<{xoModuleIcons32 ' . $img . '}>'] = "<{xoModuleIcons32 '" . $img . "'}>";
-            $patterns['<{xoAdminIcons ' . $img . '}>']    = "<{xoAdminIcons '" . $img . "'}>";
-            $patterns['<{xoAdminNav ' . $img . '}>']      = "<{xoAdminNav '" . $img . "'}>";
-            $patterns['<{xoAppUrl ' . $img . '}>']        = "<{xoAppUrl '" . $img . "'}>";
-            $patterns['<{xoImgUrl ' . $img . '}>']        = "<{xoImgUrl '" . $img . "'}>";
+            //"<{xoModuleIcons32 edit.png}>" into "<{xoModuleIcons32 'edit.png'}>"
+            $patterns["\"<{xoModuleIcons32 $img}>\""] = "\"<{xoModuleIcons32 '$img'}>\"";
+            $patterns["\"<{xoAdminIcons $img}>\""]    = "\"<{xoAdminIcons '$img'}>\"";
+            $patterns["\"<{xoAdminNav $img}>\""]      = "\"<{xoAdminNav '$img'}>\"";
+            $patterns["\"<{xoAppUrl $img}>\""]        = "\"<{xoAppUrl '$img'}>\"";
+            $patterns["\"<{xoImgUrl $img}>\""]        = "\"<{xoImgUrl '$img'}>\"";
+            //'<{xoModuleIcons32 edit.png}>' into "<{xoModuleIcons32 'edit.png'}>"
+            $patterns["'<{xoModuleIcons32 $img}>'"] = "\"<{xoModuleIcons32 '$img'}>\"";
+            $patterns["'<{xoAdminIcons $img}>'"]    = "\"<{xoAdminIcons '$img'}>\"";
+            $patterns["'<{xoAdminNav $img}>'"]      = "\"<{xoAdminNav '$img'}>\"";
+            $patterns["'<{xoAppUrl $img}>'"]        = "\"<{xoAppUrl '$img'}>\"";
+            $patterns["'<{xoImgUrl $img}>'"]        = "\"<{xoImgUrl '$img'}>\"";
         }
 
         $helperReplace = new ReplaceTextInFiles;
