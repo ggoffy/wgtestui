@@ -1,0 +1,187 @@
+{
+    "dirname": "myalbum",
+    "name": "MyAlbum",
+    "version": "3.09.0",
+    "data": [
+        {
+            "url": "modules\/myalbum\/admin\/index.php",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/main.php",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/main.php?op=new",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/main.php?op=delete",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/photomanager.php",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/photomanager.php?op=new",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/photomanager.php?op=delete",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/admission.php",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/admission.php?op=new",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/admission.php?op=delete",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/batch.php",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/batch.php?op=new",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/batch.php?op=delete",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/redothumbs.php",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/redothumbs.php?op=new",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/redothumbs.php?op=delete",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/import.php",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/import.php?op=new",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/import.php?op=delete",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/export.php",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/export.php?op=new",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/export.php?op=delete",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/groupperm_global.php",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/groupperm_global.php?op=new",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/groupperm_global.php?op=delete",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/blocksadmin.php",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/blocksadmin.php?op=edit",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/blocksadmin.php?op=delete",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/feedback.php",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/myalbum\/admin\/about.php",
+            "module": "myalbum",
+            "area": 1,
+            "type": 1
+        }
+    ]
+}

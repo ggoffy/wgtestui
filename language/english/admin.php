@@ -49,7 +49,7 @@ require_once __DIR__ . '/common.php';
 \define('_AM_WGTESTUI_TEST_INFO_EXEC5', 'If you execute the analysis, only tests with "Result code = 0" will be executed. If you want to re-analyse all urls then you have to reset test results before.');
 // Buttons
 \define('_AM_WGTESTUI_ADD_TEST', 'Add New Test');
-\define('_AM_WGTESTUI_EXEC_TEST', 'Execute All Tests');
+\define('_AM_WGTESTUI_EXEC_TEST', 'Execute Tests both');
 \define('_AM_WGTESTUI_EXEC_TEST_ADMIN', 'Execute Tests ADMIN');
 \define('_AM_WGTESTUI_EXEC_TEST_USER', 'Execute Tests USER');
 \define('_AM_WGTESTUI_RESET_TEST', 'Reset Test Results');
