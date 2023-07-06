@@ -1,0 +1,127 @@
+{
+    "dirname": "modulebuilder",
+    "name": "ModuleBuilder",
+    "version": "3.6.0",
+    "data": [
+        {
+            "url": "modules\/modulebuilder\/admin\/index.php",
+            "module": "modulebuilder",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/modulebuilder\/admin\/settings.php",
+            "module": "modulebuilder",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/modulebuilder\/admin\/settings.php?op=new",
+            "module": "modulebuilder",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/modulebuilder\/admin\/settings.php?op=delete",
+            "module": "modulebuilder",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/modulebuilder\/admin\/modules.php",
+            "module": "modulebuilder",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/modulebuilder\/admin\/modules.php?op=new",
+            "module": "modulebuilder",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/modulebuilder\/admin\/modules.php?op=delete",
+            "module": "modulebuilder",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/modulebuilder\/admin\/tables.php",
+            "module": "modulebuilder",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/modulebuilder\/admin\/tables.php?op=new",
+            "module": "modulebuilder",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/modulebuilder\/admin\/tables.php?op=delete",
+            "module": "modulebuilder",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/modulebuilder\/admin\/fields.php",
+            "module": "modulebuilder",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/modulebuilder\/admin\/fields.php?op=new",
+            "module": "modulebuilder",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/modulebuilder\/admin\/fields.php?op=delete",
+            "module": "modulebuilder",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/modulebuilder\/admin\/morefiles.php",
+            "module": "modulebuilder",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/modulebuilder\/admin\/morefiles.php?op=new",
+            "module": "modulebuilder",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/modulebuilder\/admin\/morefiles.php?op=delete",
+            "module": "modulebuilder",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/modulebuilder\/admin\/building.php",
+            "module": "modulebuilder",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/modulebuilder\/admin\/devtools.php",
+            "module": "modulebuilder",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/modulebuilder\/admin\/feedback.php",
+            "module": "modulebuilder",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/modulebuilder\/admin\/about.php",
+            "module": "modulebuilder",
+            "area": 1,
+            "type": 1
+        }
+    ]
+}
