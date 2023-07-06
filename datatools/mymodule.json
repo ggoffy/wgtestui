@@ -1,0 +1,139 @@
+{
+    "dirname": "mymodule",
+    "name": "My Module",
+    "version": "1.0.0",
+    "data": [
+        {
+            "url": "modules\/mymodule\/admin\/index.php",
+            "module": "mymodule",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/admin\/categories.php",
+            "module": "mymodule",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/admin\/categories.php?op=new",
+            "module": "mymodule",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/admin\/categories.php?op=delete",
+            "module": "mymodule",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/admin\/articles.php",
+            "module": "mymodule",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/admin\/articles.php?op=new",
+            "module": "mymodule",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/admin\/articles.php?op=delete",
+            "module": "mymodule",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/admin\/testfields.php",
+            "module": "mymodule",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/admin\/testfields.php?op=new",
+            "module": "mymodule",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/admin\/testfields.php?op=delete",
+            "module": "mymodule",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/admin\/broken.php",
+            "module": "mymodule",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/admin\/broken.php?op=delete",
+            "module": "mymodule",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/admin\/permissions.php",
+            "module": "mymodule",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/admin\/clone.php",
+            "module": "mymodule",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/admin\/feedback.php",
+            "module": "mymodule",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/admin\/about.php",
+            "module": "mymodule",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/",
+            "module": "mymodule",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/articles.php",
+            "module": "mymodule",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/articles.php?op=show&art_id=1&start=0&limit=10",
+            "module": "mymodule",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/articles.php?op=edit&art_id=1&start=0&limit=10",
+            "module": "mymodule",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/articles.php?op=broken&art_id=1&start=0&limit=10",
+            "module": "mymodule",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/mymodule\/articles.php?op=new",
+            "module": "mymodule",
+            "area": 2,
+            "type": 1
+        }
+    ]
+}
