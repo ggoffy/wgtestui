@@ -6,6 +6,7 @@
  - fixed bug with count (mamba/goffy)
  - implemented coding tools smarty 3 (goffy)
  - fixed bug with double quota (mamba/goffy)
+ - updates for XOOPS 2.5.11 Stable (goffy)
 
 ==============================================================
 1.0.1 RC1 [2023/03/01]
