@@ -138,12 +138,14 @@ class TestsHandler extends \XoopsPersistableObjectHandler
         $patternsErrorDesc = $options['patterns_fatalerrordesc'];
 
         if (empty($url)) {
-            throw new Exception('URL is empty');
+            throw new \Exception('URL is empty');
         }
-
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        if (!function_exists('curl_version')) {
+            throw new \Exception('cURL is not installed or not working properly');
+        }
+        $ch = \curl_init($url);
+        \curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        \curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         if (isset($options['timeout'])) {
             $timeout = (int) $options['timeout'];
             curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);

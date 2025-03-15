@@ -1,0 +1,193 @@
+{
+    "dirname": "wgfilemanager",
+    "name": "wgFileManager",
+    "version": "1.0.2",
+    "data": [
+        {
+            "url": "modules\/wgfilemanager\/admin\/index.php",
+            "module": "wgfilemanager",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/admin\/directory.php",
+            "module": "wgfilemanager",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/admin\/directory.php?op=new",
+            "module": "wgfilemanager",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/admin\/directory.php?op=delete",
+            "module": "wgfilemanager",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/admin\/file.php",
+            "module": "wgfilemanager",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/admin\/file.php?op=new",
+            "module": "wgfilemanager",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/admin\/file.php?op=delete",
+            "module": "wgfilemanager",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/admin\/broken.php",
+            "module": "wgfilemanager",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/admin\/broken.php?op=new",
+            "module": "wgfilemanager",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/admin\/broken.php?op=delete",
+            "module": "wgfilemanager",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/admin\/favorite.php",
+            "module": "wgfilemanager",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/admin\/favorite.php?op=new",
+            "module": "wgfilemanager",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/admin\/favorite.php?op=delete",
+            "module": "wgfilemanager",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/admin\/mimetype.php",
+            "module": "wgfilemanager",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/admin\/mimetype.php?op=new",
+            "module": "wgfilemanager",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/admin\/mimetype.php?op=delete",
+            "module": "wgfilemanager",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/admin\/permissions.php",
+            "module": "wgfilemanager",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/admin\/clone.php",
+            "module": "wgfilemanager",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/admin\/feedback.php",
+            "module": "wgfilemanager",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/admin\/about.php",
+            "module": "wgfilemanager",
+            "area": 1,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/index.php",
+            "module": "wgfilemanager",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/index.php?op=list&dir_id=1",
+            "module": "wgfilemanager",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/directory.php",
+            "module": "wgfilemanager",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/directory.php?op=new&parent_id=1",
+            "module": "wgfilemanager",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/directory.php?op=edit&id=3&dir_id=1&start=0&limit=1",
+            "module": "wgfilemanager",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/directory.php?op=delete&id=3&dir_id=1&start=0&limit=10",
+            "module": "wgfilemanager",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/file.php?op=new&dir_id=1",
+            "module": "wgfilemanager",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/file.php?op=show&file_id=1&dir_id=1&start=0&limit=10",
+            "module": "wgfilemanager",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/file.php?op=delete&file_id=1",
+            "module": "wgfilemanager",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/file.php?op=broken&file_id=1",
+            "module": "wgfilemanager",
+            "area": 2,
+            "type": 1
+        },
+        {
+            "url": "modules\/wgfilemanager\/file.php?op=edit&file_id=1&dir_id=1&start=0&limit=10",
+            "module": "wgfilemanager",
+            "area": 2,
+            "type": 1
+        }
+    ]
+}

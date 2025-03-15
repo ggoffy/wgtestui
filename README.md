@@ -22,6 +22,15 @@ Main features:
   * Execute actions, e.g. save data, delete data,...
   * Simulate user actions, e.g. type in data in a form
 
+### Require:
+- XOOPS 2.5.11;
+- XOOPS Admin 1.2;
+- PHP 7.4 or higher;
+- MySQL 5.5; -> Minimum Recommended Using InnoDB Version 5.1 or Later
+
+# Info
+
+**wgTestUI is ready for PHP 8.4**
 
 #### Tutorial:
 Coming soon..
