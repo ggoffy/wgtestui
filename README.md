@@ -4,11 +4,13 @@
 
 ## wgTestUI module for  [XOOPS CMS 2.5.11+](https://xoops.org)
 
+![module image](./assets/images/wgtestui.jpg)
+
+**wgTestUI** module for [XOOPS CMS](https://xoops.org) for automated testing XOOPS Core and module
+
 [![Software License](https://img.shields.io/badge/license-GPL-brightgreen.svg?style=flat)](LICENSE)
 [![Latest Pre-Release](https://img.shields.io/github/tag/XoopsModules25x/wgtestui.svg?style=flat)](https://github.com/XoopsModules25x/wgtestui/tags/)
 [![Latest Version](https://img.shields.io/github/release/XoopsModules25x/wgtestui.svg?style=flat)](https://github.com/XoopsModules25x/wgtestui/releases/)
-
-**wgTestUI** module for [XOOPS CMS](https://xoops.org) for automated testing XOOPS Core and module
 
 Main features:
 * What can wgTestUI do?
